@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { localizedPath } from '../core/i18n';
+---
+
+<BaseLayout title="Página não encontrada" description="A página solicitada não existe.">
+  <main>
+    <h1>Página não encontrada</h1>
+    <p><a href={localizedPath('pt-br')}>Voltar ao início</a></p>
+  </main>
+</BaseLayout>

@@ -1,0 +1,48 @@
+---
+import '../styles/styles.css';
+import { SITE_NAME, SITE_URL } from '../core/config/site';
+import { HTML_LANG, localizedPath, type Locale } from '../core/i18n';
+
+interface Props {
+  title: string;
+  description: string;
+  locale?: Locale;
+  /** Route path without locale prefix, e.g. "" or "articles". Used for canonical and hreflang. */
+  path?: string;
+  /** Locales in which this route exists. */
+  alternates?: Locale[];
+  jsonLd?: Record<string, unknown>;
+}
+
+const { title, description, locale = 'pt-br', path = '', alternates = [locale], jsonLd } = Astro.props;
+const canonical = new URL(localizedPath(locale, path), SITE_URL).href;
+const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+---
+
+<!doctype html>
+<html lang={HTML_LANG[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {alternates.length > 1 && alternates.map((l) => (
+      <link rel="alternate" hreflang={HTML_LANG[l]} href={new URL(localizedPath(l, path), SITE_URL).href} />
+    ))}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon/icon-48.png" />
+    <link rel="preload" href="/fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
