@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+  label: string;
+  hint?: string;
+  /** Pass the imported screenshot to replace the placeholder. */
+  image?: ImageMetadata;
+  alt?: string;
+}
+const { label, hint, image, alt } = Astro.props;
+---
+{image ? (
+  <figure class="shot"><Image src={image} alt={alt ?? label} widths={[640, 960, 1280]} sizes="(min-width: 960px) 560px, 100vw" /></figure>
+) : (
+  <figure class="shot shot--placeholder" data-screenshot-placeholder={label}>
+    <figcaption>
+      <strong>[PLACEHOLDER: screenshot — {label}]</strong>
+      {hint && <span>{hint}</span>}
+    </figcaption>
+  </figure>
+)}

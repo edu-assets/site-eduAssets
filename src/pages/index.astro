@@ -1,15 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LandingPage from '../features/landing/LandingPage.astro';
+import { ptBr } from '../features/landing/content/pt-br';
 import { softwareApplicationJsonLd } from '../core/seo/jsonld';
-import { APP_URL } from '../core/config/site';
 
-const description = 'Sistema de controle de equipamentos educacionais: empréstimos, devoluções, ocorrências e login por cartão RFID.';
+const description = 'Sistema de controle de empréstimos e inventário de equipamentos escolares: empréstimos, devoluções, ocorrências e login por cartão RFID.';
 ---
-
-<BaseLayout title="eduAssets — controle de equipamentos educacionais" description={description} alternates={['pt-br', 'en']} jsonLd={softwareApplicationJsonLd(description)}>
-  <main>
-    <h1>eduAssets</h1>
-    <p>{description}</p>
-    <p><a href={APP_URL}>Acessar o sistema</a></p>
-  </main>
+<BaseLayout title="eduAssets — controle de equipamentos escolares" description={description} alternates={['pt-br', 'en']} jsonLd={softwareApplicationJsonLd(description)}>
+  <LandingPage locale="pt-br" content={ptBr} />
 </BaseLayout>

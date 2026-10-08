@@ -1,0 +1,12 @@
+---
+import { GITHUB_URL } from '../../core/config/site';
+interface Props { status: string; contact: string; github: string }
+const { status, contact, github } = Astro.props;
+---
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <span>eduAssets · {status}</span>
+    <span>{contact}</span>
+    <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">{github}</a>
+  </div>
+</footer>

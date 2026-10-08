@@ -1,0 +1,11 @@
+---
+import Section from '../../../shared/components/Section.astro';
+import type { LandingContent } from '../content/types';
+const { rfid } = Astro.props as { rfid: LandingContent['rfid'] };
+---
+<Section id="rfid" title={rfid.title} lead={rfid.lead} tone="alt">
+  <ol class="steps steps--3">
+    {rfid.steps.map((s) => <li><h3>{s.title}</h3><p>{s.text}</p></li>)}
+  </ol>
+  <p class="note">{rfid.note}</p>
+</Section>

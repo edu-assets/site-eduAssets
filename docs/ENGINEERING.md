@@ -58,3 +58,18 @@ only add a folder and routes.
 `npm run dev` · `npm run build` · `npm run check` · `npm run sync:tokens`
 
 CI and Lighthouse budgets are intentionally deferred until the first visual version is done.
+
+## Landing content and placeholders
+
+Copy lives in `src/features/landing/content/{pt-br,en}.ts` (typed by `types.ts`); sections only render it.
+Anything not confirmed from the project is a visible `[PLACEHOLDER: ...]` string. Find them all with:
+
+```bash
+grep -rn "PLACEHOLDER" src
+```
+
+### Replacing a screenshot placeholder
+
+1. Save the image in `src/assets/img/` (e.g. `dashboard.webp`, light theme, ~1440px wide).
+2. Import it in the section that renders the `Screenshot` and pass `image` and `alt`, for example:
+   `<Screenshot label="Dashboard" image={dashboard} alt="Dashboard com cards de resumo e aba Estoque" />`

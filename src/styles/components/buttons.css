@@ -1,0 +1,11 @@
+.btn { display: inline-block; white-space: nowrap; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1px solid transparent; transition: background-color 0.15s, border-color 0.15s; }
+.btn--sm { padding: 7px 14px; font-size: 0.875rem; }
+.btn--primary { background: var(--primary-color); color: var(--text-on-primary); }
+.btn--primary:hover { background: var(--hover-primary); }
+.btn--secondary { background: transparent; color: var(--primary-color); border-color: var(--primary-color); }
+.btn--secondary:hover { background: var(--primary-50); }
+.final-cta .btn--secondary { color: var(--slate-50); border-color: var(--slate-400); }
+.final-cta .btn--secondary:hover { background: var(--bg-dark-hover); }
+.doc-links a { display: inline-block; padding: 8px 16px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--surface-white); text-decoration: none; font-weight: 500; }
+.doc-links a:hover { border-color: var(--primary-color); }
+:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }

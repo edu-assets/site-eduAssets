@@ -1,0 +1,5 @@
+.shot { margin: 0; border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; background: var(--surface-1); box-shadow: var(--shadow-md); }
+.shot img { width: 100%; height: auto; }
+.shot--placeholder { aspect-ratio: 16 / 10; display: grid; place-items: center; border-style: dashed; border-width: 2px; background: var(--surface-2); box-shadow: none; padding: 16px; text-align: center; }
+.shot--placeholder figcaption { display: grid; gap: 6px; color: var(--text-secondary); font-size: 0.9rem; }
+.shot--placeholder strong { color: var(--warning-color); }

@@ -1,0 +1,16 @@
+---
+import Button from '../../../shared/components/Button.astro';
+import { APP_URL, GITHUB_URL } from '../../../core/config/site';
+import type { LandingContent } from '../content/types';
+const { cta } = Astro.props as { cta: LandingContent['cta'] };
+---
+<section class="final-cta">
+  <div class="container">
+    <h2>{cta.title}</h2>
+    <p>{cta.text}</p>
+    <div class="hero__actions">
+      <Button href={APP_URL}>{cta.primary}</Button>
+      <Button href={GITHUB_URL} variant="secondary" external>{cta.secondary}</Button>
+    </div>
+  </div>
+</section>

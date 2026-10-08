@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/logos/eduAssets_logo_sobre.webp';
+import { APP_URL } from '../../core/config/site';
+import { localizedPath, type Locale } from '../../core/i18n';
+
+interface Props {
+  locale: Locale;
+  nav: { href: string; label: string }[];
+  cta: string;
+}
+const { locale, nav, cta } = Astro.props;
+---
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href={localizedPath(locale)} aria-label="eduAssets">
+      <Image src={logo} alt="eduAssets" height={32} loading="eager" />
+    </a>
+    <nav class="site-header__nav" aria-label="Principal">
+      {nav.map((i) => <a href={i.href}>{i.label}</a>)}
+    </nav>
+    <a class="btn btn--primary btn--sm" href={APP_URL}>{cta}</a>
+  </div>
+</header>

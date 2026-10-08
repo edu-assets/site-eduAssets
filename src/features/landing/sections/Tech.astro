@@ -1,0 +1,12 @@
+---
+import Section from '../../../shared/components/Section.astro';
+import type { LandingContent } from '../content/types';
+const { tech } = Astro.props as { tech: LandingContent['tech'] };
+---
+<Section id="tech" title={tech.title}>
+  <table class="table">
+    <tbody>
+      {tech.rows.map((r) => <tr><th scope="row">{r.area}</th><td>{r.items}</td></tr>)}
+    </tbody>
+  </table>
+</Section>

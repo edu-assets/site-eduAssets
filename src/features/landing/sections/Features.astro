@@ -1,0 +1,23 @@
+---
+import Section from '../../../shared/components/Section.astro';
+import Screenshot from '../../../shared/components/Screenshot.astro';
+import type { LandingContent } from '../content/types';
+const { features } = Astro.props as { features: LandingContent['features'] };
+---
+<Section id="features" title={features.title}>
+  {features.rows.map((row, i) => (
+    <article class={`feature ${i % 2 ? 'feature--reverse' : ''}`}>
+      <div class="feature__text">
+        <h3>{row.title}</h3>
+        <p>{row.text}</p>
+        <ul>{row.points.map((p) => <li>{p}</li>)}</ul>
+      </div>
+      <Screenshot label={row.shot.label} hint={row.shot.hint} />
+    </article>
+  ))}
+  <dl class="more">
+    {features.more.map((m) => (
+      <div><dt>{m.title}</dt><dd>{m.text}</dd></div>
+    ))}
+  </dl>
+</Section>

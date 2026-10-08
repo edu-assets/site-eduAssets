@@ -1,14 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { APP_URL } from '../../core/config/site';
+import LandingPage from '../../features/landing/LandingPage.astro';
+import { en } from '../../features/landing/content/en';
+import { softwareApplicationJsonLd } from '../../core/seo/jsonld';
 
-const description = 'Educational equipment management: loans, returns, incident tracking and RFID card login.';
+const description = 'School equipment loan and inventory management: loans, returns, issue tracking and RFID card login.';
 ---
-
-<BaseLayout title="eduAssets — educational equipment management" description={description} locale="en" alternates={['pt-br', 'en']}>
-  <main>
-    <h1>eduAssets</h1>
-    <p>{description}</p>
-    <p><a href={APP_URL}>Open the system</a></p>
-  </main>
+<BaseLayout title="eduAssets — school equipment management" description={description} locale="en" alternates={['pt-br', 'en']} jsonLd={softwareApplicationJsonLd(description)}>
+  <LandingPage locale="en" content={en} />
 </BaseLayout>
