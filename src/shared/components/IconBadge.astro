@@ -1,0 +1,6 @@
+---
+import Icon from './Icon.astro';
+interface Props { name: string; tone?: 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'neutral'; size?: 'md' | 'lg' }
+const { name, tone = 'primary', size = 'md' } = Astro.props;
+---
+<span class={`icon-badge icon-badge--${tone} icon-badge--${size}`}><Icon name={name} /></span>

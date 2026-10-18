@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "sync:tokens": "node scripts/sync-tokens.mjs"
+    "sync:tokens": "node scripts/sync-tokens.mjs",
+    "sync:icons": "python3 scripts/subset-icons.py"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",

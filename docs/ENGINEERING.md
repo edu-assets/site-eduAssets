@@ -70,6 +70,6 @@ grep -rn "PLACEHOLDER" src
 
 ### Replacing a screenshot placeholder
 
-1. Save the image in `src/assets/img/` (e.g. `dashboard.webp`, light theme, ~1440px wide).
-2. Import it in the section that renders the `Screenshot` and pass `image` and `alt`, for example:
-   `<Screenshot label="Dashboard" image={dashboard} alt="Dashboard com cards de resumo e aba Estoque" />`
+Drop the real capture in `src/assets/screenshots/` using the file name listed in that folder's README
+(`dashboard`, `emprestimos`, `dashboard-historico`, `controle`). The `Screenshot` component finds it by name and
+replaces the placeholder automatically. See also `docs/ASTRO.md` for where each thing is edited.

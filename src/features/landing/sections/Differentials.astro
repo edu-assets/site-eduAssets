@@ -1,0 +1,17 @@
+---
+import Section from '../../../shared/components/Section.astro';
+import IconBadge from '../../../shared/components/IconBadge.astro';
+import type { LandingContent } from '../content/types';
+const { differentials } = Astro.props as { differentials: LandingContent['differentials'] };
+---
+<Section id="differentials" eyebrow={differentials.eyebrow} title={differentials.title}>
+  <ul class="grid grid--3" role="list">
+    {differentials.items.map((d) => (
+      <li class="card">
+        <IconBadge name={d.icon} />
+        <h3>{d.title}</h3>
+        <p>{d.text}</p>
+      </li>
+    ))}
+  </ul>
+</Section>

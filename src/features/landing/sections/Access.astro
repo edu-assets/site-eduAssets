@@ -1,14 +1,25 @@
 ---
 import Section from '../../../shared/components/Section.astro';
+import Icon from '../../../shared/components/Icon.astro';
+import IconBadge from '../../../shared/components/IconBadge.astro';
 import type { LandingContent } from '../content/types';
 const { access } = Astro.props as { access: LandingContent['access'] };
 ---
-<Section id="access" title={access.title} lead={access.lead}>
-  <table class="table">
-    <thead><tr><th scope="col">{access.headers[0]}</th><th scope="col">{access.headers[1]}</th></tr></thead>
-    <tbody>
-      {access.levels.map((l) => <tr><th scope="row">{l.name}</th><td>{l.can}</td></tr>)}
-    </tbody>
-  </table>
-  <ul class="checklist">{access.security.map((s) => <li>{s}</li>)}</ul>
+<Section id="access" eyebrow={access.eyebrow} title={access.title} lead={access.lead} tone="alt">
+  <div class="access">
+    <ul class="levels" role="list">
+      {access.levels.map((l) => (
+        <li>
+          <IconBadge name={l.icon} />
+          <div><h3>{l.name}</h3><p>{l.can}</p></div>
+        </li>
+      ))}
+    </ul>
+    <div class="security">
+      <h3>{access.securityTitle}</h3>
+      <ul class="ticks" role="list">
+        {access.security.map((s) => <li><Icon name="verified_user" />{s}</li>)}
+      </ul>
+    </div>
+  </div>
 </Section>

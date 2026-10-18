@@ -1,11 +1,10 @@
-.btn { display: inline-block; white-space: nowrap; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: 1px solid transparent; transition: background-color 0.15s, border-color 0.15s; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; padding: 11px 20px; border-radius: 6px; font-weight: 500; font-size: 1rem; text-decoration: none; border: 1px solid transparent; transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease; }
+.btn .material-symbols-outlined { font-size: 18px; }
 .btn--sm { padding: 7px 14px; font-size: 0.875rem; }
 .btn--primary { background: var(--primary-color); color: var(--text-on-primary); }
-.btn--primary:hover { background: var(--hover-primary); }
-.btn--secondary { background: transparent; color: var(--primary-color); border-color: var(--primary-color); }
-.btn--secondary:hover { background: var(--primary-50); }
-.final-cta .btn--secondary { color: var(--slate-50); border-color: var(--slate-400); }
-.final-cta .btn--secondary:hover { background: var(--bg-dark-hover); }
-.doc-links a { display: inline-block; padding: 8px 16px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--surface-white); text-decoration: none; font-weight: 500; }
-.doc-links a:hover { border-color: var(--primary-color); }
-:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+.btn--primary:hover { background: var(--hover-primary); transform: translateY(-2px); }
+.btn--secondary { background: var(--surface-white); color: var(--text-primary); border-color: var(--input-border); }
+.btn--secondary:hover { border-color: var(--primary-color); color: var(--primary-color); }
+.section--dark .btn--secondary, .final-cta .btn--secondary { background: transparent; color: var(--slate-50); border-color: var(--slate-600); }
+.section--dark .btn--secondary:hover, .final-cta .btn--secondary:hover { border-color: var(--slate-300); color: #fff; }

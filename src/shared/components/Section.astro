@@ -1,11 +1,14 @@
 ---
-interface Props { id: string; title: string; lead?: string; tone?: 'plain' | 'alt' }
-const { id, title, lead, tone = 'plain' } = Astro.props;
+interface Props { id: string; title: string; eyebrow?: string; lead?: string; tone?: 'plain' | 'alt' | 'dark' }
+const { id, title, eyebrow, lead, tone = 'plain' } = Astro.props;
 ---
 <section id={id} class={`section section--${tone}`} aria-labelledby={`${id}-title`}>
   <div class="container">
-    <h2 id={`${id}-title`}>{title}</h2>
-    {lead && <p class="section__lead">{lead}</p>}
+    <header class="section__head">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h2 id={`${id}-title`}>{title}</h2>
+      {lead && <p class="section__lead">{lead}</p>}
+    </header>
     <slot />
   </div>
 </section>

@@ -1,23 +1,38 @@
 ---
 import Section from '../../../shared/components/Section.astro';
+import Icon from '../../../shared/components/Icon.astro';
+import IconBadge from '../../../shared/components/IconBadge.astro';
 import Screenshot from '../../../shared/components/Screenshot.astro';
 import type { LandingContent } from '../content/types';
 const { features } = Astro.props as { features: LandingContent['features'] };
 ---
-<Section id="features" title={features.title}>
+<Section id="features" eyebrow={features.eyebrow} title={features.title} tone="alt">
   {features.rows.map((row, i) => (
     <article class={`feature ${i % 2 ? 'feature--reverse' : ''}`}>
       <div class="feature__text">
+        <IconBadge name={row.icon} size="lg" />
         <h3>{row.title}</h3>
         <p>{row.text}</p>
-        <ul>{row.points.map((p) => <li>{p}</li>)}</ul>
+        <ul class="ticks" role="list">
+          {row.points.map((p) => <li><Icon name="check_circle" />{p}</li>)}
+        </ul>
       </div>
-      <Screenshot label={row.shot.label} hint={row.shot.hint} />
+      <Screenshot name={row.shot.key} label={row.shot.label} alt={row.shot.alt} hint={row.shot.hint} />
     </article>
   ))}
-  <dl class="more">
-    {features.more.map((m) => (
-      <div><dt>{m.title}</dt><dd>{m.text}</dd></div>
-    ))}
-  </dl>
+  <div class="effects">
+    <div class="effects__head">
+      <h3>{features.effects.title}</h3>
+      <p>{features.effects.lead}</p>
+    </div>
+    <ul role="list">
+      {features.effects.items.map((e) => (
+        <li>
+          <IconBadge name={e.icon} tone={e.tone} />
+          <strong>{e.action}</strong>
+          <span>{e.effect}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
 </Section>

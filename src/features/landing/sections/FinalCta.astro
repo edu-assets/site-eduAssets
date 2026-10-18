@@ -5,12 +5,14 @@ import type { LandingContent } from '../content/types';
 const { cta } = Astro.props as { cta: LandingContent['cta'] };
 ---
 <section class="final-cta">
-  <div class="container">
-    <h2>{cta.title}</h2>
-    <p>{cta.text}</p>
-    <div class="hero__actions">
-      <Button href={APP_URL}>{cta.primary}</Button>
-      <Button href={GITHUB_URL} variant="secondary" external>{cta.secondary}</Button>
+  <div class="container final-cta__inner">
+    <div>
+      <h2>{cta.title}</h2>
+      <p>{cta.text}</p>
+    </div>
+    <div class="actions">
+      <Button href={APP_URL} icon="arrow_forward">{cta.primary}</Button>
+      <Button href={GITHUB_URL} variant="secondary" external icon="open_in_new">{cta.secondary}</Button>
     </div>
   </div>
 </section>

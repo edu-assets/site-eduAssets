@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../../assets/logos/eduAssets_logo_sobre.webp';
+import Icon from './Icon.astro';
 import { APP_URL } from '../../core/config/site';
 import { localizedPath, type Locale } from '../../core/i18n';
 
@@ -8,8 +9,9 @@ interface Props {
   locale: Locale;
   nav: { href: string; label: string }[];
   cta: string;
+  lang: { href: string; label: string; title: string };
 }
-const { locale, nav, cta } = Astro.props;
+const { locale, nav, cta, lang } = Astro.props;
 ---
 <header class="site-header">
   <div class="container site-header__inner">
@@ -19,6 +21,7 @@ const { locale, nav, cta } = Astro.props;
     <nav class="site-header__nav" aria-label="Principal">
       {nav.map((i) => <a href={i.href}>{i.label}</a>)}
     </nav>
+    <a class="site-header__lang" href={lang.href} title={lang.title} hreflang={lang.label.toLowerCase()}><Icon name="translate" />{lang.label}</a>
     <a class="btn btn--primary btn--sm" href={APP_URL}>{cta}</a>
   </div>
 </header>

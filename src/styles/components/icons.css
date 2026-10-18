@@ -1,0 +1,12 @@
+.material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-flex; align-items: center; justify-content: center; width: 1em; height: 1em; white-space: nowrap; direction: ltr; -webkit-font-smoothing: antialiased; flex-shrink: 0; }
+
+.icon-badge { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; border-radius: 8px; background: var(--neutral-bg); color: var(--text-secondary); }
+.icon-badge--md { width: 38px; height: 38px; }
+.icon-badge--md .material-symbols-outlined { font-size: 20px; }
+.icon-badge--lg { width: 48px; height: 48px; border-radius: 10px; }
+.icon-badge--lg .material-symbols-outlined { font-size: 26px; }
+.icon-badge--primary { background: var(--primary-bg); color: var(--primary-color); }
+.icon-badge--secondary { background: var(--secondary-bg); color: var(--secondary-color); }
+.icon-badge--success { background: var(--success-bg); color: var(--success-color); }
+.icon-badge--warning { background: var(--warning-bg); color: var(--warning-color); }
+.icon-badge--error { background: var(--error-bg); color: var(--error-color); }

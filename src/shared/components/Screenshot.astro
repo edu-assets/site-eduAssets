@@ -1,21 +1,27 @@
 ---
 import { Image } from 'astro:assets';
-interface Props {
-  label: string;
-  hint?: string;
-  /** Pass the imported screenshot to replace the placeholder. */
-  image?: ImageMetadata;
-  alt?: string;
-}
-const { label, hint, image, alt } = Astro.props;
+import Icon from './Icon.astro';
+
+interface Props { name: string; label: string; alt: string; hint?: string; priority?: boolean }
+const { name, label, alt, hint, priority = false } = Astro.props;
+
+// Drop `<name>.webp|png|jpg` into src/assets/screenshots/ and the placeholder is replaced automatically.
+const files = import.meta.glob<{ default: ImageMetadata }>('/src/assets/screenshots/*.{webp,png,jpg}', { eager: true });
+const image = Object.entries(files).find(([path]) => path.split('/').pop()?.replace(/\.\w+$/, '') === name)?.[1].default;
 ---
-{image ? (
-  <figure class="shot"><Image src={image} alt={alt ?? label} widths={[640, 960, 1280]} sizes="(min-width: 960px) 560px, 100vw" /></figure>
-) : (
-  <figure class="shot shot--placeholder" data-screenshot-placeholder={label}>
-    <figcaption>
-      <strong>[PLACEHOLDER: screenshot — {label}]</strong>
+<figure class="shot">
+  <div class="shot__bar" aria-hidden="true">
+    <span></span><span></span><span></span>
+    <em>app.eduassets.tech</em>
+  </div>
+  {image ? (
+    <Image src={image} alt={alt} widths={[640, 960, 1280, 1600]} sizes="(min-width: 960px) 600px, 100vw" loading={priority ? 'eager' : 'lazy'} />
+  ) : (
+    <div class="shot__pending" data-screenshot-pending={name}>
+      <Icon name="image" />
+      <strong>{label}</strong>
       {hint && <span>{hint}</span>}
-    </figcaption>
-  </figure>
-)}
+      <code>src/assets/screenshots/{name}.webp</code>
+    </div>
+  )}
+</figure>

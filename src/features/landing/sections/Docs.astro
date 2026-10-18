@@ -1,12 +1,15 @@
 ---
 import Section from '../../../shared/components/Section.astro';
+import Icon from '../../../shared/components/Icon.astro';
 import { DOCS_BASE_URL, README_URL } from '../../../core/config/site';
 import type { LandingContent } from '../content/types';
 const { docs } = Astro.props as { docs: LandingContent['docs'] };
 const url = (file: string) => (file === 'README.md' ? README_URL : `${DOCS_BASE_URL}/${file}`);
 ---
-<Section id="docs" title={docs.title} lead={docs.lead} tone="alt">
-  <ul class="doc-links">
-    {docs.items.map((d) => <li><a href={url(d.file)} target="_blank" rel="noopener noreferrer">{d.title}</a></li>)}
+<Section id="docs" eyebrow={docs.eyebrow} title={docs.title} lead={docs.lead}>
+  <ul class="doc-links" role="list">
+    {docs.items.map((d) => (
+      <li><a href={url(d.file)} target="_blank" rel="noopener noreferrer"><Icon name={d.icon} />{d.title}<Icon name="open_in_new" /></a></li>
+    ))}
   </ul>
 </Section>

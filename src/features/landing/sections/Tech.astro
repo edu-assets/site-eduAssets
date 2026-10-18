@@ -1,12 +1,17 @@
 ---
 import Section from '../../../shared/components/Section.astro';
+import IconBadge from '../../../shared/components/IconBadge.astro';
 import type { LandingContent } from '../content/types';
 const { tech } = Astro.props as { tech: LandingContent['tech'] };
 ---
-<Section id="tech" title={tech.title}>
-  <table class="table">
-    <tbody>
-      {tech.rows.map((r) => <tr><th scope="row">{r.area}</th><td>{r.items}</td></tr>)}
-    </tbody>
-  </table>
+<Section id="tech" eyebrow={tech.eyebrow} title={tech.title} tone="alt">
+  <ul class="stack" role="list">
+    {tech.rows.map((r) => (
+      <li>
+        <IconBadge name={r.icon} tone="neutral" />
+        <strong>{r.area}</strong>
+        <span>{r.items}</span>
+      </li>
+    ))}
+  </ul>
 </Section>

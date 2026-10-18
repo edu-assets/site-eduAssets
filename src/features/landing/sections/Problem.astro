@@ -1,0 +1,14 @@
+---
+import Section from '../../../shared/components/Section.astro';
+import IconBadge from '../../../shared/components/IconBadge.astro';
+import type { LandingContent } from '../content/types';
+const { problem } = Astro.props as { problem: LandingContent['problem'] };
+---
+<Section id="problem" eyebrow={problem.eyebrow} title={problem.title} lead={problem.lead}>
+  <div class="questions">
+    <h3>{problem.questionsTitle}</h3>
+    <ul role="list">
+      {problem.questions.map((q) => <li><IconBadge name={q.icon} />{q.text}</li>)}
+    </ul>
+  </div>
+</Section>

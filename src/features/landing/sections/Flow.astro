@@ -1,12 +1,17 @@
 ---
 import Section from '../../../shared/components/Section.astro';
+import Icon from '../../../shared/components/Icon.astro';
 import type { LandingContent } from '../content/types';
 const { flow } = Astro.props as { flow: LandingContent['flow'] };
 ---
-<Section id="flow" title={flow.title} tone="alt">
-  <ol class="steps">
+<Section id="flow" eyebrow={flow.eyebrow} title={flow.title} lead={flow.lead} tone="dark">
+  <ol class="flow" role="list">
     {flow.steps.map((s) => (
-      <li><h3>{s.title}</h3><p>{s.text}</p></li>
+      <li>
+        <span class="flow__icon"><Icon name={s.icon} /></span>
+        <h3>{s.title}</h3>
+        <p>{s.text}</p>
+      </li>
     ))}
   </ol>
 </Section>

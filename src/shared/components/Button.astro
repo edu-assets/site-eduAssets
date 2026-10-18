@@ -1,5 +1,8 @@
 ---
-interface Props { href: string; variant?: 'primary' | 'secondary'; external?: boolean }
-const { href, variant = 'primary', external = false } = Astro.props;
+import Icon from './Icon.astro';
+interface Props { href: string; variant?: 'primary' | 'secondary'; external?: boolean; icon?: string }
+const { href, variant = 'primary', external = false, icon } = Astro.props;
 ---
-<a class={`btn btn--${variant}`} href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}><slot /></a>
+<a class={`btn btn--${variant}`} href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+  <slot />{icon && <Icon name={icon} />}
+</a>

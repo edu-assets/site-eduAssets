@@ -1,5 +1,6 @@
 ---
 import Button from '../../../shared/components/Button.astro';
+import Icon from '../../../shared/components/Icon.astro';
 import Screenshot from '../../../shared/components/Screenshot.astro';
 import { APP_URL, GITHUB_URL } from '../../../core/config/site';
 import type { LandingContent } from '../content/types';
@@ -8,14 +9,21 @@ const { hero } = Astro.props as { hero: LandingContent['hero'] };
 <section class="hero">
   <div class="container hero__inner">
     <div class="hero__text">
+      <p class="eyebrow">{hero.eyebrow}</p>
       <h1>{hero.title}</h1>
+      <span class="divider" aria-hidden="true"></span>
       <p class="hero__lead">{hero.lead}</p>
-      <div class="hero__actions">
-        <Button href={APP_URL}>{hero.primary}</Button>
-        <Button href={GITHUB_URL} variant="secondary" external>{hero.secondary}</Button>
+      <div class="actions">
+        <Button href={APP_URL} icon="arrow_forward">{hero.primary}</Button>
+        <Button href={GITHUB_URL} variant="secondary" external icon="open_in_new">{hero.secondary}</Button>
       </div>
       <p class="hero__note">{hero.note}</p>
     </div>
-    <Screenshot label={hero.shot.label} hint={hero.shot.hint} />
+    <div class="hero__visual">
+      <Screenshot name={hero.shot.key} label={hero.shot.label} alt={hero.shot.alt} hint={hero.shot.hint} priority />
+    </div>
   </div>
+  <ul class="container chips" role="list">
+    {hero.chips.map((c) => <li><Icon name={c.icon} />{c.text}</li>)}
+  </ul>
 </section>

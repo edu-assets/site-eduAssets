@@ -2,8 +2,10 @@
 import SiteHeader from '../../shared/components/SiteHeader.astro';
 import SiteFooter from '../../shared/components/SiteFooter.astro';
 import Hero from './sections/Hero.astro';
-import Features from './sections/Features.astro';
+import Problem from './sections/Problem.astro';
 import Flow from './sections/Flow.astro';
+import Features from './sections/Features.astro';
+import Differentials from './sections/Differentials.astro';
 import Access from './sections/Access.astro';
 import Rfid from './sections/Rfid.astro';
 import Tech from './sections/Tech.astro';
@@ -15,19 +17,22 @@ import type { LandingContent } from './content/types';
 interface Props { locale: Locale; content: LandingContent }
 const { locale, content: c } = Astro.props;
 const nav = [
-  { href: '#features', label: c.nav.features },
+  { href: '#problem', label: c.nav.problem },
   { href: '#flow', label: c.nav.flow },
+  { href: '#features', label: c.nav.features },
+  { href: '#differentials', label: c.nav.differentials },
   { href: '#access', label: c.nav.access },
-  { href: '#rfid', label: c.nav.rfid },
   { href: '#tech', label: c.nav.tech },
   { href: '#docs', label: c.nav.docs },
 ];
 ---
-<SiteHeader locale={locale} nav={nav} cta={c.hero.primary} />
+<SiteHeader locale={locale} nav={nav} cta={c.hero.primary} lang={c.lang} />
 <main>
   <Hero hero={c.hero} />
-  <Features features={c.features} />
+  <Problem problem={c.problem} />
   <Flow flow={c.flow} />
+  <Features features={c.features} />
+  <Differentials differentials={c.differentials} />
   <Access access={c.access} />
   <Rfid rfid={c.rfid} />
   <Tech tech={c.tech} />

@@ -1,6 +1,10 @@
 @import './base/fonts.css';
 @import './base/tokens.css';
 @import './base/reset.css';
+@import './components/icons.css';
 @import './components/buttons.css';
+@import './components/cards.css';
 @import './components/screenshot.css';
-@import './layout/page.css';
+@import './layout/header.css';
+@import './layout/hero.css';
+@import './layout/sections.css';
