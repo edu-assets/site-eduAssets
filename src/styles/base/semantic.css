@@ -1,0 +1,37 @@
+/* Site-level semantic colors on top of the app tokens (tokens.css is generated; do not edit it).
+   Components use only these names, so a theme is just the block below. */
+:root {
+  color-scheme: light;
+  --page-bg: var(--surface-white);
+  --alt-bg: var(--surface-2);
+  --band-bg: var(--bg-dark);
+  --band-text: var(--slate-50);
+  --band-muted: var(--slate-300);
+  --band-line: var(--slate-700);
+  --chrome-bg: var(--slate-100);
+  --chrome-dot: var(--slate-300);
+  --stripe-a: var(--slate-50);
+  --stripe-b: var(--surface-white);
+  --hero-glow: var(--primary-50);
+  --soft-hover: var(--slate-100);
+  --accent-text: var(--primary-600);
+  --btn-bg: var(--primary-500);
+  --btn-bg-hover: var(--hover-primary);
+  --header-bg: color-mix(in srgb, var(--page-bg) 94%, transparent);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: var(--slate-900);
+  --alt-bg: color-mix(in srgb, var(--slate-900) 65%, var(--slate-950));
+  --band-bg: color-mix(in srgb, var(--primary-900) 45%, var(--slate-950));
+  --band-line: color-mix(in srgb, var(--primary-700) 55%, var(--slate-900));
+  --chrome-bg: var(--slate-700);
+  --chrome-dot: var(--slate-500);
+  --stripe-a: var(--slate-800);
+  --stripe-b: color-mix(in srgb, var(--slate-800) 55%, var(--slate-900));
+  --hero-glow: color-mix(in srgb, var(--primary-700) 30%, transparent);
+  --soft-hover: var(--slate-800);
+  --accent-text: var(--primary-color);
+  --btn-bg-hover: color-mix(in srgb, var(--primary-500) 80%, #fff);
+}

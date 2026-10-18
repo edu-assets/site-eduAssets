@@ -1,27 +1,54 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '../../assets/logos/eduAssets_logo_sobre.webp';
+import logoLight from '../../assets/logos/eduAssets_logo_sobre.webp';
+import logoDark from '../../assets/logos/eduAssets_logo-header.webp';
 import Icon from './Icon.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro';
 import { APP_URL } from '../../core/config/site';
 import { localizedPath, type Locale } from '../../core/i18n';
+import { ui } from '../../core/i18n/ui';
 
 interface Props {
   locale: Locale;
-  nav: { href: string; label: string }[];
+  nav: { href: string; label: string; icon: string }[];
   cta: string;
-  lang: { href: string; label: string; title: string };
 }
-const { locale, nav, cta, lang } = Astro.props;
+const { locale, nav, cta } = Astro.props;
+const t = ui[locale];
 ---
-<header class="site-header">
+<header class="site-header" data-at-top>
   <div class="container site-header__inner">
     <a class="site-header__brand" href={localizedPath(locale)} aria-label="eduAssets">
-      <Image src={logo} alt="eduAssets" height={32} loading="eager" />
+      <Image class="logo logo--light" src={logoLight} alt="eduAssets" height={30} loading="eager" />
+      <Image class="logo logo--dark" src={logoDark} alt="" height={30} loading="eager" />
     </a>
-    <nav class="site-header__nav" aria-label="Principal">
+
+    <nav class="site-header__nav" aria-label={t.mainNav}>
       {nav.map((i) => <a href={i.href}>{i.label}</a>)}
     </nav>
-    <a class="site-header__lang" href={lang.href} title={lang.title} hreflang={lang.label.toLowerCase()}><Icon name="translate" />{lang.label}</a>
-    <a class="btn btn--primary btn--sm" href={APP_URL}>{cta}</a>
+
+    <div class="site-header__tools">
+      <LanguageSwitcher locale={locale} />
+      <ThemeToggle locale={locale} />
+      <a class="btn btn--primary btn--sm site-header__cta" href={APP_URL}>{cta}</a>
+      <button type="button" class="icon-btn site-header__burger" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label={t.openMenu} data-label-open={t.openMenu} data-label-close={t.closeMenu}>
+        <Icon name="menu" />
+        <Icon name="close" />
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu" hidden>
+    <nav class="container" aria-label={t.mainNav}>
+      {nav.map((i) => <a href={i.href}><Icon name={i.icon} />{i.label}</a>)}
+      <a class="btn btn--primary" href={APP_URL}>{cta}<Icon name="arrow_forward" /></a>
+    </nav>
   </div>
 </header>
+<noscript><style>.site-header{background:var(--page-bg)!important;border-bottom-color:var(--border-color)!important}.site-header__burger{display:none}.mobile-menu[hidden]{display:block}</style></noscript>
+
+<script>
+  import '../../scripts/theme';
+  import '../../scripts/header';
+</script>

@@ -1,0 +1,12 @@
+---
+import Icon from './Icon.astro';
+import { ui } from '../../core/i18n/ui';
+import type { Locale } from '../../core/i18n';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<button type="button" class="icon-btn theme-toggle" data-theme-toggle data-label-to-dark={ui[locale].toDark} data-label-to-light={ui[locale].toLight} aria-label={ui[locale].toDark} title={ui[locale].toDark} aria-pressed="false">
+  <span class="theme-toggle__moon"><Icon name="dark_mode" /></span>
+  <span class="theme-toggle__sun"><Icon name="light_mode" /></span>
+</button>

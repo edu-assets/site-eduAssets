@@ -7,6 +7,8 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   integrations: [mdx(), sitemap()],
+  // The CSP is `script-src 'self'`: never inline bundled scripts into the HTML.
+  vite: { build: { assetsInlineLimit: 0 } },
   i18n: {
     defaultLocale: 'pt-br',
     locales: ['pt-br', 'en'],

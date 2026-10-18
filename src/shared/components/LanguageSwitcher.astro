@@ -1,0 +1,27 @@
+---
+import Flag from './Flag.astro';
+import { localizedPath, type Locale } from '../../core/i18n';
+import { ui } from '../../core/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = ui[locale];
+const options = [
+  { code: 'pt-br' as const, flag: 'br' as const, lang: 'pt-BR' },
+  { code: 'en' as const, flag: 'us' as const, lang: 'en' },
+];
+---
+<nav class="lang-switch" aria-label={t.language}>
+  {options.map((o) => (
+    <a
+      href={localizedPath(o.code)}
+      hreflang={o.lang}
+      lang={o.lang}
+      title={t.langNames[o.code]}
+      aria-current={o.code === locale ? 'true' : undefined}
+    >
+      <Flag code={o.flag} />
+      <span class="sr-only">{t.langNames[o.code]}</span>
+    </a>
+  ))}
+</nav>
