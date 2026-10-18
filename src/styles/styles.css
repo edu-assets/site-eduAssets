@@ -1,6 +1,7 @@
 @import './base/fonts.css';
 @import './base/tokens.css';
 @import './base/semantic.css';
+@import './base/transitions.css';
 @import './base/reset.css';
 @import './components/icons.css';
 @import './components/buttons.css';

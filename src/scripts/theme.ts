@@ -16,6 +16,13 @@ function apply(theme: Theme) {
   });
 }
 
+function withTransition(change: () => void) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return change();
+  root.classList.add('theme-transition');
+  change();
+  window.setTimeout(() => root.classList.remove('theme-transition'), 350);
+}
+
 function saved(): Theme | null {
   try {
     const v = localStorage.getItem(KEY);
@@ -30,12 +37,12 @@ apply(current());
 document.querySelectorAll('[data-theme-toggle]').forEach((btn) =>
   btn.addEventListener('click', () => {
     const next: Theme = current() === 'dark' ? 'light' : 'dark';
-    apply(next);
-    try { localStorage.setItem(KEY, next); } catch { /* storage unavailable: theme still applies for this page */ }
+    withTransition(() => apply(next));
+    try { localStorage.setItem(KEY, next); } catch { /* ignore */ }
   }),
 );
 
 // Without an explicit choice, follow the operating system live.
 media.addEventListener('change', (e) => {
-  if (!saved()) apply(e.matches ? 'dark' : 'light');
+  if (!saved()) withTransition(() => apply(e.matches ? 'dark' : 'light'));
 });

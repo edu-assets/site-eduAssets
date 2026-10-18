@@ -29,3 +29,9 @@ document.addEventListener('click', (e) => {
   if (toggle?.getAttribute('aria-expanded') === 'true' && !header?.contains(e.target as Node)) setMenu(false);
 });
 window.matchMedia('(min-width: 1081px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
+
+document.querySelectorAll<HTMLAnchorElement>('.lang-switch a').forEach((a) =>
+  a.addEventListener('click', () => {
+    if (location.hash) a.href = a.pathname + location.hash;
+  }),
+);

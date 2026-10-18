@@ -1,0 +1,23 @@
+/* Theme switch: only while the toggle runs (class added by scripts/theme.ts),
+   so hovers and page load are not affected. */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease, fill 0.3s ease, stroke 0.3s ease !important;
+}
+
+/* Language switch: cross-document view transition between / and /en/.
+   Browsers without support (e.g. Firefox) just navigate normally. */
+@view-transition { navigation: auto; }
+
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 0.25s; }
+
+/* Keeps the navbar fixed instead of cross-fading with the page. */
+.site-header { view-transition-name: site-header; }
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
