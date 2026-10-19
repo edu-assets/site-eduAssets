@@ -12,9 +12,9 @@ export interface LandingContent {
     rows: { icon: string; title: string; text: string; points: string[]; shot: Shot }[];
     effects: { title: string; lead: string; items: { icon: string; tone: 'primary' | 'success' | 'warning' | 'error'; action: string; effect: string }[] };
   };
-  differentials: { eyebrow: string; title: string; items: IconItem[] };
+  differentials: { eyebrow: string; title: string; lead: string; items: IconItem[] };
   access: { eyebrow: string; title: string; lead: string; levels: { icon: string; name: string; can: string }[]; securityTitle: string; security: string[] };
-  rfid: { eyebrow: string; title: string; lead: string; steps: IconItem[]; note: string };
+  rfid: { eyebrow: string; title: string; lead: string; video: Shot; steps: IconItem[]; note: string };
   tech: { eyebrow: string; title: string; rows: { icon: string; area: string; items: string }[] };
   docs: { eyebrow: string; title: string; lead: string; items: { icon: string; title: string; file: string }[] };
   cta: { title: string; text: string; primary: string; secondary: string };

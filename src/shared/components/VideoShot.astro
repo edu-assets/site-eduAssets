@@ -1,0 +1,26 @@
+---
+import Icon from './Icon.astro';
+
+interface Props { name: string; label: string; alt: string; hint?: string; caption?: string }
+const { name, label, alt, hint, caption = label } = Astro.props;
+
+// Drop `<name>.mp4|webm` into src/assets/videos/ and the placeholder is replaced automatically.
+const files = import.meta.glob<string>('/src/assets/videos/*.{mp4,webm}', { eager: true, query: '?url', import: 'default' });
+const src = Object.entries(files).find(([path]) => path.split('/').pop()?.replace(/\.\w+$/, '') === name)?.[1];
+---
+<figure class="shot">
+  <div class="shot__bar" aria-hidden="true">
+    <span></span><span></span><span></span>
+    <em>{caption}</em>
+  </div>
+  {src ? (
+    <video src={src} aria-label={alt} autoplay muted loop playsinline preload="metadata" disablepictureinpicture></video>
+  ) : (
+    <div class="shot__pending" data-video-pending={name}>
+      <Icon name="videocam" />
+      <strong>{label}</strong>
+      {hint && <span>{hint}</span>}
+      <code>src/assets/videos/{name}.mp4</code>
+    </div>
+  )}
+</figure>

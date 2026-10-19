@@ -2,7 +2,7 @@ import type { LandingContent } from './types';
 
 export const en: LandingContent = {
   lang: { href: '/', label: 'PT', title: 'Versão em português' },
-  nav: { problem: 'The problem', flow: 'Workflow', features: 'Features', differentials: 'Highlights', access: 'Access', tech: 'Technology', docs: 'Documentation' },
+  nav: { problem: 'The problem', flow: 'Workflow', features: 'Features', differentials: 'Capabilities', access: 'Access', tech: 'Technology', docs: 'Documentation' },
   hero: {
     eyebrow: 'v1.0 · Portfolio project',
     title: 'School equipment loans and inventory, in one place',
@@ -93,8 +93,9 @@ export const en: LandingContent = {
     },
   },
   differentials: {
-    eyebrow: 'Highlights',
-    title: 'What the project does differently',
+    eyebrow: 'Also included',
+    title: 'Project features',
+    lead: 'Beyond the panels, what the system offers in daily use.',
     items: [
       { icon: 'visibility', title: 'Guest Mode', text: 'Anyone can explore the system in read-only mode, with no sign-up.' },
       { icon: 'lock', title: 'Backend permissions', text: 'Access levels do not rely on the interface alone: every write route validates the token.' },
@@ -125,6 +126,7 @@ export const en: LandingContent = {
     eyebrow: 'Optional hardware',
     title: 'RFID card login',
     lead: 'Users tap their card on the reader and sign in without typing a password.',
+    video: { key: 'rfid-login', label: 'Card login', alt: 'Video of the RFID reader: the card is tapped on the reader and the session starts by itself in the system', hint: 'Card on the reader and session starting' },
     steps: [
       { icon: 'badge', title: 'Card provisioning', text: 'The administrator generates a token under Registers → Users and writes it to the card. The server stores only the hash.' },
       { icon: 'sensors', title: 'Reading', text: 'A Python service on a Raspberry Pi or Arduino Nano reads the card and sends the token to the backend.' },

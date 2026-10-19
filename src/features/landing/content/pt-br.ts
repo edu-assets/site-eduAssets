@@ -2,7 +2,7 @@ import type { LandingContent } from './types';
 
 export const ptBr: LandingContent = {
   lang: { href: '/en/', label: 'EN', title: 'English version' },
-  nav: { problem: 'O problema', flow: 'Fluxo', features: 'Funcionalidades', differentials: 'Diferenciais', access: 'Acesso', tech: 'Tecnologia', docs: 'Documentação' },
+  nav: { problem: 'O problema', flow: 'Fluxo', features: 'Funcionalidades', differentials: 'Recursos', access: 'Acesso', tech: 'Tecnologia', docs: 'Documentação' },
   hero: {
     eyebrow: 'v1.0 · Projeto de portfólio',
     title: 'Empréstimos e inventário de equipamentos escolares, em um só lugar',
@@ -93,8 +93,9 @@ export const ptBr: LandingContent = {
     },
   },
   differentials: {
-    eyebrow: 'Diferenciais',
-    title: 'O que o projeto faz de diferente',
+    eyebrow: 'Também incluído',
+    title: 'Recursos do projeto',
+    lead: 'Além dos painéis, o que o sistema oferece no uso diário.',
     items: [
       { icon: 'visibility', title: 'Guest Mode', text: 'Qualquer pessoa explora o sistema em modo leitura, sem cadastro.' },
       { icon: 'lock', title: 'Permissões no backend', text: 'A restrição por nível não depende só da interface: toda rota de escrita valida o token.' },
@@ -125,6 +126,7 @@ export const ptBr: LandingContent = {
     eyebrow: 'Hardware opcional',
     title: 'Login por cartão RFID',
     lead: 'O usuário encosta o cartão no leitor e entra sem digitar senha.',
+    video: { key: 'rfid-login', label: 'Card login', alt: 'Video of the RFID reader: the card is tapped on the reader and the session starts by itself in the system', hint: 'Card on the reader and session starting' },
     steps: [
       { icon: 'badge', title: 'Cadastro do cartão', text: 'O administrador gera um token em Cadastros → Usuários e grava no cartão. O servidor guarda só o hash.' },
       { icon: 'sensors', title: 'Leitura', text: 'Um serviço em Python, em um Raspberry Pi ou Arduino Nano, lê o cartão e envia o token ao backend.' },
