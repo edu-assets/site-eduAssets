@@ -78,6 +78,8 @@
 }
 
 .shot__pending code {
+    max-width: 100%;
+    overflow-wrap: anywhere;
     margin-top: 8px;
     font-size: 0.72rem;
     color: var(--warning-color);
@@ -97,7 +99,7 @@
     margin: 0;
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    min-width: 0; 
+    min-width: 0;
     overflow: hidden;
     background: var(--surface-white);
     box-shadow: var(--shadow-md);
