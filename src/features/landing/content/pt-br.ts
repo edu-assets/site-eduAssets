@@ -5,7 +5,7 @@ export const ptBr: LandingContent = {
   nav: { problem: 'O problema', flow: 'Fluxo', features: 'Funcionalidades', differentials: 'Recursos', access: 'Acesso', tech: 'Tecnologia', docs: 'Documentação' },
   hero: {
     eyebrow: 'v1.0 · Projeto de portfólio',
-    title: 'Controle de equipamentos escolares',
+    title: 'Controle de equipamentos',
     lead: 'O eduAssets registra quem retirou o quê, mantém o estoque atualizado, acompanha manutenções e quebras e exporta relatórios em CSV, Excel e PDF.',
     primary: 'Acessar o sistema',
     secondary: 'Ver código no GitHub',
