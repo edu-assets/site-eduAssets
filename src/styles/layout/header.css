@@ -263,6 +263,7 @@ html[data-theme="dark"] .theme-toggle__sun {
   transition: color 0.2s;
 }
 
+/* Hover effect for footer links */
 .site-footer__inner a:hover {
   color: var(--text-primary);
 }
