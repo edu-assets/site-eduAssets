@@ -6,3 +6,6 @@ export const SITE_NAME = 'eduAssets';
 
 export const DOCS_BASE_URL = `${GITHUB_URL}/blob/main/frontend/public/docs`;
 export const README_URL = `${GITHUB_URL}/blob/main/README.md`;
+
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/dasilva-thiago/';
+export const CONTACT_EMAIL = 'thiagosilva785@gmail.com';

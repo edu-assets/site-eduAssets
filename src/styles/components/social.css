@@ -1,0 +1,57 @@
+.brand-icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social a {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--surface-white);
+    color: var(--text-secondary);
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.social a:hover,
+.social a:focus-visible {
+    transform: scale(1.18);
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-on-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.social--sm a {
+    width: 34px;
+    height: 34px;
+}
+
+.social--sm svg {
+    width: 15px;
+    height: 15px;
+}
+
+.hero .social {
+    margin-top: 20px;
+}
+
+.btn .brand-icon {
+    font-size: 18px;
+}

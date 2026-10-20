@@ -1,0 +1,10 @@
+---
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+
+const icons = { github: faGithub, linkedin: faLinkedinIn, email: faEnvelope } as const;
+interface Props { name: keyof typeof icons }
+const { name } = Astro.props;
+const [width, height, , , path] = icons[name].icon;
+---
+<svg class="brand-icon" viewBox={`0 0 ${width} ${height}`} aria-hidden="true" focusable="false"><path d={String(path)} /></svg>

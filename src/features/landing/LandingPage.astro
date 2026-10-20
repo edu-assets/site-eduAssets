@@ -28,7 +28,7 @@ const nav = [
 ---
 <SiteHeader locale={locale} nav={nav} cta={c.hero.primary} />
 <main>
-  <Hero hero={c.hero} />
+  <Hero hero={c.hero} locale={locale} />
   <Problem problem={c.problem} />
   <Flow flow={c.flow} />
   <Features features={c.features} />
@@ -39,4 +39,4 @@ const nav = [
   <Docs docs={c.docs} />
   <FinalCta cta={c.cta} />
 </main>
-<SiteFooter {...c.footer} />
+<SiteFooter locale={locale} {...c.footer} />

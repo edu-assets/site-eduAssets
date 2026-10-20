@@ -18,5 +18,5 @@ export interface LandingContent {
   tech: { eyebrow: string; title: string; rows: { icon: string; area: string; items: string }[] };
   docs: { eyebrow: string; title: string; lead: string; items: { icon: string; title: string; file: string }[] };
   cta: { title: string; text: string; primary: string; secondary: string };
-  footer: { status: string; contact: string; github: string };
+  footer: { status: string };
 }

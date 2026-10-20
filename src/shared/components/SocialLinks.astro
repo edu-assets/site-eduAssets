@@ -1,0 +1,24 @@
+---
+import BrandIcon from './BrandIcon.astro';
+import { GITHUB_URL, LINKEDIN_URL, CONTACT_EMAIL } from '../../core/config/site';
+import { ui } from '../../core/i18n/ui';
+import type { Locale } from '../../core/i18n';
+
+interface Props { locale: Locale; size?: 'md' | 'sm' }
+const { locale, size = 'md' } = Astro.props;
+const t = ui[locale];
+const links: { name: 'github' | 'linkedin' | 'email'; href: string; label: string; external: boolean }[] = [
+  { name: 'github', href: GITHUB_URL, label: 'GitHub', external: true },
+  { name: 'linkedin', href: LINKEDIN_URL, label: 'LinkedIn', external: true },
+  { name: 'email', href: `mailto:${CONTACT_EMAIL}`, label: t.email, external: false },
+];
+---
+<ul class={`social social--${size}`} role="list">
+  {links.map((l) => (
+    <li>
+      <a href={l.href} aria-label={l.label} title={l.label} {...(l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+        <BrandIcon name={l.name} />
+      </a>
+    </li>
+  ))}
+</ul>

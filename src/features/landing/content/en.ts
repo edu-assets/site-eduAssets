@@ -164,5 +164,5 @@ export const en: LandingContent = {
     primary: 'Open the system',
     secondary: 'View code on GitHub',
   },
-  footer: { status: 'Beta version 0.9.9', contact: '[PLACEHOLDER: contact]', github: 'GitHub' },
+  footer: { status: 'Version 1.0'},
 };

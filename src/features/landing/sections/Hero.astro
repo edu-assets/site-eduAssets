@@ -1,10 +1,13 @@
 ---
 import Button from '../../../shared/components/Button.astro';
+import BrandIcon from '../../../shared/components/BrandIcon.astro';
+import SocialLinks from '../../../shared/components/SocialLinks.astro';
 import Icon from '../../../shared/components/Icon.astro';
 import Screenshot from '../../../shared/components/Screenshot.astro';
 import { APP_URL, GITHUB_URL } from '../../../core/config/site';
+import type { Locale } from '../../../core/i18n';
 import type { LandingContent } from '../content/types';
-const { hero } = Astro.props as { hero: LandingContent['hero'] };
+const { hero, locale } = Astro.props as { hero: LandingContent['hero']; locale: Locale };
 ---
 <section class="hero">
   <div class="container hero__inner">
@@ -15,9 +18,10 @@ const { hero } = Astro.props as { hero: LandingContent['hero'] };
       <p class="hero__lead">{hero.lead}</p>
       <div class="actions">
         <Button href={APP_URL} icon="arrow_forward">{hero.primary}</Button>
-        <Button href={GITHUB_URL} variant="secondary" external icon="open_in_new">{hero.secondary}</Button>
+         <Button href={GITHUB_URL} variant="secondary" external><BrandIcon name="github" />{hero.secondary}</Button>
       </div>
       <p class="hero__note">{hero.note}</p>
+      <SocialLinks locale={locale} />
     </div>
     <div class="hero__visual">
       <Screenshot name={hero.shot.key} label={hero.shot.label} alt={hero.shot.alt} hint={hero.shot.hint} priority />
