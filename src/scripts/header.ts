@@ -30,8 +30,45 @@ document.addEventListener('click', (e) => {
 });
 window.matchMedia('(min-width: 1081px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
 
+// Language switch: keep the reading position across / and /en/.
+// Sections share the same ids in both locales, but text heights differ,
+// so we store "which section + how far into it" instead of raw pixels.
+const SCROLL_KEY = 'eduassets-lang-scroll';
+type ScrollAnchor = { id: string; ratio: number } | { y: number };
+
+function captureScroll(): ScrollAnchor {
+  const sections = [...document.querySelectorAll<HTMLElement>('main section[id]')];
+  const current = sections.filter((s) => s.getBoundingClientRect().top <= 0).pop();
+  if (!current) return { y: window.scrollY }; // still in the hero
+  const rect = current.getBoundingClientRect();
+  return { id: current.id, ratio: -rect.top / rect.height };
+}
+
+function restoreScroll() {
+  let raw: string | null = null;
+  try {
+    raw = sessionStorage.getItem(SCROLL_KEY);
+    sessionStorage.removeItem(SCROLL_KEY);
+  } catch { /* ignore */ }
+  if (!raw) return;
+
+  const anchor = JSON.parse(raw) as ScrollAnchor;
+  let top = 0;
+  if ('id' in anchor) {
+    const el = document.getElementById(anchor.id);
+    if (!el) return;
+    top = el.getBoundingClientRect().top + window.scrollY + anchor.ratio * el.offsetHeight;
+  } else {
+    top = anchor.y;
+  }
+  // 'instant' overrides the global scroll-behavior: smooth, so there is no visible scrolling.
+  window.scrollTo({ top, behavior: 'instant' });
+}
+
+restoreScroll();
+
 document.querySelectorAll<HTMLAnchorElement>('.lang-switch a').forEach((a) =>
   a.addEventListener('click', () => {
-    if (location.hash) a.href = a.pathname + location.hash;
+    try { sessionStorage.setItem(SCROLL_KEY, JSON.stringify(captureScroll())); } catch { /* ignore */ }
   }),
 );
