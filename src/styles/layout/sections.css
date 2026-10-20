@@ -218,7 +218,7 @@
 
 .rfid__video {
   max-width: 880px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
 }
 
 .note {
@@ -255,8 +255,9 @@
 
 .doc-links {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 12px;
+  padding-bottom: 8px;
 }
 
 .doc-links a {
@@ -272,6 +273,8 @@
   font-weight: 500;
   color: var(--text-primary);
   transition: border-color 0.2s, transform 0.2s;
+  flex-shrink: 0;     
+  white-space: nowrap;
 }
 
 .doc-links a:hover {

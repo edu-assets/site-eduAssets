@@ -4,7 +4,7 @@ export interface IconItem { icon: string; title: string; text: string }
 export interface LandingContent {
   lang: { href: string; label: string; title: string };
   nav: { problem: string; flow: string; features: string; differentials: string; access: string; tech: string; docs: string };
-  hero: { eyebrow: string; title: string; lead: string; primary: string; secondary: string; note: string; chips: IconText[]; shot: Shot };
+  hero: { eyebrow: string; title: string; lead: string; primary: string; secondary: string; note: string; shot: Shot };
   problem: {
     eyebrow: string;
     title: string;

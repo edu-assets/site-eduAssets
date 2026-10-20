@@ -10,12 +10,6 @@ export const en: LandingContent = {
     primary: 'Open the system',
     secondary: 'View code on GitHub',
     note: 'Opens in Guest Mode: read-only, no sign-up.',
-    chips: [
-      { icon: 'visibility', text: 'Guest Mode' },
-      { icon: 'admin_panel_settings', text: '3 access levels' },
-      { icon: 'contactless', text: 'Optional RFID login' },
-      { icon: 'dark_mode', text: 'Dark mode' },
-    ],
     shot: { key: 'dashboard', label: 'Dashboard', alt: 'eduAssets dashboard with summary cards and the Stock tab', hint: 'Summary cards and Stock tab' },
   },
   problem: {

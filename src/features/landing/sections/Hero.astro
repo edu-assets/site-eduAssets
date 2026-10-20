@@ -2,7 +2,6 @@
 import Button from '../../../shared/components/Button.astro';
 import BrandIcon from '../../../shared/components/BrandIcon.astro';
 import SocialLinks from '../../../shared/components/SocialLinks.astro';
-import Icon from '../../../shared/components/Icon.astro';
 import Screenshot from '../../../shared/components/Screenshot.astro';
 import { APP_URL, GITHUB_URL } from '../../../core/config/site';
 import type { Locale } from '../../../core/i18n';
@@ -27,7 +26,4 @@ const { hero, locale } = Astro.props as { hero: LandingContent['hero']; locale: 
       <Screenshot name={hero.shot.key} label={hero.shot.label} alt={hero.shot.alt} hint={hero.shot.hint} priority />
     </div>
   </div>
-  <ul class="container chips" role="list">
-    {hero.chips.map((c) => <li><Icon name={c.icon} />{c.text}</li>)}
-  </ul>
 </section>

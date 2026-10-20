@@ -10,12 +10,6 @@ export const ptBr: LandingContent = {
     primary: 'Acessar o sistema',
     secondary: 'Ver código no GitHub',
     note: 'Abre em Guest Mode: somente leitura, sem cadastro.',
-    chips: [
-      { icon: 'visibility', text: 'Guest Mode' },
-      { icon: 'admin_panel_settings', text: '3 níveis de acesso' },
-      { icon: 'contactless', text: 'Login por RFID opcional' },
-      { icon: 'dark_mode', text: 'Modo escuro' },
-    ],
     shot: { key: 'dashboard', label: 'Dashboard', alt: 'Dashboard do eduAssets com cards de resumo e a aba Estoque', hint: 'Cards de resumo e aba Estoque' },
   },
   problem: {
