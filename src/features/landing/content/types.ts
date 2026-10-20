@@ -1,6 +1,7 @@
 export interface Shot { key: string; label: string; alt: string; hint: string }
 export interface IconText { icon: string; text: string }
 export interface IconItem { icon: string; title: string; text: string }
+type RfidPhoto = { alt: string; caption: string };
 export interface LandingContent {
   lang: { href: string; label: string; title: string };
   nav: { problem: string; flow: string; features: string; differentials: string; access: string; tech: string; docs: string };
@@ -29,12 +30,13 @@ export interface LandingContent {
     title: string;
     lead: string;
     video: Shot;
-    photos: Array<{ alt: string; caption: string }>;
+    photos: [RfidPhoto, RfidPhoto];
     steps: IconItem[];
     note: string;
   };
   tech: { eyebrow: string; title: string; rows: { icon: string; area: string; items: string }[] };
   docs: { eyebrow: string; title: string; lead: string; items: { icon: string; title: string; file: string }[] };
   cta: { title: string; text: string; primary: string; secondary: string };
-  footer: { status: string };
+  footer: { status: string; contact: string };
 }
+

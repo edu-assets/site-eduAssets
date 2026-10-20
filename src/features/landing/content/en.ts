@@ -163,5 +163,6 @@ export const en: LandingContent = {
     primary: 'Open the system',
     secondary: 'View code on GitHub',
   },
-  footer: { status: 'Version 1.0'},
+  footer: { status: 'Version 1.0', contact: 'thiagosilva785@gmail.com' },
 };
+

@@ -163,5 +163,6 @@ export const ptBr: LandingContent = {
     primary: 'Acessar o sistema',
     secondary: 'Ver código no GitHub',
   },
-  footer: { status: 'Versão 1.0' },
+  footer: { status: 'Versão 1.0', contact: 'thiagosilva785@gmail.com' },
 };
+
