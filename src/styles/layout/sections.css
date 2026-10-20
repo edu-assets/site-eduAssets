@@ -255,10 +255,8 @@
 
 .doc-links {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 12px;
-  overflow-x: auto;
-  padding-bottom: 8px;
 }
 
 .doc-links a {
