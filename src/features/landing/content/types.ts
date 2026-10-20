@@ -5,7 +5,17 @@ export interface LandingContent {
   lang: { href: string; label: string; title: string };
   nav: { problem: string; flow: string; features: string; differentials: string; access: string; tech: string; docs: string };
   hero: { eyebrow: string; title: string; lead: string; primary: string; secondary: string; note: string; chips: IconText[]; shot: Shot };
-  problem: { eyebrow: string; title: string; lead: string; questionsTitle: string; questions: IconText[] };
+  problem: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    questionsTitle: string;
+    photo: {
+      alt: string;
+      caption: string;
+    };
+    questions: IconText[]; 
+  };
   flow: { eyebrow: string; title: string; lead: string; steps: IconItem[] };
   features: {
     eyebrow: string; title: string;
@@ -14,7 +24,15 @@ export interface LandingContent {
   };
   differentials: { eyebrow: string; title: string; lead: string; items: IconItem[] };
   access: { eyebrow: string; title: string; lead: string; levels: { icon: string; name: string; can: string }[]; securityTitle: string; security: string[] };
-  rfid: { eyebrow: string; title: string; lead: string; video: Shot; steps: IconItem[]; note: string };
+  rfid: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    video: Shot;
+    photos: Array<{ alt: string; caption: string }>;
+    steps: IconItem[];
+    note: string;
+  };
   tech: { eyebrow: string; title: string; rows: { icon: string; area: string; items: string }[] };
   docs: { eyebrow: string; title: string; lead: string; items: { icon: string; title: string; file: string }[] };
   cta: { title: string; text: string; primary: string; secondary: string };

@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props { name: string; alt: string; caption?: string; ratio?: string }
+const { name, alt, caption, ratio = '16 / 10' } = Astro.props;
+
+const files = import.meta.glob<{ default: ImageMetadata }>('/src/assets/photos/*.{webp,png,jpg}', { eager: true });
+const image = Object.entries(files).find(([path]) => path.split('/').pop()?.replace(/\.\w+$/, '') === name)?.[1].default;
+---
+{image && (
+  <figure class="photo" style={`--ratio: ${ratio}`}>
+    <Image src={image} alt={alt} widths={[480, 800, 1200]} sizes="(min-width: 960px) 520px, 100vw" loading="lazy" />
+    {caption && <figcaption>{caption}</figcaption>}
+  </figure>
+)}

@@ -5,7 +5,7 @@ export const en: LandingContent = {
   nav: { problem: 'The problem', flow: 'Workflow', features: 'Features', differentials: 'Capabilities', access: 'Access', tech: 'Technology', docs: 'Documentation' },
   hero: {
     eyebrow: 'v1.0 · Portfolio project',
-    title: 'School equipment loans and inventory, in one place',
+    title: 'School equipment management',
     lead: 'eduAssets records who took what, keeps stock up to date, tracks maintenance and breakage, and exports reports as CSV, Excel and PDF.',
     primary: 'Open the system',
     secondary: 'View code on GitHub',
@@ -23,6 +23,7 @@ export const en: LandingContent = {
     title: 'Knowing what is available, who has it and what is broken',
     lead: 'Laptops, tablets, headphones and chargers are lent and returned all the time. Without a single record, real stock and the state of each item become uncertain. eduAssets is designed for fast, repetitive workflows, without tracking every individual unit.',
     questionsTitle: 'The dashboard answers, no spreadsheets needed:',
+    photo: { alt: 'Cart with laptops stored in numbered compartments', caption: 'The scenario the system records: numbered equipment, borrowed and returned every day.' },
     questions: [
       { icon: 'inventory_2', text: 'How many items exist and how many are available?' },
       { icon: 'swap_horiz', text: 'What is on loan, and to whom?' },
@@ -127,6 +128,10 @@ export const en: LandingContent = {
     title: 'RFID card login',
     lead: 'Users tap their card on the reader and sign in without typing a password.',
     video: { key: 'rfid-login', label: 'Card login', alt: 'Video of the RFID reader: the card is tapped on the reader and the session starts by itself in the system', hint: 'Card on the reader and session starting' },
+    photos: [
+    { alt: 'Description of the RFID hardware', caption: 'Components of the RFID reader' },
+    { alt: 'Description of the test bench', caption: 'Testing environment on a bench' },
+  ],
     steps: [
       { icon: 'badge', title: 'Card provisioning', text: 'The administrator generates a token under Registers → Users and writes it to the card. The server stores only the hash.' },
       { icon: 'sensors', title: 'Reading', text: 'A Python service on a Raspberry Pi or Arduino Nano reads the card and sends the token to the backend.' },

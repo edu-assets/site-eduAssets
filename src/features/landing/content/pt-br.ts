@@ -5,7 +5,7 @@ export const ptBr: LandingContent = {
   nav: { problem: 'O problema', flow: 'Fluxo', features: 'Funcionalidades', differentials: 'Recursos', access: 'Acesso', tech: 'Tecnologia', docs: 'Documentação' },
   hero: {
     eyebrow: 'v1.0 · Projeto de portfólio',
-    title: 'Empréstimos e inventário de equipamentos escolares, em um só lugar',
+    title: 'Controle de equipamentos escolares',
     lead: 'O eduAssets registra quem retirou o quê, mantém o estoque atualizado, acompanha manutenções e quebras e exporta relatórios em CSV, Excel e PDF.',
     primary: 'Acessar o sistema',
     secondary: 'Ver código no GitHub',
@@ -23,6 +23,7 @@ export const ptBr: LandingContent = {
     title: 'Saber o que está disponível, com quem está e o que quebrou',
     lead: 'Notebooks, tablets, fones e carregadores são retirados e devolvidos com frequência. Sem um registro único, o estoque real e o estado de cada equipamento ficam incertos. O eduAssets foi desenhado para fluxos rápidos e repetitivos, sem rastrear cada unidade individualmente.',
     questionsTitle: 'O painel responde, sem precisar abrir planilhas:',
+    photo: { alt: 'Carrinho com notebooks guardados em compartimentos numerados', caption: 'O cenário que o sistema registra: equipamentos numerados, emprestados e devolvidos todos os dias.' },
     questions: [
       { icon: 'inventory_2', text: 'Quantos equipamentos existem e quantos estão disponíveis?' },
       { icon: 'swap_horiz', text: 'O que está emprestado, e para quem?' },
@@ -127,6 +128,10 @@ export const ptBr: LandingContent = {
     title: 'Login por cartão RFID',
     lead: 'O usuário encosta o cartão no leitor e entra sem digitar senha.',
     video: { key: 'rfid-login', label: 'Card login', alt: 'Video of the RFID reader: the card is tapped on the reader and the session starts by itself in the system', hint: 'Card on the reader and session starting' },
+    photos: [
+    { alt: 'Descrição do hardware RFID', caption: 'Componentes do leitor RFID' },
+    { alt: 'Descrição da bancada de teste', caption: 'Ambiente de testes em bancada' },
+  ],
     steps: [
       { icon: 'badge', title: 'Cadastro do cartão', text: 'O administrador gera um token em Cadastros → Usuários e grava no cartão. O servidor guarda só o hash.' },
       { icon: 'sensors', title: 'Leitura', text: 'Um serviço em Python, em um Raspberry Pi ou Arduino Nano, lê o cartão e envia o token ao backend.' },
