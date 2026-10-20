@@ -1,10 +1,69 @@
-.actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; padding: 11px 20px; border-radius: 6px; font-weight: 500; font-size: 1rem; text-decoration: none; border: 1px solid transparent; transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease; }
-.btn .material-symbols-outlined { font-size: 18px; }
-.btn--sm { padding: 7px 14px; font-size: 0.875rem; }
-.btn--primary { background: var(--btn-bg); color: var(--text-on-primary); }
-.btn--primary:hover { background: var(--btn-bg-hover); transform: translateY(-2px); }
-.btn--secondary { background: var(--surface-white); color: var(--text-primary); border-color: var(--input-border); }
-.btn--secondary:hover { border-color: var(--primary-color); color: var(--primary-color); }
-.section--dark .btn--secondary, .final-cta .btn--secondary { background: transparent; color: var(--band-text); border-color: var(--band-line); }
-.section--dark .btn--secondary:hover, .final-cta .btn--secondary:hover { border-color: var(--band-muted); color: #fff; }
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Aplica a margem superior no botão apenas quando ele estiver dentro de páginas legais ou 404 */
+.legal-page .btn,
+.error-404 .btn { /* Adicione aqui a classe da sua página 404 caso ela use um nome diferente */
+  margin-top: 32px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.btn--sm {
+    padding: 7px 14px;
+    font-size: 0.875rem;
+}
+
+.btn--primary {
+    background: var(--btn-bg);
+    color: var(--text-on-primary);
+}
+
+.btn--primary:hover {
+    background: var(--btn-bg-hover);
+    transform: translateY(-2px);
+}
+
+.btn--secondary {
+    background: var(--surface-white);
+    color: var(--text-primary);
+    border-color: var(--input-border);
+}
+
+.btn--secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.section--dark .btn--secondary,
+.final-cta .btn--secondary {
+    background: transparent;
+    color: var(--band-text);
+    border-color: var(--band-line);
+}
+
+.section--dark .btn--secondary:hover,
+.final-cta .btn--secondary:hover {
+    border-color: var(--band-muted);
+    color: #fff;
+}

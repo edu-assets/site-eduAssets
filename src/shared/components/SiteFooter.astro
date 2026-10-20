@@ -8,6 +8,10 @@ const { locale, status, contact } = Astro.props;
   <div class="container site-footer__inner">
     <span>eduAssets · {status}</span>
     <span>{contact}</span>
+    <nav class="site-footer__legal" aria-label={locale === 'pt-br' ? 'Informações legais' : 'Legal information'}>
+      <a href={locale === 'pt-br' ? '/politica-de-privacidade/' : '/en/privacy-policy/'}>{locale === 'pt-br' ? 'Privacidade' : 'Privacy'}</a>
+      <a href={locale === 'pt-br' ? '/politica-de-cookies/' : '/en/cookies-policy/'}>Cookies</a>
+    </nav>
     <SocialLinks locale={locale} size="sm" />
   </div>
 </footer>

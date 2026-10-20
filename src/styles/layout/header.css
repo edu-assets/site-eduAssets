@@ -254,6 +254,16 @@ html[data-theme="dark"] .theme-toggle__sun {
   padding-block: 20px;
 }
 
+.site-footer__inner a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-footer__inner a:hover {
+  color: var(--text-primary);
+}
+
 .site-footer__icons {
   display: flex;
   justify-content: center;

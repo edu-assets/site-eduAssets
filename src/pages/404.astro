@@ -3,9 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { localizedPath } from '../core/i18n';
 ---
 
-<BaseLayout title="Página não encontrada" description="A página solicitada não existe.">
-  <main>
+<BaseLayout title="Página não encontrada" description="A página solicitada não existe." robots="noindex,follow">
+  <main class="not-found container">
+    <p aria-hidden="true" class="not-found__code">404</p>
     <h1>Página não encontrada</h1>
-    <p><a href={localizedPath('pt-br')}>Voltar ao início</a></p>
+    <p>O endereço pode estar incorreto ou o conteúdo pode ter sido movido.</p>
+    <a class="btn btn--primary" href={localizedPath('pt-br')}>Voltar à página inicial</a>
   </main>
 </BaseLayout>
