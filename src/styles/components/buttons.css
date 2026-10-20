@@ -4,9 +4,9 @@
     gap: 12px;
 }
 
-/* Aplica a margem superior no botão apenas quando ele estiver dentro de páginas legais ou 404 */
+
 .legal-page .btn,
-.error-404 .btn { /* Adicione aqui a classe da sua página 404 caso ela use um nome diferente */
+.error-404 .btn {
   margin-top: 32px;
 }
 
