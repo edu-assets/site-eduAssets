@@ -97,6 +97,7 @@
     margin: 0;
     border: 1px solid var(--border-color);
     border-radius: 10px;
+    min-width: 0; 
     overflow: hidden;
     background: var(--surface-white);
     box-shadow: var(--shadow-md);
@@ -106,6 +107,7 @@
     width: 100%;
     aspect-ratio: var(--ratio);
     object-fit: cover;
+    max-height: 420px;
 }
 
 .photo figcaption {

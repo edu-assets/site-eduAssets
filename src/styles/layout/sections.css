@@ -311,6 +311,20 @@
   color: var(--band-muted);
 }
 
+.problem {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .problem {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
 @media (max-width: 960px) {
   .section {
     padding-block: 56px;

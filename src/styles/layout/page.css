@@ -301,21 +301,3 @@
     white-space: normal;
   }
 }
-
-.problem {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.problem .questions {
-  max-width: none;
-}
-
-@media (max-width: 960px) {
-  .problem {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
