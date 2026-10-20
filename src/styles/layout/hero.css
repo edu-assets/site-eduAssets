@@ -1,13 +1,13 @@
 /* The hero extends under the sticky (initially transparent) header so the glow has no seam. */
 .hero {
-  margin-top: -68px;
-  padding-top: 124px;
-  background: radial-gradient(900px 420px at 88% 0%, var(--hero-glow), transparent 70%);
-  padding-bottom: 48px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    margin-top: -68px;
+    padding-top: 124px;
+    background: radial-gradient(900px 420px at 88% 0%, var(--hero-glow), transparent 70%);
+    padding-bottom: 48px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero__inner {
@@ -41,8 +41,7 @@
     }
 
     .hero__inner {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .hero .chips {

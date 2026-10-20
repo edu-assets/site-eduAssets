@@ -257,6 +257,7 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 12px;
+  overflow-x: auto;
   padding-bottom: 8px;
 }
 
@@ -273,8 +274,6 @@
   font-weight: 500;
   color: var(--text-primary);
   transition: border-color 0.2s, transform 0.2s;
-  flex-shrink: 0;     
-  white-space: nowrap;
 }
 
 .doc-links a:hover {
@@ -343,8 +342,7 @@
 
   .feature,
   .access {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .feature {
