@@ -139,9 +139,9 @@ export const en: LandingContent = {
     rows: [
       { icon: 'web', area: 'Frontend', items: 'TypeScript, Vite, feature-first architecture, CSS custom properties' },
       { icon: 'dns', area: 'Backend', items: 'Node.js, Express 5, Prisma, Zod' },
-      { icon: 'database', area: 'Database', items: 'PostgreSQL (Supabase)' },
+      { icon: 'database', area: 'Database', items: 'Managed PostgreSQL on Neon' },
       { icon: 'memory', area: 'Optional hardware', items: 'Python, Raspberry Pi or Arduino Nano, RFID reader' },
-      { icon: 'cloud', area: 'Hosting', items: '[PLACEHOLDER: confirm public hosting text]' },
+      { icon: 'cloud', area: 'Hosting', items: 'Cloudflare Pages for the frontend, Oracle Cloud VM with Docker and Nginx for the API' },
     ],
   },
   docs: {
