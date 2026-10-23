@@ -89,11 +89,17 @@ html[data-theme="dark"] .logo--dark {
 .site-header__tools {
   display: flex;
   align-items: center;
-  gap: 16px; 
+  gap: 16px;
+}
+
+.site-header__utils {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .site-header__cta {
-  margin: 0; 
+  margin: 0;
 }
 
 .icon-btn {
@@ -190,15 +196,18 @@ html[data-theme="dark"] .theme-toggle__sun {
   border-top: 1px solid var(--border-color);
   background: var(--page-bg);
   box-shadow: var(--shadow-md);
+  max-height: calc(100dvh - 68px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
-.mobile-menu nav {
+.mobile-menu__links {
   display: grid;
   gap: 4px;
   padding-block: 12px 16px;
 }
 
-.mobile-menu a:not(.btn) {
+.mobile-menu__links a:not(.btn) {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -209,11 +218,11 @@ html[data-theme="dark"] .theme-toggle__sun {
   text-decoration: none;
 }
 
-.mobile-menu a:not(.btn):hover {
+.mobile-menu__links a:not(.btn):hover {
   background: var(--soft-hover);
 }
 
-.mobile-menu a:not(.btn) .material-symbols-outlined {
+.mobile-menu__links a:not(.btn) .material-symbols-outlined {
   font-size: 22px;
   color: var(--primary-color);
 }
@@ -221,6 +230,40 @@ html[data-theme="dark"] .theme-toggle__sun {
 .mobile-menu .btn {
   margin-top: 8px;
   padding: 12px;
+}
+
+/* Language + theme row inside the mobile menu */
+.mobile-menu__tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 16px 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.mobile-menu__tools .lang-switch {
+  gap: 6px;
+  padding: 5px;
+}
+
+.mobile-menu__tools .lang-switch a {
+  width: 56px;
+  height: 44px;
+}
+
+.mobile-menu__tools .flag {
+  width: 30px;
+  height: 30px;
+}
+
+.mobile-menu__tools .icon-btn {
+  width: 48px;
+  height: 48px;
+}
+
+.mobile-menu__tools .icon-btn .material-symbols-outlined {
+  font-size: 28px;
 }
 
 @media (min-width: 1081px) {
@@ -283,12 +326,10 @@ html[data-theme="dark"] .theme-toggle__sun {
   gap: 12px;
 }
 
-
 @media (max-width: 800px) {
   .site-footer__inner a {
     margin-left: 0;
   }
-
 
   .site-footer__inner .social {
     margin-left: 0;
@@ -309,29 +350,14 @@ html[data-theme="dark"] .theme-toggle__sun {
     width: 36px;
     height: 36px;
   }
-}
 
+  .mobile-menu {
+    max-height: calc(100dvh - 60px);
+  }
 
-.mobile-menu {
-  max-height: calc(100dvh - 68px);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-
-.mobile-menu__tools {
-  display: grid;
-  gap: 4px;
-  padding-block: 12px 16px;
-  border-top: 1px solid var(--border-color);
-}
-
-.mobile-menu__row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 4px 12px;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  font-weight: 500;
+  /* keep the larger touch targets in the menu (the generic .icon-btn above is smaller) */
+  .mobile-menu__tools .icon-btn {
+    width: 48px;
+    height: 48px;
+  }
 }

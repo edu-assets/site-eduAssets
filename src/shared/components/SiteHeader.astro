@@ -41,20 +41,14 @@ const t = ui[locale];
     </div>
   </div>
 
-  <div id="mobile-menu" class="mobile-menu" hidden>
-    <nav class="container" aria-label={t.mainNav}>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+    <nav class="container mobile-menu__links" aria-label={t.mainNav}>
       {nav.map((i) => <a href={i.href}><Icon name={i.icon} />{i.label}</a>)}
       <a class="btn btn--primary" href={APP_URL}>{cta}<Icon name="arrow_forward" /></a>
     </nav>
     <div class="container mobile-menu__tools">
-      <div class="mobile-menu__row">
-        <span>{t.language}</span>
-        <LanguageSwitcher locale={locale} />
-      </div>
-      <div class="mobile-menu__row">
-        <span>{t.theme}</span>
-        <ThemeToggle locale={locale} />
-      </div>
+      <LanguageSwitcher locale={locale} />
+      <ThemeToggle locale={locale} />
     </div>
   </div>
 </header>
