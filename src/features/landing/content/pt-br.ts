@@ -139,9 +139,9 @@ export const ptBr: LandingContent = {
     rows: [
       { icon: 'web', area: 'Frontend', items: 'TypeScript, Vite, arquitetura feature-first, CSS com variáveis' },
       { icon: 'dns', area: 'Backend', items: 'Node.js, Express 5, Prisma, Zod' },
-      { icon: 'database', area: 'Banco de dados', items: 'PostgreSQL (Supabase)' },
+      { icon: 'database', area: 'Banco de dados', items: 'PostgreSQL gerenciado no Neon' },
       { icon: 'memory', area: 'Hardware opcional', items: 'Python, Raspberry Pi ou Arduino Nano, leitor RFID' },
-      { icon: 'cloud', area: 'Hospedagem', items: '[PLACEHOLDER: confirmar texto público sobre hospedagem]' },
+      { icon: 'cloud', area: 'Hospedagem', items: 'Cloudflare Pages para o frontend, Oracle Cloud VM com Docker e Nginx para a API' },
     ],
   },
   docs: {
