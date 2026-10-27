@@ -2,11 +2,15 @@
 import Button from '../../../shared/components/Button.astro';
 import BrandIcon from '../../../shared/components/BrandIcon.astro';
 import SocialLinks from '../../../shared/components/SocialLinks.astro';
-import Screenshot from '../../../shared/components/Screenshot.astro';
+import { Image } from 'astro:assets';
+import banner from '../../../assets/img/eduAssets_banner.webp';
 import { APP_LOGIN_URL, GITHUB_URL } from '../../../core/config/site';
 import type { Locale } from '../../../core/i18n';
 import type { LandingContent } from '../content/types';
 const { hero, locale } = Astro.props as { hero: LandingContent['hero']; locale: Locale };
+const bannerAlt = locale === 'pt-br'
+  ? 'eduAssets — gestão de equipamentos escolares'
+  : 'eduAssets — school equipment management';
 ---
 <section class="hero">
   <div class="container hero__inner">
@@ -23,7 +27,15 @@ const { hero, locale } = Astro.props as { hero: LandingContent['hero']; locale: 
       <SocialLinks locale={locale} />
     </div>
     <div class="hero__visual">
-      <Screenshot name={hero.shot.key} label={hero.shot.label} alt={hero.shot.alt} hint={hero.shot.hint} priority />
+      <figure class="hero__banner">
+        <Image
+          src={banner}
+          alt={bannerAlt}
+          widths={[640, 960, 1280, 1600]}
+          sizes="(min-width: 960px) 600px, 100vw"
+          loading="eager"
+        />
+      </figure>
     </div>
   </div>
 </section>

@@ -10,7 +10,6 @@ export const en: LandingContent = {
     primary: 'Open the system',
     secondary: 'View code on GitHub',
     note: 'Opens in Guest Mode: read-only, no sign-up.',
-    shot: { key: 'dashboard', label: 'Dashboard', alt: 'eduAssets dashboard with summary cards and the Stock tab', hint: 'Summary cards and Stock tab' },
   },
   problem: {
     eyebrow: 'The problem',
@@ -61,7 +60,7 @@ export const en: LandingContent = {
           'Detailed summary per category',
           'Export of stock and history',
         ],
-        shot: { key: 'dashboard-historico', label: 'Dashboard · History', alt: 'eduAssets dashboard on the History tab with each loan status', hint: 'History tab with status' },
+        shot: { key: 'dashboard', label: 'Dashboard', alt: 'eduAssets dashboard with summary cards and the Stock tab', hint: 'Summary cards and Stock tab' },
       },
       {
         icon: 'report',

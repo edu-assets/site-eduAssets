@@ -10,7 +10,6 @@ export const ptBr: LandingContent = {
     primary: 'Acessar o sistema',
     secondary: 'Ver código no GitHub',
     note: 'Abre em Guest Mode: somente leitura, sem cadastro.',
-    shot: { key: 'dashboard', label: 'Dashboard', alt: 'Dashboard do eduAssets com cards de resumo e a aba Estoque', hint: 'Cards de resumo e aba Estoque' },
   },
   problem: {
     eyebrow: 'O problema',
@@ -61,7 +60,7 @@ export const ptBr: LandingContent = {
           'Resumo detalhado por categoria',
           'Exportação do estoque e do histórico',
         ],
-        shot: { key: 'dashboard-historico', label: 'Dashboard · Histórico', alt: 'Dashboard do eduAssets na aba Histórico com o status de cada empréstimo', hint: 'Aba Histórico com status' },
+        shot: { key: 'dashboard', label: 'Dashboard', alt: 'Dashboard do eduAssets com cards de resumo e a aba Estoque', hint: 'Cards de resumo e aba Estoque' },
       },
       {
         icon: 'report',

@@ -17,6 +17,27 @@
     align-items: center;
 }
 
+.hero__visual {
+    min-width: 0;
+}
+
+.hero__banner {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--surface-white);
+    box-shadow: var(--shadow-lg);
+}
+
+.hero__banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
 .hero h1 {
     font-size: clamp(2rem, 3.8vw, 2.8rem);
 }
@@ -42,6 +63,11 @@
 
     .hero__inner {
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero__banner {
+        max-width: 720px;
+        margin-inline: auto;
     }
 
     .hero .chips {
