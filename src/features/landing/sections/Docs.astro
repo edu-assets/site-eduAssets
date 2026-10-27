@@ -1,7 +1,7 @@
 ---
 import Section from '../../../shared/components/Section.astro';
 import Icon from '../../../shared/components/Icon.astro';
-import { DOCS_BASE_URL, README_URL } from '../../../core/config/site';
+import { DOCS_BASE_URL, DOCS_REPO_URL, README_URL } from '../../../core/config/site';
 import type { LandingContent } from '../content/types';
 import type { Locale } from '../../../core/i18n';
 
@@ -12,23 +12,23 @@ const t = locale === 'en' ? {
   contents: 'Documents', toc: 'On this page', loading: 'Loading document…', loadError: 'Could not load this document. Check your connection and try again.',
   noResults: 'No results found.', searchLoading: 'Searching documents…', general: 'General', technical: 'Technical',
   source: 'Source file', copy: 'Copy code', copied: 'Code copied.', copyFailed: 'Could not copy code.',
-  openDocs: 'Open documentation', readDoc: 'Read guide',
+  openDocs: 'Source repository', readDoc: 'Read guide',
 } : {
   close: 'Fechar documentação', search: 'Buscar em todos os documentos', searchPlaceholder: 'Buscar na documentação…',
   contents: 'Documentos', toc: 'Nesta página', loading: 'Carregando documento…',
   loadError: 'Não foi possível carregar este documento. Verifique sua conexão e tente novamente.',
   noResults: 'Nenhum resultado encontrado.', searchLoading: 'Buscando nos documentos…', general: 'Geral', technical: 'Técnico',
   source: 'Arquivo-fonte', copy: 'Copiar código', copied: 'Código copiado.', copyFailed: 'Não foi possível copiar o código.',
-  openDocs: 'Abrir documentação', readDoc: 'Ler guia',
+  openDocs: 'Repositório de origem', readDoc: 'Ler guia',
 };
 
 const technicalFiles = new Set([
   'ARCHITECTURE.md', 'ARQUITETURA.md', 'DATA_MODEL.md', 'MODELO_DE_DADOS.md',
   'API_REFERENCE.md', 'REFERENCIA_API.md', 'DEVELOPMENT.md', 'DESENVOLVIMENTO.md',
-  'DEPLOYMENT.md', 'GUIA_IMPLANTACAO.md', 'OPERATIONS_AND_RECOVERY.md', 'OPERACAO_E_RECUPERACAO.md',
+  'DEPLOYMENT.md', 'GUIA_IMPLANTACAO.md', 'Hosting.md', 'Hospedagem.md',
+  'OPERATIONS_AND_RECOVERY.md', 'OPERACAO_E_RECUPERACAO.md',
 ]);
-const fileUrl = (file: string) => `${DOCS_BASE_URL}/${encodeURIComponent(file)}`;
-const hostedIndexFile = locale === 'en' ? 'README.md' : 'LEIAME.md';
+const sourceFileUrl = (file: string) => `${DOCS_REPO_URL}/blob/main/public/docs/${encodeURIComponent(file)}`;
 ---
 <Section id="docs" eyebrow={docs.eyebrow} title={docs.title} lead={docs.lead}>
   <ul class="doc-links" role="list">
@@ -53,13 +53,11 @@ const hostedIndexFile = locale === 'en' ? 'README.md' : 'LEIAME.md';
   </ul>
   <p class="docs-source-note">
     <span>{t.openDocs}:</span>
-    <a href={fileUrl(hostedIndexFile)} target="_blank" rel="noopener noreferrer">{locale === 'en' ? 'Hosted documentation' : 'Documentação hospedada'}</a>
-    <span aria-hidden="true">·</span>
     <a href={README_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
   </p>
 </Section>
 
-<dialog class="docs-reader" id="docs-reader" aria-labelledby="docs-reader-heading" data-locale={locale} data-docs-base={DOCS_BASE_URL} data-technical-files={JSON.stringify([...technicalFiles])}>
+<dialog class="docs-reader" id="docs-reader" aria-labelledby="docs-reader-heading" data-locale={locale} data-docs-base={DOCS_BASE_URL} data-docs-repo={DOCS_REPO_URL} data-technical-files={JSON.stringify([...technicalFiles])}>
   <div class="docs-reader__frame">
     <header class="docs-reader__header">
       <div class="docs-reader__identity">
@@ -109,7 +107,7 @@ const hostedIndexFile = locale === 'en' ? 'README.md' : 'LEIAME.md';
             <p class="docs-reader__document-category" data-doc-category>{t.contents}</p>
             <h3 id="docs-reader-document-heading" data-doc-heading>{docs.items[0]?.title}</h3>
           </div>
-          <a class="docs-reader__source" data-doc-source href={docs.items[0] ? fileUrl(docs.items[0].file) : '#'} target="_blank" rel="noopener noreferrer" title={t.source}>
+          <a class="docs-reader__source" data-doc-source href={docs.items[0] ? sourceFileUrl(docs.items[0].file) : '#'} target="_blank" rel="noopener noreferrer" title={t.source}>
             <Icon name="open_in_new" /> <span>{t.source}</span>
           </a>
         </div>

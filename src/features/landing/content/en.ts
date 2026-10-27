@@ -147,7 +147,7 @@ export const en: LandingContent = {
   docs: {
     eyebrow: 'Documentation',
     title: 'Product and project guides',
-    lead: 'Browse the user, architecture, API, development, deployment and operations guides.',
+    lead: 'Browse the user, architecture, API, development, deployment, hosting and operations guides.',
     items: [
       { icon: 'description', title: 'README', file: 'README.md' },
       { icon: 'menu_book', title: 'User manual', file: 'USER_MANUAL.md' },
@@ -156,6 +156,7 @@ export const en: LandingContent = {
       { icon: 'description', title: 'API reference', file: 'API_REFERENCE.md' },
       { icon: 'code', title: 'Development guide', file: 'DEVELOPMENT.md' },
       { icon: 'cloud', title: 'Deployment guide', file: 'DEPLOYMENT.md' },
+      { icon: 'menu_book', title: 'Hosting and operations', file: 'Hosting.md' },
       { icon: 'history', title: 'Operations and recovery', file: 'OPERATIONS_AND_RECOVERY.md' },
       { icon: 'history', title: 'Changelog', file: 'CHANGELOG_EN.md' },
       { icon: 'route', title: 'Roadmap', file: 'ROADMAP_EN.md' },

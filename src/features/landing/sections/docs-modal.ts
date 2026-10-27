@@ -9,6 +9,7 @@ const dialog = document.querySelector<HTMLDialogElement>('#docs-reader');
 if (dialog) {
   const locale = dialog.dataset.locale === 'en' ? 'en' : 'pt-br';
   const baseUrl = (dialog.dataset.docsBase ?? 'https://docs.eduassets.tech/docs').replace(/\/+$/, '');
+  const repositoryUrl = (dialog.dataset.docsRepo ?? 'https://github.com/edu-assets/docs-eduassets').replace(/\/+$/, '');
   const technicalFiles = new Set<string>(JSON.parse(dialog.dataset.technicalFiles ?? '[]'));
   const ui = locale === 'en' ? {
     loading: 'Loading document…', error: 'Could not load this document. Check your connection and try again.',
@@ -44,6 +45,7 @@ if (dialog) {
   marked.setOptions({ gfm: true, breaks: false });
 
   const documentUrl = (file: string) => `${baseUrl}/${encodeURIComponent(file)}`;
+  const sourceFileUrl = (file: string) => `${repositoryUrl}/blob/main/public/docs/${encodeURIComponent(file)}`;
   const normalize = (value: string) => value.toLocaleLowerCase(locale).normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const slugify = (value: string) => normalize(value).replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
 
@@ -99,7 +101,7 @@ if (dialog) {
             anchor.href = '#';
             anchor.setAttribute('aria-label', `${known.title} — ${anchor.textContent?.trim() || known.title}`);
           } else {
-            anchor.href = `${baseUrl}/${encodeURI(href.replace(/^\.\//, ''))}`;
+            anchor.href = sourceFileUrl(linkedFile || path);
             anchor.target = '_blank';
             anchor.rel = 'noopener noreferrer';
           }
@@ -144,7 +146,7 @@ if (dialog) {
     headingEl.textContent = title || doc.title;
     categoryEl.textContent = technicalFiles.has(file) ? ui.technical : ui.general;
     fileEl.textContent = file;
-    sourceLink.href = documentUrl(file);
+    sourceLink.href = sourceFileUrl(file);
     content.replaceChildren();
     toc.replaceChildren();
     toc.hidden = true;

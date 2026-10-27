@@ -1,6 +1,6 @@
 # eduassets-site
 
-Landing page and articles for [eduAssets](https://github.com/dasilva-thiago/edu-assets), published at
+Landing page, articles, and an integrated documentation reader for [eduAssets](https://github.com/edu-assets/app-eduassets), published at
 `eduassets.tech`. The interactive system lives in a separate repository at `app.eduassets.tech`.
 
 ```bash
