@@ -17,7 +17,9 @@ from fontTools.varLib import instancer
 if len(sys.argv) != 2:
     sys.exit(__doc__)
 
-icons = {"image"}  # used by the screenshot placeholder
+# `image` is used by the screenshot placeholder; `content_copy` is inserted
+# by client-side code and cannot be found by the static <Icon name="..."> scan.
+icons = {"image", "content_copy"}
 patterns = [r"icon:\s*['\"]([a-z0-9_]+)['\"]", r"\bicon=[\"']([a-z0-9_]+)[\"']", r"<Icon\s+name=[\"']([a-z0-9_]+)[\"']"]
 for path in Path("src").rglob("*"):
     if path.suffix in (".astro", ".ts"):
