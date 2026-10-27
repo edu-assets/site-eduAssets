@@ -17,7 +17,7 @@ const { features } = Astro.props as { features: LandingContent['features'] };
           {row.points.map((p) => <li><Icon name="check_circle" />{p}</li>)}
         </ul>
       </div>
-      <Screenshot name={row.shot.key} label={row.shot.label} alt={row.shot.alt} hint={row.shot.hint} />
+      <Screenshot name={row.shot.key} label={row.shot.label} alt={row.shot.alt} caption={row.shot.caption} hint={row.shot.hint} />
     </article>
   ))}
   <div class="effects">

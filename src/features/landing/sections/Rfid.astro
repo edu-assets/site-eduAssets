@@ -8,7 +8,7 @@ const { rfid } = Astro.props as { rfid: LandingContent['rfid'] };
 ---
 <Section id="rfid" eyebrow={rfid.eyebrow} title={rfid.title} lead={rfid.lead}>
   <div class="rfid__video">
-    <VideoShot name={rfid.video.key} label={rfid.video.label} alt={rfid.video.alt} hint={rfid.video.hint} caption="app.eduassets.tech" />
+    <VideoShot name={rfid.video.key} label={rfid.video.label} alt={rfid.video.alt} hint={rfid.video.hint} caption={rfid.video.caption} />
   </div>
   <div class="rfid__photos">
   <Photo name="rfid-hardware" ratio="16 / 10" alt={rfid.photos[0].alt} caption={rfid.photos[0].caption} />

@@ -10,5 +10,4 @@ O nome do arquivo (sem extensão) substitui o placeholder automaticamente, sem e
 | `dashboard-historico.webp` | Variação de funcionalidade | Dashboard, aba Histórico, com Aberto/Devolvido |
 | `controle.webp` | Funcionalidades | Painel Controle com registros em aberto e resolvidos |
 
-Dica: capture com dados de exemplo, sem nomes de pessoas reais. O texto alternativo de cada imagem está em
-`src/features/landing/content/pt-br.ts` e `en.ts` (campo `shot.alt`).
+Dica: capture com dados sintéticos, sem nomes de pessoas reais. Para cada captura, mantenha em `src/features/landing/content/pt-br.ts` e `en.ts` os campos `shot.label` (nome acessível da figura), `shot.alt` (descrição visual objetiva, sem repetir a legenda) e `shot.caption` (legenda visível, localizada). O componente aplica o `alt` à imagem e o `aria-label` à figura. Use as mesmas descrições funcionais nos dois idiomas, traduzidas naturalmente.

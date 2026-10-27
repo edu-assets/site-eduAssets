@@ -49,7 +49,7 @@ export const ptBr: LandingContent = {
           'Baixa de estoque atômica, segura contra concorrência',
           'Observação opcional em cada empréstimo',
         ],
-        shot: { key: 'emprestimos', label: 'Devoluções', alt: 'Painel de devoluções com a lista de empréstimos em aberto e o painel de detalhes', hint: 'Lista de abertos e painel de detalhes' },
+        shot: { key: 'emprestimos', label: 'Captura do painel de devoluções', alt: 'Tela Devoluções do eduAssets, com empréstimos em aberto, equipamentos pendentes e painel para confirmar uma devolução.', caption: 'Devoluções: empréstimos em aberto e detalhes do registro selecionado.', hint: 'Lista de abertos e painel de detalhes' },
       },
       {
         icon: 'dashboard',
@@ -60,7 +60,7 @@ export const ptBr: LandingContent = {
           'Resumo detalhado por categoria',
           'Exportação do estoque e do histórico',
         ],
-        shot: { key: 'dashboard', label: 'Dashboard', alt: 'Dashboard do eduAssets com cards de resumo e a aba Estoque', hint: 'Cards de resumo e aba Estoque' },
+        shot: { key: 'dashboard', label: 'Captura do dashboard de estoque', alt: 'Tela Dashboard do eduAssets na aba Estoque, com indicadores de equipamentos e tabela por categoria com quantidades totais, disponíveis e quebradas.', caption: 'Dashboard de estoque: indicadores gerais e disponibilidade dos equipamentos por categoria.', hint: 'Cards de resumo e aba Estoque' },
       },
       {
         icon: 'report',
@@ -71,7 +71,7 @@ export const ptBr: LandingContent = {
           'Manutenção e quebra retiram o item do estoque disponível',
           'Histórico de registros resolvidos, com as medidas tomadas',
         ],
-        shot: { key: 'controle', label: 'Controle', alt: 'Painel de Controle com os registros de observação, manutenção e quebra', hint: 'Registros em aberto e resolvidos' },
+        shot: { key: 'controle', label: 'Captura do painel de controle', alt: 'Tela Controle do eduAssets, com indicadores de observações, manutenções e equipamentos quebrados e uma lista de ocorrências.', caption: 'Controle: indicadores e registros de observação, manutenção e quebra.', hint: 'Registros em aberto e resolvidos' },
       },
     ],
     effects: {
@@ -120,10 +120,10 @@ export const ptBr: LandingContent = {
     eyebrow: 'Hardware opcional',
     title: 'Login por cartão RFID',
     lead: 'O usuário encosta o cartão no leitor e entra sem digitar senha.',
-    video: { key: 'rfid-login', label: 'Card login', alt: 'Video of the RFID reader: the card is tapped on the reader and the session starts by itself in the system', hint: 'Card on the reader and session starting' },
+    video: { key: 'rfid-login', label: 'Demonstração do leitor RFID', alt: 'Vídeo sem áudio mostrando uma mão aproximar uma etiqueta e um cartão RFID de um sensor conectado por fios a um microcomputador.', caption: 'Teste do leitor RFID: etiquetas são aproximadas do sensor conectado ao microcomputador.', hint: 'Etiqueta e cartão aproximados do sensor RFID' },
     photos: [
-    { alt: 'Descrição do hardware RFID', caption: 'Componentes do leitor RFID' },
-    { alt: 'Descrição da bancada de teste', caption: 'Ambiente de testes em bancada' },
+    { alt: 'Placa leitora RFID conectada por fios a um Raspberry Pi sobre uma bancada.', caption: 'Hardware RFID: leitor, conexões e microcomputador.' },
+    { alt: 'Bancada de informática com o sistema eduAssets aberto em um monitor e o leitor RFID conectado sobre a mesa.', caption: 'Bancada de testes com o eduAssets e o conjunto de leitura RFID.' },
   ],
     steps: [
       { icon: 'badge', title: 'Cadastro do cartão', text: 'O administrador gera um token em Cadastros → Usuários e grava no cartão. O servidor guarda só o hash.' },

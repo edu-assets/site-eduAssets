@@ -2,14 +2,14 @@
 import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 
-interface Props { name: string; label: string; alt: string; hint?: string; priority?: boolean }
-const { name, label, alt, hint, priority = false } = Astro.props;
+interface Props { name: string; label: string; alt: string; caption: string; hint?: string; priority?: boolean }
+const { name, label, alt, caption, hint, priority = false } = Astro.props;
 
 // Drop `<name>.webp|png|jpg` into src/assets/screenshots/ and the placeholder is replaced automatically.
 const files = import.meta.glob<{ default: ImageMetadata }>('/src/assets/screenshots/*.{webp,png,jpg}', { eager: true });
 const image = Object.entries(files).find(([path]) => path.split('/').pop()?.replace(/\.\w+$/, '') === name)?.[1].default;
 ---
-<figure class="shot">
+<figure class="shot" aria-label={label}>
   <div class="shot__bar" aria-hidden="true">
     <span></span><span></span><span></span>
     <em>app.eduassets.tech</em>
@@ -24,4 +24,5 @@ const image = Object.entries(files).find(([path]) => path.split('/').pop()?.repl
       <code>src/assets/screenshots/{name}.webp</code>
     </div>
   )}
+  <figcaption>{caption}</figcaption>
 </figure>

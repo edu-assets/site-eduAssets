@@ -82,3 +82,9 @@ grep -rn "PLACEHOLDER" src
 ### Replacing a screenshot placeholder
 
 Drop the real capture in `src/assets/screenshots/` using a file name listed in that folder's README (`dashboard`, `emprestimos`, `dashboard-historico`, or `controle`). The `Screenshot` component finds it by name and replaces the placeholder. See `docs/ASTRO.md` for where each feature is edited.
+
+### Media accessibility standard
+
+Every informative screenshot and video is rendered in a semantic `<figure>` with a localized `aria-label` on the figure, a concise and specific `alt` on each image (or `aria-label` on the video element), and a visible, localized `<figcaption>`. Informative photos also require a specific image `alt` and localized visible caption. The alt describes the visual information needed to understand the asset; the caption provides its context in the page. Do not repeat the caption verbatim as the alt, add labels to decorative imagery, or expose personal names/account data from sample screenshots. Keep screenshot/video metadata in both `pt-br.ts` and `en.ts`, typed through `Shot`; new screenshots must include `label`, `alt`, and `caption` in both locales.
+
+The RFID clip is intentionally silent, autoplaying, and looping without visible controls. Preserve `autoplay muted loop playsinline` unless the product owner explicitly requests a behavior change. Its localized caption describes the visual action; no speech captions are needed because the clip has no audio.

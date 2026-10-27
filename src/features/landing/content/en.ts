@@ -49,7 +49,7 @@ export const en: LandingContent = {
           'Race-condition-safe, atomic stock updates',
           'Optional note on every loan',
         ],
-        shot: { key: 'emprestimos', label: 'Returns', alt: 'Returns panel with the open loans list and the details panel', hint: 'Open loans list and details panel' },
+        shot: { key: 'emprestimos', label: 'Returns panel screenshot', alt: 'eduAssets Returns screen showing open loans, pending equipment and a panel to confirm a return.', caption: 'Returns: open loans and details for the selected record.', hint: 'Open loans list and details panel' },
       },
       {
         icon: 'dashboard',
@@ -60,7 +60,7 @@ export const en: LandingContent = {
           'Detailed summary per category',
           'Export of stock and history',
         ],
-        shot: { key: 'dashboard', label: 'Dashboard', alt: 'eduAssets dashboard with summary cards and the Stock tab', hint: 'Summary cards and Stock tab' },
+        shot: { key: 'dashboard', label: 'Stock dashboard screenshot', alt: 'eduAssets Dashboard screen on the Stock tab, with equipment summary indicators and a category table showing total, available and broken quantities.', caption: 'Stock dashboard: summary indicators and equipment availability by category.', hint: 'Summary cards and Stock tab' },
       },
       {
         icon: 'report',
@@ -71,7 +71,7 @@ export const en: LandingContent = {
           'Maintenance and breakage remove the item from available stock',
           'History of resolved records, with the measures taken',
         ],
-        shot: { key: 'controle', label: 'Control', alt: 'Control panel with observation, maintenance and breakage records', hint: 'Open and resolved records' },
+        shot: { key: 'controle', label: 'Issue tracking panel screenshot', alt: 'eduAssets Control screen with summary indicators for observations, maintenance and broken equipment, followed by an issue list.', caption: 'Control: indicators and records for observations, maintenance and breakage.', hint: 'Open and resolved records' },
       },
     ],
     effects: {
@@ -120,10 +120,10 @@ export const en: LandingContent = {
     eyebrow: 'Optional hardware',
     title: 'RFID card login',
     lead: 'Users tap their card on the reader and sign in without typing a password.',
-    video: { key: 'rfid-login', label: 'Card login', alt: 'Video of the RFID reader: the card is tapped on the reader and the session starts by itself in the system', hint: 'Card on the reader and session starting' },
+    video: { key: 'rfid-login', label: 'RFID reader demonstration', alt: 'Silent video showing a hand bringing an RFID tag and card close to a sensor wired to a small computer.', caption: 'RFID reader test: tags are brought close to a sensor connected to the computer.', hint: 'RFID tag and card brought close to the sensor' },
     photos: [
-    { alt: 'Description of the RFID hardware', caption: 'Components of the RFID reader' },
-    { alt: 'Description of the test bench', caption: 'Testing environment on a bench' },
+    { alt: 'RFID reader board wired to a Raspberry Pi on a workbench.', caption: 'RFID hardware: reader, wiring and small computer.' },
+    { alt: 'Computer lab bench with eduAssets open on a monitor and the RFID reader setup on the desk.', caption: 'Test bench with eduAssets and the RFID reader setup.' },
   ],
     steps: [
       { icon: 'badge', title: 'Card provisioning', text: 'The administrator generates a token under Registers → Users and writes it to the card. The server stores only the hash.' },

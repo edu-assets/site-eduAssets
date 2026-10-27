@@ -1,4 +1,4 @@
-export interface Shot { key: string; label: string; alt: string; hint: string }
+export interface Shot { key: string; label: string; alt: string; caption: string; hint: string }
 export interface IconText { icon: string; text: string }
 export interface IconItem { icon: string; title: string; text: string }
 type RfidPhoto = { alt: string; caption: string };

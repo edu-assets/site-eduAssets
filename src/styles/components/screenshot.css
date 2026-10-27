@@ -95,6 +95,14 @@
     background: var(--slate-900);
 }
 
+.shot figcaption {
+    padding: 10px 14px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
 .photo {
     margin: 0;
     border: 1px solid var(--border-color);

@@ -8,10 +8,10 @@ const { name, label, alt, hint, caption = label } = Astro.props;
 const files = import.meta.glob<string>('/src/assets/videos/*.{mp4,webm}', { eager: true, query: '?url', import: 'default' });
 const src = Object.entries(files).find(([path]) => path.split('/').pop()?.replace(/\.\w+$/, '') === name)?.[1];
 ---
-<figure class="shot">
+<figure class="shot" aria-label={label}>
   <div class="shot__bar" aria-hidden="true">
     <span></span><span></span><span></span>
-    <em>{caption}</em>
+    <em>app.eduassets.tech</em>
   </div>
   {src ? (
     <video src={src} aria-label={alt} autoplay muted loop playsinline preload="metadata" disablepictureinpicture></video>
@@ -23,4 +23,5 @@ const src = Object.entries(files).find(([path]) => path.split('/').pop()?.replac
       <code>src/assets/videos/{name}.mp4</code>
     </div>
   )}
+  <figcaption>{caption}</figcaption>
 </figure>
