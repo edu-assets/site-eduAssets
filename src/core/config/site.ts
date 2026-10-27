@@ -6,7 +6,7 @@ export const DOCS_REPO_URL = 'https://github.com/edu-assets/docs-eduassets';
 
 export const SITE_NAME = 'eduAssets';
 
-export const DOCS_BASE_URL = `${DOCS_REPO_URL}/blob/main/public/docs`;
+export const DOCS_BASE_URL = 'https://docs.eduassets.tech/docs';
 export const README_URL = `${DOCS_REPO_URL}/blob/main/README.md`;
 
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/dasilva-thiago/';
