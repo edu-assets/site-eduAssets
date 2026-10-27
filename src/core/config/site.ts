@@ -1,11 +1,11 @@
 export const SITE_URL = 'https://eduassets.tech';
 export const APP_URL = 'https://app.eduassets.tech';
 export const APP_LOGIN_URL = `${APP_URL}/#login`;
-export const GITHUB_URL = 'https://github.com/edu-assets/eduAssets';
+export const GITHUB_URL = 'https://github.com/edu-assets/app-eduassets';
 
 export const SITE_NAME = 'eduAssets';
 
-export const DOCS_BASE_URL = `${GITHUB_URL}/blob/main/frontend/public/docs`;
+export const DOCS_BASE_URL = `${GITHUB_URL}/blob/main/public/docs`;
 export const README_URL = `${GITHUB_URL}/blob/main/README.md`;
 
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/dasilva-thiago/';
