@@ -263,7 +263,8 @@
   scroll-margin-top: 84px;
 }
 
-.doc-links a {
+.doc-links a,
+.doc-links .doc-link-button {
   min-height: 56px;
   display: grid;
   grid-template-columns: 24px minmax(0, 1fr) 20px;
@@ -275,27 +276,35 @@
   background: var(--surface-white);
   color: var(--text-primary);
   font-weight: 600;
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: left;
   text-decoration: none;
+  cursor: pointer;
   transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 
-.doc-links a:hover {
+.doc-links a:hover,
+.doc-links .doc-link-button:hover {
   border-color: var(--primary-color);
   background: var(--soft-hover);
   transform: translateY(-1px);
 }
 
-.doc-links a:focus-visible {
+.doc-links a:focus-visible,
+.doc-links .doc-link-button:focus-visible {
   outline: 3px solid var(--primary-color);
   outline-offset: 3px;
 }
 
-.doc-links a > .material-symbols-outlined:first-child {
+.doc-links a > .material-symbols-outlined:first-child,
+.doc-links .doc-link-button > .material-symbols-outlined:first-child {
   color: var(--primary-color);
   font-size: 22px;
 }
 
-.doc-links a > .material-symbols-outlined:last-child {
+.doc-links a > .material-symbols-outlined:last-child,
+.doc-links .doc-link-button > .material-symbols-outlined:last-child {
   color: var(--text-secondary);
   font-size: 18px;
   justify-self: end;

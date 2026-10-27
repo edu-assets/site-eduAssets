@@ -3,13 +3,127 @@ import Section from '../../../shared/components/Section.astro';
 import Icon from '../../../shared/components/Icon.astro';
 import { DOCS_BASE_URL, README_URL } from '../../../core/config/site';
 import type { LandingContent } from '../content/types';
-const { docs } = Astro.props as { docs: LandingContent['docs'] };
-const url = (file: string) => (file === 'README.md' ? README_URL : `${DOCS_BASE_URL}/${file}`);
+import type { Locale } from '../../../core/i18n';
+
+interface Props { docs: LandingContent['docs']; locale: Locale }
+const { docs, locale } = Astro.props;
+const t = locale === 'en' ? {
+  close: 'Close documentation', search: 'Search all documents', searchPlaceholder: 'Search in documentation…',
+  contents: 'Documents', toc: 'On this page', loading: 'Loading document…', loadError: 'Could not load this document. Check your connection and try again.',
+  noResults: 'No results found.', searchLoading: 'Searching documents…', general: 'General', technical: 'Technical',
+  source: 'Source file', copy: 'Copy code', copied: 'Code copied.', copyFailed: 'Could not copy code.',
+  openDocs: 'Open documentation', readDoc: 'Read guide',
+} : {
+  close: 'Fechar documentação', search: 'Buscar em todos os documentos', searchPlaceholder: 'Buscar na documentação…',
+  contents: 'Documentos', toc: 'Nesta página', loading: 'Carregando documento…',
+  loadError: 'Não foi possível carregar este documento. Verifique sua conexão e tente novamente.',
+  noResults: 'Nenhum resultado encontrado.', searchLoading: 'Buscando nos documentos…', general: 'Geral', technical: 'Técnico',
+  source: 'Arquivo-fonte', copy: 'Copiar código', copied: 'Código copiado.', copyFailed: 'Não foi possível copiar o código.',
+  openDocs: 'Abrir documentação', readDoc: 'Ler guia',
+};
+
+const technicalFiles = new Set([
+  'ARCHITECTURE.md', 'ARQUITETURA.md', 'DATA_MODEL.md', 'MODELO_DE_DADOS.md',
+  'API_REFERENCE.md', 'REFERENCIA_API.md', 'DEVELOPMENT.md', 'DESENVOLVIMENTO.md',
+  'DEPLOYMENT.md', 'GUIA_IMPLANTACAO.md', 'OPERATIONS_AND_RECOVERY.md', 'OPERACAO_E_RECUPERACAO.md',
+]);
+const fileUrl = (file: string) => `${DOCS_BASE_URL}/${encodeURIComponent(file)}`;
+const hostedIndexFile = locale === 'en' ? 'README.md' : 'LEIAME.md';
 ---
 <Section id="docs" eyebrow={docs.eyebrow} title={docs.title} lead={docs.lead}>
   <ul class="doc-links" role="list">
-    {docs.items.map((d) => (
-      <li><a href={url(d.file)} target="_blank" rel="noopener noreferrer"><Icon name={d.icon} />{d.title}<Icon name="open_in_new" /></a></li>
+    {docs.items.map((doc) => (
+      <li>
+        <button
+          class="doc-link-button"
+          type="button"
+          data-doc-open
+          data-doc-file={doc.file}
+          data-doc-title={doc.title}
+          data-doc-icon={doc.icon}
+          aria-haspopup="dialog"
+          aria-label={`${t.readDoc}: ${doc.title}`}
+        >
+          <Icon name={doc.icon} />
+          <span>{doc.title}</span>
+          <Icon name="menu_book" />
+        </button>
+      </li>
     ))}
   </ul>
+  <p class="docs-source-note">
+    <span>{t.openDocs}:</span>
+    <a href={fileUrl(hostedIndexFile)} target="_blank" rel="noopener noreferrer">{locale === 'en' ? 'Hosted documentation' : 'Documentação hospedada'}</a>
+    <span aria-hidden="true">·</span>
+    <a href={README_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
+  </p>
 </Section>
+
+<dialog class="docs-reader" id="docs-reader" aria-labelledby="docs-reader-heading" data-locale={locale} data-docs-base={DOCS_BASE_URL} data-technical-files={JSON.stringify([...technicalFiles])}>
+  <div class="docs-reader__frame">
+    <header class="docs-reader__header">
+      <div class="docs-reader__identity">
+        <span class="docs-reader__eyebrow">eduAssets <span aria-hidden="true">/</span> {t.contents}</span>
+        <h2 id="docs-reader-heading">{docs.title}</h2>
+      </div>
+      <button class="docs-reader__close" type="button" data-doc-close aria-label={t.close} title={t.close}>
+        <Icon name="close" />
+      </button>
+    </header>
+
+    <div class="docs-reader__search-wrap">
+      <label class="sr-only" for="docs-reader-search">{t.search}</label>
+      <Icon name="search" />
+      <input id="docs-reader-search" type="search" placeholder={t.searchPlaceholder} autocomplete="off" aria-controls="docs-reader-results" aria-expanded="false" />
+      <div class="docs-reader__results" id="docs-reader-results" role="region" aria-label={t.search} hidden></div>
+    </div>
+
+    <div class="docs-reader__layout">
+      <nav class="docs-reader__sidebar" aria-label={t.contents}>
+        <p class="docs-reader__sidebar-label">{t.contents}</p>
+        <div class="docs-reader__nav-list">
+          {docs.items.map((doc) => {
+            const category = technicalFiles.has(doc.file) ? t.technical : t.general;
+            return (
+              <button
+                class="docs-reader__nav-item"
+                type="button"
+                data-doc-select
+                data-doc-file={doc.file}
+                data-doc-title={doc.title}
+                data-doc-icon={doc.icon}
+                data-category={category}
+                aria-current="false"
+              >
+                <Icon name={doc.icon} />
+                <span>{doc.title}</span>
+              </button>
+            );
+          })}
+        </div>
+      </nav>
+
+      <section class="docs-reader__main" aria-labelledby="docs-reader-document-heading">
+        <div class="docs-reader__document-head">
+          <div>
+            <p class="docs-reader__document-category" data-doc-category>{t.contents}</p>
+            <h3 id="docs-reader-document-heading" data-doc-heading>{docs.items[0]?.title}</h3>
+          </div>
+          <a class="docs-reader__source" data-doc-source href={docs.items[0] ? fileUrl(docs.items[0].file) : '#'} target="_blank" rel="noopener noreferrer" title={t.source}>
+            <Icon name="open_in_new" /> <span>{t.source}</span>
+          </a>
+        </div>
+        <p class="docs-reader__status" data-doc-status role="status" aria-live="polite">{t.loading}</p>
+        <article class="docs-reader__content" data-doc-content tabindex="0"></article>
+        <footer class="docs-reader__footer"><span>{t.source}</span><code data-doc-filename></code></footer>
+      </section>
+
+      <aside class="docs-reader__toc-wrap" aria-label={t.toc}>
+        <p class="docs-reader__sidebar-label">{t.toc}</p>
+        <nav class="docs-reader__toc" data-doc-toc></nav>
+      </aside>
+    </div>
+  </div>
+</dialog>
+
+<script src="./docs-modal.ts"></script>

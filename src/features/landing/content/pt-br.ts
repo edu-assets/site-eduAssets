@@ -149,7 +149,7 @@ export const ptBr: LandingContent = {
     title: 'Guias do produto e do projeto',
     lead: 'Consulte os materiais de uso, arquitetura, API, desenvolvimento, implantação e operação.',
     items: [
-      { icon: 'description', title: 'README', file: 'README.md' },
+      { icon: 'description', title: 'Apresentação do projeto', file: 'LEIAME.md' },
       { icon: 'menu_book', title: 'Manual do usuário', file: 'MANUAL_USUARIO.md' },
       { icon: 'architecture', title: 'Arquitetura', file: 'ARQUITETURA.md' },
       { icon: 'database', title: 'Modelo de dados', file: 'MODELO_DE_DADOS.md' },
