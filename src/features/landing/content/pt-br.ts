@@ -146,13 +146,17 @@ export const ptBr: LandingContent = {
   },
   docs: {
     eyebrow: 'Documentação',
-    title: 'Leia o projeto por dentro',
-    lead: 'Toda a documentação está no repositório.',
+    title: 'Guias do produto e do projeto',
+    lead: 'Consulte os materiais de uso, arquitetura, API, desenvolvimento, implantação e operação.',
     items: [
       { icon: 'description', title: 'README', file: 'README.md' },
       { icon: 'menu_book', title: 'Manual do usuário', file: 'MANUAL_USUARIO.md' },
       { icon: 'architecture', title: 'Arquitetura', file: 'ARQUITETURA.md' },
       { icon: 'database', title: 'Modelo de dados', file: 'MODELO_DE_DADOS.md' },
+      { icon: 'description', title: 'Referência da API', file: 'REFERENCIA_API.md' },
+      { icon: 'code', title: 'Guia de desenvolvimento', file: 'DESENVOLVIMENTO.md' },
+      { icon: 'cloud', title: 'Guia de implantação', file: 'GUIA_IMPLANTACAO.md' },
+      { icon: 'history', title: 'Operação e recuperação', file: 'OPERACAO_E_RECUPERACAO.md' },
       { icon: 'history', title: 'Changelog', file: 'CHANGELOG.md' },
       { icon: 'route', title: 'Roadmap', file: 'ROADMAP.md' },
     ],
@@ -165,4 +169,3 @@ export const ptBr: LandingContent = {
   },
   footer: { status: 'Versão 1.0', contact: 'thiagosilva785@gmail.com' },
 };
-

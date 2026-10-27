@@ -146,13 +146,17 @@ export const en: LandingContent = {
   },
   docs: {
     eyebrow: 'Documentation',
-    title: 'Read the project from the inside',
-    lead: 'All documentation lives in the repository.',
+    title: 'Product and project guides',
+    lead: 'Browse the user, architecture, API, development, deployment and operations guides.',
     items: [
       { icon: 'description', title: 'README', file: 'README.md' },
       { icon: 'menu_book', title: 'User manual', file: 'USER_MANUAL.md' },
       { icon: 'architecture', title: 'Architecture', file: 'ARCHITECTURE.md' },
       { icon: 'database', title: 'Data model', file: 'DATA_MODEL.md' },
+      { icon: 'description', title: 'API reference', file: 'API_REFERENCE.md' },
+      { icon: 'code', title: 'Development guide', file: 'DEVELOPMENT.md' },
+      { icon: 'cloud', title: 'Deployment guide', file: 'DEPLOYMENT.md' },
+      { icon: 'history', title: 'Operations and recovery', file: 'OPERATIONS_AND_RECOVERY.md' },
       { icon: 'history', title: 'Changelog', file: 'CHANGELOG_EN.md' },
       { icon: 'route', title: 'Roadmap', file: 'ROADMAP_EN.md' },
     ],
@@ -165,4 +169,3 @@ export const en: LandingContent = {
   },
   footer: { status: 'Version 1.0', contact: 'thiagosilva785@gmail.com' },
 };
-

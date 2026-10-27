@@ -254,39 +254,57 @@
 }
 
 .doc-links {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
+#docs {
+  scroll-margin-top: 84px;
+}
+
 .doc-links a {
-  display: inline-flex;
+  min-height: 56px;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 20px;
   align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
+  gap: 12px;
+  padding: 14px 16px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
   background: var(--surface-white);
-  box-shadow: var(--shadow-sm);
-  text-decoration: none;
-  font-weight: 500;
   color: var(--text-primary);
-  transition: border-color 0.2s, transform 0.2s;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 
 .doc-links a:hover {
   border-color: var(--primary-color);
-  transform: translateY(-2px);
+  background: var(--soft-hover);
+  transform: translateY(-1px);
 }
 
-.doc-links .material-symbols-outlined {
-  font-size: 20px;
+.doc-links a:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+.doc-links a > .material-symbols-outlined:first-child {
   color: var(--primary-color);
+  font-size: 22px;
 }
 
-.doc-links a .material-symbols-outlined:last-child {
-  font-size: 16px;
-  color: var(--text-muted);
+.doc-links a > .material-symbols-outlined:last-child {
+  color: var(--text-secondary);
+  font-size: 18px;
+  justify-self: end;
+}
+
+@media (max-width: 560px) {
+  .doc-links {
+    grid-template-columns: 1fr;
+  }
 }
 
 .final-cta {
