@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://eduassets.tech/sitemap-index.xml
+Sitemap: https://eduassets.tech/sitemap.xml

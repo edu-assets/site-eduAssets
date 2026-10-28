@@ -2,7 +2,6 @@
 import '../styles/styles.css';
 import { SITE_NAME, SITE_URL } from '../core/config/site';
 import { HTML_LANG, localizedPath, type Locale } from '../core/i18n';
-import defaultSocialImage from '../assets/img/eduAssets_banner.webp';
 
 interface Props {
   title: string;
@@ -19,7 +18,10 @@ interface Props {
 const { title, description, locale = 'pt-br', path = '', alternates = [locale], jsonLd, robots = 'index,follow' } = Astro.props;
 const canonical = new URL(localizedPath(locale, path), SITE_URL).href;
 const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
-const socialImage = new URL(defaultSocialImage.src, SITE_URL).href;
+const socialImage = new URL('/og-image.webp', SITE_URL).href;
+const socialImageAlt = locale === 'pt-br'
+  ? 'eduAssets — controle de empréstimos e estoque escolar'
+  : 'eduAssets — school equipment loan and inventory management';
 ---
 
 <!doctype html>
@@ -36,22 +38,31 @@ const socialImage = new URL(defaultSocialImage.src, SITE_URL).href;
     {alternates.length > 1 && alternates.map((l) => (
       <link rel="alternate" hreflang={HTML_LANG[l]} href={new URL(localizedPath(l, path), SITE_URL).href} />
     ))}
+    {alternates.length > 1 && <link rel="alternate" hreflang="x-default" href={new URL(localizedPath('pt-br', path), SITE_URL).href} />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:alt" content="eduAssets — gestão de equipamentos escolares" />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/webp" />
     <meta property="og:locale" content={HTML_LANG[locale].replace('-', '_')} />
+    {alternates.filter((l) => l !== locale).map((l) => (
+      <meta property="og:locale:alternate" content={HTML_LANG[l].replace('-', '_')} />
+    ))}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" href="/favicon/icon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/icon-180.png" />
     <link rel="preload" href="/fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>

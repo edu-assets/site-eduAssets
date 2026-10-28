@@ -4,7 +4,7 @@ import LandingPage from '../../features/landing/LandingPage.astro';
 import { en } from '../../features/landing/content/en';
 import { softwareApplicationJsonLd } from '../../core/seo/jsonld';
 
-const description = 'School equipment loan and inventory management: loans, returns, issue tracking and RFID card login.';
+const description = 'Record equipment loans and returns, track laptops and tablets, manage maintenance issues, and export reports in one web system.';
 ---
 <BaseLayout title="eduAssets — school equipment management" description={description} locale="en" alternates={['pt-br', 'en']} jsonLd={softwareApplicationJsonLd(description)}>
   <LandingPage locale="en" content={en} />

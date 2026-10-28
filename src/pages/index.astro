@@ -4,8 +4,8 @@ import LandingPage from '../features/landing/LandingPage.astro';
 import { ptBr } from '../features/landing/content/pt-br';
 import { softwareApplicationJsonLd } from '../core/seo/jsonld';
 
-const description = 'Sistema de controle de empréstimos e inventário de equipamentos escolares: empréstimos, devoluções, ocorrências e login por cartão RFID.';
+const description = 'Registre empréstimos e devoluções, acompanhe o estoque de notebooks e tablets, controle manutenções e exporte relatórios em um único sistema.';
 ---
-<BaseLayout title="eduAssets — controle de equipamentos escolares" description={description} alternates={['pt-br', 'en']} jsonLd={softwareApplicationJsonLd(description)}>
+<BaseLayout title="eduAssets — Controle de empréstimos e estoque escolar" description={description} alternates={['pt-br', 'en']} jsonLd={softwareApplicationJsonLd(description)}>
   <LandingPage locale="pt-br" content={ptBr} />
 </BaseLayout>
