@@ -56,7 +56,10 @@
     height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    transform: scale(1.42);
+    transform-origin: center;
     filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+    transition: transform 240ms ease, filter 240ms ease;
 }
 
 html[data-theme='dark'] .hero__banner::before {
@@ -97,6 +100,10 @@ html[data-theme='dark'] .hero__banner img {
     .hero__banner {
         max-width: 720px;
         margin-inline: auto;
+    }
+
+    .hero__banner img {
+        transform: scale(1.24);
     }
 
     .hero .chips {
