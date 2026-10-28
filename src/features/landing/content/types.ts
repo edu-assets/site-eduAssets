@@ -35,7 +35,7 @@ export interface LandingContent {
     decisions: { icon: string; title: string; text: string }[];
   };
   tech: { eyebrow: string; title: string; groups: { area: string; items: { name: string; brand?: string; icon?: string }[] }[] };
-  docs: { eyebrow: string; title: string; lead: string; items: { icon: string; title: string; file: string }[] };
+  docs: { eyebrow: string; title: string; lead: string; groups: { title: string; items: { icon: string; title: string; file: string }[] }[] };
   cta: { title: string; text: string; primary: string; secondary: string };
   profile: {
     eyebrow: string;

@@ -452,13 +452,10 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
 
 /* Profile */
 .profile-card {
-  max-width: 900px;
+  width: fit-content;
+  max-width: min(100%, 900px);
   margin-inline: auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 28px;
-  align-items: center;
-  padding: 28px;
+  padding: 24px;
   background: color-mix(in srgb, var(--band-bg) 70%, white 5%);
   border: 1px solid var(--band-line);
   border-radius: 8px;
@@ -502,31 +499,41 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
   font-size: 18px;
 }
 
-.profile-card__links {
+.profile-card__details {
+  min-width: 0;
+}
+
+.profile-card__details .social {
+  margin-top: 14px;
+}
+
+.doc-groups {
   display: grid;
-  gap: 12px;
-  justify-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.profile-card__links-label {
-  font-size: 0.9rem;
-  font-weight: 600;
+.doc-group {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--surface-white);
+  box-shadow: var(--shadow-sm);
 }
 
-.profile-card__links .social {
-  margin: 0;
+.doc-group h3 {
+  margin-bottom: 14px;
+  font-size: 1.05rem;
 }
 
 .doc-links {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
 }
 
-.doc-links > :last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: min(100%, 520px);
+.doc-links li {
+  min-width: 0;
 }
 
 #docs {
@@ -535,6 +542,7 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
 
 .doc-links a,
 .doc-links .doc-link-button {
+  width: 100%;
   min-height: 56px;
   display: grid;
   grid-template-columns: 24px minmax(0, 1fr) 20px;
@@ -581,7 +589,7 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
 }
 
 @media (max-width: 560px) {
-  .doc-links {
+  .doc-groups {
     grid-template-columns: 1fr;
   }
 }
@@ -658,10 +666,6 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
     width: min(100%, 460px);
   }
 
-  .profile-card {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
 }
 
 @media (max-width: 560px) {

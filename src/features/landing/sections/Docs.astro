@@ -7,6 +7,7 @@ import type { Locale } from '../../../core/i18n';
 
 interface Props { docs: LandingContent['docs']; locale: Locale }
 const { docs, locale } = Astro.props;
+const documents = docs.groups.flatMap((group) => group.items);
 const t = locale === 'en' ? {
   close: 'Close documentation', search: 'Search all documents', searchPlaceholder: 'Search in documentation…',
   contents: 'Documents', toc: 'On this page', loading: 'Loading document…', loadError: 'Could not load this document. Check your connection and try again.',
@@ -31,26 +32,33 @@ const technicalFiles = new Set([
 const sourceFileUrl = (file: string) => `${DOCS_REPO_URL}/blob/main/public/docs/${encodeURIComponent(file)}`;
 ---
 <Section id="docs" eyebrow={docs.eyebrow} title={docs.title} lead={docs.lead}>
-  <ul class="doc-links" role="list">
-    {docs.items.map((doc) => (
-      <li>
-        <button
-          class="doc-link-button"
-          type="button"
-          data-doc-open
-          data-doc-file={doc.file}
-          data-doc-title={doc.title}
-          data-doc-icon={doc.icon}
-          aria-haspopup="dialog"
-          aria-label={`${t.readDoc}: ${doc.title}`}
-        >
-          <Icon name={doc.icon} />
-          <span>{doc.title}</span>
-          <Icon name="menu_book" />
-        </button>
-      </li>
+  <div class="doc-groups">
+    {docs.groups.map((group, groupIndex) => (
+      <section class="doc-group" aria-labelledby={`doc-group-${groupIndex}`}>
+        <h3 id={`doc-group-${groupIndex}`}>{group.title}</h3>
+        <ul class="doc-links" role="list">
+          {group.items.map((doc) => (
+            <li>
+              <button
+                class="doc-link-button"
+                type="button"
+                data-doc-open
+                data-doc-file={doc.file}
+                data-doc-title={doc.title}
+                data-doc-icon={doc.icon}
+                aria-haspopup="dialog"
+                aria-label={`${t.readDoc}: ${doc.title}`}
+              >
+                <Icon name={doc.icon} />
+                <span>{doc.title}</span>
+                <Icon name="menu_book" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </section>
     ))}
-  </ul>
+  </div>
   <p class="docs-source-note">
     <span>{t.openDocs}:</span>
     <a href={README_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -80,7 +88,7 @@ const sourceFileUrl = (file: string) => `${DOCS_REPO_URL}/blob/main/public/docs/
       <nav class="docs-reader__sidebar" aria-label={t.contents}>
         <p class="docs-reader__sidebar-label">{t.contents}</p>
         <div class="docs-reader__nav-list">
-          {docs.items.map((doc) => {
+          {documents.map((doc) => {
             const category = technicalFiles.has(doc.file) ? t.technical : t.general;
             return (
               <button
@@ -105,9 +113,9 @@ const sourceFileUrl = (file: string) => `${DOCS_REPO_URL}/blob/main/public/docs/
         <div class="docs-reader__document-head">
           <div>
             <p class="docs-reader__document-category" data-doc-category>{t.contents}</p>
-            <h3 id="docs-reader-document-heading" data-doc-heading>{docs.items[0]?.title}</h3>
+            <h3 id="docs-reader-document-heading" data-doc-heading>{documents[0]?.title}</h3>
           </div>
-          <a class="docs-reader__source" data-doc-source href={docs.items[0] ? sourceFileUrl(docs.items[0].file) : '#'} target="_blank" rel="noopener noreferrer" title={t.source}>
+          <a class="docs-reader__source" data-doc-source href={documents[0] ? sourceFileUrl(documents[0].file) : '#'} target="_blank" rel="noopener noreferrer" title={t.source}>
             <Icon name="open_in_new" /> <span>{t.source}</span>
           </a>
         </div>

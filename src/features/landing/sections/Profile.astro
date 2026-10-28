@@ -12,15 +12,12 @@ const { profile, locale } = Astro.props as { profile: LandingContent['profile'];
   <div class="profile-card">
     <div class="profile-card__identity">
       <Image class="profile-card__photo" src={profilePhoto} alt={profile.photoAlt} width={240} height={240} loading="lazy" />
-      <div>
+      <div class="profile-card__details">
         <h3>{profile.name}</h3>
         <p>{profile.role}</p>
         <p class="profile-card__location"><Icon name="place" /> {profile.location}</p>
+        <SocialLinks locale={locale} githubHref={profile.github} />
       </div>
-    </div>
-    <div class="profile-card__links">
-      <p class="profile-card__links-label">{profile.title}</p>
-      <SocialLinks locale={locale} githubHref={profile.github} />
     </div>
   </div>
 </Section>

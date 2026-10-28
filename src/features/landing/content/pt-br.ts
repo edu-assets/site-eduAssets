@@ -179,18 +179,26 @@ export const ptBr: LandingContent = {
     eyebrow: 'Documentação',
     title: 'Guias do projeto',
     lead: 'Consulte os materiais de uso, arquitetura, API, desenvolvimento, implantação, hospedagem e operação.',
-    items: [
-      { icon: 'description', title: 'Apresentação do projeto', file: 'LEIAME.md' },
-      { icon: 'menu_book', title: 'Manual do usuário', file: 'MANUAL_USUARIO.md' },
-      { icon: 'architecture', title: 'Arquitetura', file: 'ARQUITETURA.md' },
-      { icon: 'database', title: 'Modelo de dados', file: 'MODELO_DE_DADOS.md' },
-      { icon: 'description', title: 'Referência da API', file: 'REFERENCIA_API.md' },
-      { icon: 'code', title: 'Guia de desenvolvimento', file: 'DESENVOLVIMENTO.md' },
-      { icon: 'cloud', title: 'Guia de implantação', file: 'GUIA_IMPLANTACAO.md' },
-      { icon: 'menu_book', title: 'Hospedagem e operação', file: 'Hospedagem.md' },
-      { icon: 'history', title: 'Operação e recuperação', file: 'OPERACAO_E_RECUPERACAO.md' },
-      { icon: 'history', title: 'Changelog', file: 'CHANGELOG.md' },
-      { icon: 'route', title: 'Roadmap', file: 'ROADMAP.md' },
+    groups: [
+      { title: 'Visão geral', items: [
+        { icon: 'description', title: 'Apresentação do projeto', file: 'LEIAME.md' },
+        { icon: 'menu_book', title: 'Manual do usuário', file: 'MANUAL_USUARIO.md' },
+      ] },
+      { title: 'Arquitetura e dados', items: [
+        { icon: 'architecture', title: 'Arquitetura', file: 'ARQUITETURA.md' },
+        { icon: 'database', title: 'Modelo de dados', file: 'MODELO_DE_DADOS.md' },
+        { icon: 'description', title: 'Referência da API', file: 'REFERENCIA_API.md' },
+      ] },
+      { title: 'Desenvolvimento e implantação', items: [
+        { icon: 'code', title: 'Guia de desenvolvimento', file: 'DESENVOLVIMENTO.md' },
+        { icon: 'cloud', title: 'Guia de implantação', file: 'GUIA_IMPLANTACAO.md' },
+        { icon: 'menu_book', title: 'Hospedagem e operação', file: 'Hospedagem.md' },
+      ] },
+      { title: 'Operação e evolução', items: [
+        { icon: 'history', title: 'Operação e recuperação', file: 'OPERACAO_E_RECUPERACAO.md' },
+        { icon: 'history', title: 'Changelog', file: 'CHANGELOG.md' },
+        { icon: 'route', title: 'Roadmap', file: 'ROADMAP.md' },
+      ] },
     ],
   },
   cta: {

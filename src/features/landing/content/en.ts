@@ -179,18 +179,26 @@ export const en: LandingContent = {
     eyebrow: 'Documentation',
     title: 'Project guides',
     lead: 'Browse the user, architecture, API, development, deployment, hosting and operations guides.',
-    items: [
-      { icon: 'description', title: 'README', file: 'README.md' },
-      { icon: 'menu_book', title: 'User manual', file: 'USER_MANUAL.md' },
-      { icon: 'architecture', title: 'Architecture', file: 'ARCHITECTURE.md' },
-      { icon: 'database', title: 'Data model', file: 'DATA_MODEL.md' },
-      { icon: 'description', title: 'API reference', file: 'API_REFERENCE.md' },
-      { icon: 'code', title: 'Development guide', file: 'DEVELOPMENT.md' },
-      { icon: 'cloud', title: 'Deployment guide', file: 'DEPLOYMENT.md' },
-      { icon: 'menu_book', title: 'Hosting and operations', file: 'Hosting.md' },
-      { icon: 'history', title: 'Operations and recovery', file: 'OPERATIONS_AND_RECOVERY.md' },
-      { icon: 'history', title: 'Changelog', file: 'CHANGELOG_EN.md' },
-      { icon: 'route', title: 'Roadmap', file: 'ROADMAP_EN.md' },
+    groups: [
+      { title: 'Project overview', items: [
+        { icon: 'description', title: 'README', file: 'README.md' },
+        { icon: 'menu_book', title: 'User manual', file: 'USER_MANUAL.md' },
+      ] },
+      { title: 'Architecture and data', items: [
+        { icon: 'architecture', title: 'Architecture', file: 'ARCHITECTURE.md' },
+        { icon: 'database', title: 'Data model', file: 'DATA_MODEL.md' },
+        { icon: 'description', title: 'API reference', file: 'API_REFERENCE.md' },
+      ] },
+      { title: 'Development and deployment', items: [
+        { icon: 'code', title: 'Development guide', file: 'DEVELOPMENT.md' },
+        { icon: 'cloud', title: 'Deployment guide', file: 'DEPLOYMENT.md' },
+        { icon: 'menu_book', title: 'Hosting and operations', file: 'Hosting.md' },
+      ] },
+      { title: 'Operations and evolution', items: [
+        { icon: 'history', title: 'Operations and recovery', file: 'OPERATIONS_AND_RECOVERY.md' },
+        { icon: 'history', title: 'Changelog', file: 'CHANGELOG_EN.md' },
+        { icon: 'route', title: 'Roadmap', file: 'ROADMAP_EN.md' },
+      ] },
     ],
   },
   cta: {
