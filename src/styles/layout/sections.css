@@ -293,6 +293,25 @@
   margin-top: 16px;
 }
 
+.project-questions-title {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.project-questions {
+  display: grid;
+  gap: 9px;
+}
+
+.project-questions li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
 .project-block {
   margin-top: 36px;
 }

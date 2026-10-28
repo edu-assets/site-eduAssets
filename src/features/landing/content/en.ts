@@ -11,20 +11,6 @@ export const en: LandingContent = {
     secondary: 'View code on GitHub',
     note: 'Opens in Guest Mode: read-only, no sign-up.'
   },
-  problem: {
-    eyebrow: 'The problem',
-    title: 'Knowing what is available, who has it and what is broken',
-    lead: 'Laptops, tablets, headphones and chargers are lent and returned all the time. Without a single record, real stock and the state of each item become uncertain. eduAssets is designed for fast, repetitive workflows, without tracking every individual unit.',
-    questionsTitle: 'The dashboard answers, no spreadsheets needed:',
-    photo: { alt: 'Cart with laptops stored in numbered compartments', caption: 'The scenario the system records: numbered equipment, borrowed and returned every day.' },
-    questions: [
-      { icon: 'inventory_2', text: 'How many items exist and how many are available?' },
-      { icon: 'swap_horiz', text: 'What is on loan, and to whom?' },
-      { icon: 'build', text: 'What is in maintenance?' },
-      { icon: 'heart_broken', text: 'What is broken?' },
-      { icon: 'history', text: 'What was lent and returned recently?' },
-    ],
-  },
   flow: {
     eyebrow: 'Loan workflow',
     title: 'From loan to return in four steps',
@@ -137,7 +123,13 @@ export const en: LandingContent = {
     title: 'From operational challenge to full-stack implementation',
     lead: 'A full-stack web system for managing school equipment inventory, loans, returns and incidents.',
     author: { icon: 'person', title: 'Portfolio project developed by Thiago da Silva', text: 'A complete implementation bringing interface, API, database, infrastructure, testing and documentation together in one demonstrable project.' },
-    challenge: { icon: 'description', title: 'The challenge', text: 'Schools often manage laptops, tablets and accessories through scattered spreadsheets, making it difficult to know what is available, borrowed, under maintenance or broken.' },
+    challenge: { icon: 'description', title: 'The challenge', text: 'Schools often manage laptops, tablets and accessories through scattered spreadsheets, making it difficult to know what is available, borrowed, under maintenance or broken.', questionsTitle: 'The dashboard answers, no spreadsheets needed:', questions: [
+      { icon: 'inventory_2', text: 'How many items exist and how many are available?' },
+      { icon: 'swap_horiz', text: 'What is on loan, and to whom?' },
+      { icon: 'build', text: 'What is in maintenance?' },
+      { icon: 'heart_broken', text: 'What is broken?' },
+      { icon: 'history', text: 'What was lent and returned recently?' }
+    ] },
     solution: { icon: 'task_alt', title: 'The solution', text: 'eduAssets centralizes inventory, loans, returns, incidents, permissions and report exports in a web application.' },
     scopeTitle: 'What was built',
     scope: [

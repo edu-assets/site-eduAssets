@@ -19,6 +19,12 @@ const { project } = Astro.props as { project: LandingContent['project'] };
       <IconBadge name={project.challenge.icon} tone="warning" />
       <h3>{project.challenge.title}</h3>
       <p>{project.challenge.text}</p>
+      <h4 class="project-questions-title">{project.challenge.questionsTitle}</h4>
+      <ul class="project-questions" role="list">
+        {project.challenge.questions.map((question) => (
+          <li><IconBadge name={question.icon} tone="neutral" />{question.text}</li>
+        ))}
+      </ul>
     </article>
     <article class="project-story__card">
       <IconBadge name={project.solution.icon} tone="success" />

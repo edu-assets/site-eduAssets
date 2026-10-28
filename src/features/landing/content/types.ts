@@ -6,17 +6,6 @@ export interface LandingContent {
   lang: { href: string; label: string; title: string };
   nav: { project: string; problem: string; flow: string; features: string; differentials: string; access: string; tech: string; docs: string; profile: string };
   hero: { eyebrow: string; title: string; lead: string; primary: string; secondary: string; note: string };
-  problem: {
-    eyebrow: string;
-    title: string;
-    lead: string;
-    questionsTitle: string;
-    photo: {
-      alt: string;
-      caption: string;
-    };
-    questions: IconText[]; 
-  };
   flow: { eyebrow: string; title: string; lead: string; steps: IconItem[] };
   features: {
     eyebrow: string; title: string;
@@ -39,7 +28,7 @@ export interface LandingContent {
     title: string;
     lead: string;
     author: { icon: string; title: string; text: string };
-    challenge: { icon: string; title: string; text: string };
+    challenge: { icon: string; title: string; text: string; questionsTitle: string; questions: IconText[] };
     solution: { icon: string; title: string; text: string };
     scopeTitle: string;
     scope: { icon: string; title: string; text: string }[];

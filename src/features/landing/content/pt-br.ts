@@ -11,20 +11,6 @@ export const ptBr: LandingContent = {
     secondary: 'Ver código no GitHub',
     note: 'Abre em Guest Mode: somente leitura, sem cadastro.'
   },
-  problem: {
-    eyebrow: 'O problema',
-    title: 'Saber o que está disponível, com quem está e o que quebrou',
-    lead: 'Notebooks, tablets, fones e carregadores são retirados e devolvidos com frequência. Sem um registro único, o estoque real e o estado de cada equipamento ficam incertos. O eduAssets foi desenhado para fluxos rápidos e repetitivos, sem rastrear cada unidade individualmente.',
-    questionsTitle: 'O painel responde, sem precisar abrir planilhas:',
-    photo: { alt: 'Carrinho com notebooks guardados em compartimentos numerados', caption: 'O cenário que o sistema registra: equipamentos numerados, emprestados e devolvidos todos os dias.' },
-    questions: [
-      { icon: 'inventory_2', text: 'Quantos equipamentos existem e quantos estão disponíveis?' },
-      { icon: 'swap_horiz', text: 'O que está emprestado, e para quem?' },
-      { icon: 'build', text: 'O que está em manutenção?' },
-      { icon: 'heart_broken', text: 'O que está quebrado?' },
-      { icon: 'history', text: 'O que foi emprestado e devolvido recentemente?' },
-    ],
-  },
   flow: {
     eyebrow: 'Fluxo de empréstimos',
     title: 'Do empréstimo à devolução em quatro passos',
@@ -137,7 +123,13 @@ export const ptBr: LandingContent = {
     title: 'Do desafio operacional à implementação full-stack',
     lead: 'Sistema web full-stack para controle de estoque, empréstimos, devoluções e ocorrências de equipamentos escolares.',
     author: { icon: 'person', title: 'Projeto de portfólio desenvolvido por Thiago da Silva', text: 'Uma implementação completa que reúne interface, API, banco de dados, infraestrutura, testes e documentação em um único projeto demonstrável.' },
-    challenge: { icon: 'description', title: 'O desafio', text: 'Escolas frequentemente controlam notebooks, tablets e acessórios por planilhas dispersas, dificultando saber o que está disponível, emprestado, em manutenção ou quebrado.' },
+    challenge: { icon: 'description', title: 'O desafio', text: 'Escolas frequentemente controlam notebooks, tablets e acessórios por planilhas dispersas, dificultando saber o que está disponível, emprestado, em manutenção ou quebrado.', questionsTitle: 'O painel responde, sem precisar abrir planilhas:', questions: [
+      { icon: 'inventory_2', text: 'Quantos equipamentos existem e quantos estão disponíveis?' },
+      { icon: 'swap_horiz', text: 'O que está emprestado, e para quem?' },
+      { icon: 'build', text: 'O que está em manutenção?' },
+      { icon: 'heart_broken', text: 'O que está quebrado?' },
+      { icon: 'history', text: 'O que foi emprestado e devolvido recentemente?' }
+    ] },
     solution: { icon: 'task_alt', title: 'A solução', text: 'O eduAssets centraliza estoque, empréstimos, devoluções, ocorrências, permissões e exportação de relatórios em uma aplicação web.' },
     scopeTitle: 'O que foi desenvolvido',
     scope: [

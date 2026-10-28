@@ -11,7 +11,7 @@ const { profile } = Astro.props as { profile: LandingContent['profile'] };
       <div>
         <h3>{profile.name}</h3>
         <p>{profile.role}</p>
-        <p class="profile-card__location"><Icon name="location_on" /> {profile.location}</p>
+        <p class="profile-card__location"><Icon name="place" /> {profile.location}</p>
       </div>
     </div>
     <nav class="profile-card__links" aria-label={profile.title}>
