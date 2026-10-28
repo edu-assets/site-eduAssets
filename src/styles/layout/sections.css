@@ -228,30 +228,84 @@
   font-size: 0.95rem;
 }
 
-.stack {
+.tech-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 16px;
+}
+
+.tech-stack__group {
+  padding: 20px;
   background: var(--surface-white);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
 }
 
-.stack li {
+.tech-stack__group h3 {
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+}
+
+.tech-stack__items {
   display: grid;
-  grid-template-columns: 38px 170px 1fr;
-  gap: 16px;
-  align-items: center;
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--border-color);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 
-.stack li:last-child {
-  border-bottom: 0;
+.tech-stack__item {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 8px;
+  min-height: 96px;
+  padding: 12px 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
 }
 
-.stack li span:last-child {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
+.tech-stack__mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--primary-color);
 }
+
+.tech-stack__mark .material-symbols-outlined {
+  font-size: 34px;
+}
+
+.tech-stack__logo {
+  width: 36px;
+  height: 36px;
+  fill: currentColor;
+}
+
+.tech-stack__logo--typescript { color: #3178c6; }
+.tech-stack__logo--vite { color: #646cff; }
+.tech-stack__logo--css { color: #663399; }
+.tech-stack__logo--nodedotjs { color: #5fa04e; }
+.tech-stack__logo--express { color: #303030; }
+.tech-stack__logo--prisma { color: #2d3748; }
+.tech-stack__logo--zod { color: #3e67b1; }
+.tech-stack__logo--postgresql { color: #4169e1; }
+.tech-stack__logo--neon { color: #00a879; }
+.tech-stack__logo--python { color: #3776ab; }
+.tech-stack__logo--raspberrypi { color: #c51a4a; }
+.tech-stack__logo--arduino { color: #00979d; }
+.tech-stack__logo--cloudflarepages { color: #f38020; }
+.tech-stack__logo--docker { color: #2496ed; }
+.tech-stack__logo--nginx { color: #009639; }
+html[data-theme="dark"] .tech-stack__logo--express { color: #f5f5f5; }
+html[data-theme="dark"] .tech-stack__logo--prisma { color: #d5deea; }
+html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
 
 .project-challenge h3,
 .project-solution h3,
@@ -614,14 +668,6 @@
   .profile-card {
     padding: 20px;
   }
-  .stack li {
-    grid-template-columns: 38px 1fr;
-  }
-
-  .stack li span:last-child {
-    grid-column: 1 / -1;
-  }
-
   .actions .btn {
     flex: 1 1 100%;
   }

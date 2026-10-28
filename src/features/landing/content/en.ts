@@ -153,12 +153,26 @@ export const en: LandingContent = {
   tech: {
     eyebrow: 'Technology',
     title: 'Stack',
-    rows: [
-      { icon: 'web', area: 'Frontend', items: 'TypeScript, Vite, feature-first architecture, CSS custom properties' },
-      { icon: 'dns', area: 'Backend', items: 'Node.js, Express 5, Prisma, Zod' },
-      { icon: 'database', area: 'Database', items: 'Managed PostgreSQL on Neon' },
-      { icon: 'memory', area: 'Optional hardware', items: 'Python, Raspberry Pi or Arduino Nano, RFID reader' },
-      { icon: 'cloud', area: 'Hosting', items: 'Cloudflare Pages for the frontend, Oracle Cloud VM with Docker and Nginx for the API' },
+    groups: [
+      { area: 'Frontend', items: [
+        { name: 'TypeScript', brand: 'typescript' }, { name: 'Vite', brand: 'vite' },
+        { name: 'CSS custom properties', brand: 'css' }, { name: 'Feature-first architecture', icon: 'account_tree' },
+      ] },
+      { area: 'Backend and API', items: [
+        { name: 'Node.js', brand: 'nodedotjs' }, { name: 'Express 5', brand: 'express' },
+        { name: 'Prisma', brand: 'prisma' }, { name: 'Zod', brand: 'zod' },
+      ] },
+      { area: 'Database', items: [
+        { name: 'PostgreSQL', brand: 'postgresql' }, { name: 'Neon', brand: 'neon' },
+      ] },
+      { area: 'Optional hardware', items: [
+        { name: 'Python', brand: 'python' }, { name: 'Raspberry Pi', brand: 'raspberrypi' },
+        { name: 'Arduino Nano', brand: 'arduino' }, { name: 'RFID reader', icon: 'contactless' },
+      ] },
+      { area: 'Hosting and infrastructure', items: [
+        { name: 'Cloudflare Pages', brand: 'cloudflarepages' }, { name: 'Oracle Cloud', icon: 'cloud' },
+        { name: 'Docker', brand: 'docker' }, { name: 'Nginx', brand: 'nginx' },
+      ] },
     ],
   },
   docs: {

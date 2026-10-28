@@ -1,17 +1,29 @@
 ---
 import Section from '../../../shared/components/Section.astro';
-import IconBadge from '../../../shared/components/IconBadge.astro';
+import Icon from '../../../shared/components/Icon.astro';
 import type { LandingContent } from '../content/types';
 const { tech } = Astro.props as { tech: LandingContent['tech'] };
 ---
 <Section id="tech" eyebrow={tech.eyebrow} title={tech.title} tone="alt">
-  <ul class="stack" role="list">
-    {tech.rows.map((r) => (
-      <li>
-        <IconBadge name={r.icon} tone="neutral" />
-        <strong>{r.area}</strong>
-        <span>{r.items}</span>
-      </li>
+  <div class="tech-stack">
+    {tech.groups.map((group) => (
+      <section class="tech-stack__group" aria-label={group.area}>
+        <h3>{group.area}</h3>
+        <ul class="tech-stack__items" role="list">
+          {group.items.map((item) => (
+            <li class="tech-stack__item">
+              <span class="tech-stack__mark" aria-hidden="true">
+                {item.brand ? (
+                  <svg class={`tech-stack__logo tech-stack__logo--${item.brand}`} viewBox="0 0 24 24" focusable="false">
+                    <use href={`/tech-icons.svg#${item.brand}`} />
+                  </svg>
+                ) : <Icon name={item.icon ?? 'extension'} />}
+              </span>
+              <span>{item.name}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
     ))}
-  </ul>
+  </div>
 </Section>
