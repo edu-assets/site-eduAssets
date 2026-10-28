@@ -27,8 +27,7 @@ export interface LandingContent {
     eyebrow: string;
     title: string;
     lead: string;
-    author: { icon: string; title: string; text: string };
-    challenge: { icon: string; title: string; text: string; questionsTitle: string; questions: IconText[] };
+    challenge: { icon: string; title: string; text: string; photo: { alt: string; caption: string }; questionsTitle: string; questions: IconText[] };
     solution: { icon: string; title: string; text: string };
     scopeTitle: string;
     scope: { icon: string; title: string; text: string }[];
@@ -45,7 +44,7 @@ export interface LandingContent {
     name: string;
     role: string;
     location: string;
-    links: { icon: string; label: string; href: string; external?: boolean }[];
+    github: string;
   };
   footer: { status: string; contact: string };
 }

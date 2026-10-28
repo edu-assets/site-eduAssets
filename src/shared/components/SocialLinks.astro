@@ -4,11 +4,11 @@ import { GITHUB_URL, LINKEDIN_URL, CONTACT_EMAIL } from '../../core/config/site'
 import { ui } from '../../core/i18n/ui';
 import type { Locale } from '../../core/i18n';
 
-interface Props { locale: Locale; size?: 'md' | 'sm' }
-const { locale, size = 'md' } = Astro.props;
+interface Props { locale: Locale; size?: 'md' | 'sm'; githubHref?: string }
+const { locale, size = 'md', githubHref = GITHUB_URL } = Astro.props;
 const t = ui[locale];
 const links: { name: 'github' | 'linkedin' | 'email'; href: string; label: string; external: boolean }[] = [
-  { name: 'github', href: GITHUB_URL, label: 'GitHub', external: true },
+  { name: 'github', href: githubHref, label: 'GitHub', external: true },
   { name: 'linkedin', href: LINKEDIN_URL, label: 'LinkedIn', external: true },
   { name: 'email', href: `mailto:${CONTACT_EMAIL}`, label: t.email, external: false },
 ];

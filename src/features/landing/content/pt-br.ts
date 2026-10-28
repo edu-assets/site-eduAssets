@@ -122,8 +122,7 @@ export const ptBr: LandingContent = {
     eyebrow: 'Projeto de portfólio',
     title: 'Do desafio operacional à implementação full-stack',
     lead: 'Sistema web full-stack para controle de estoque, empréstimos, devoluções e ocorrências de equipamentos escolares.',
-    author: { icon: 'person', title: 'Projeto de portfólio desenvolvido por Thiago da Silva', text: 'Uma implementação completa que reúne interface, API, banco de dados, infraestrutura, testes e documentação em um único projeto demonstrável.' },
-    challenge: { icon: 'description', title: 'O desafio', text: 'Escolas frequentemente controlam notebooks, tablets e acessórios por planilhas dispersas, dificultando saber o que está disponível, emprestado, em manutenção ou quebrado.', questionsTitle: 'O painel responde, sem precisar abrir planilhas:', questions: [
+    challenge: { icon: 'description', title: 'O desafio', text: 'Escolas frequentemente controlam notebooks, tablets e acessórios por planilhas dispersas, dificultando saber o que está disponível, emprestado, em manutenção ou quebrado.', photo: { alt: 'Carrinho com notebooks guardados em compartimentos numerados.', caption: 'O cenário que o sistema organiza: equipamentos numerados, emprestados e devolvidos todos os dias.' }, questionsTitle: 'O painel responde, sem precisar abrir planilhas:', questions: [
       { icon: 'inventory_2', text: 'Quantos equipamentos existem e quantos estão disponíveis?' },
       { icon: 'swap_horiz', text: 'O que está emprestado, e para quem?' },
       { icon: 'build', text: 'O que está em manutenção?' },
@@ -193,11 +192,7 @@ export const ptBr: LandingContent = {
     name: 'Thiago da Silva',
     role: 'Desenvolvedor · Técnico em informática · Estudante de Engenharia da Computação',
     location: 'São Paulo, Brasil',
-    links: [
-      { icon: 'code', label: 'GitHub pessoal', href: 'https://github.com/dasilva-thiago', external: true },
-      { icon: 'work', label: 'LinkedIn', href: 'https://www.linkedin.com/in/dasilva-thiago/', external: true },
-      { icon: 'mail', label: 'thiagosilva785@gmail.com', href: 'mailto:thiagosilva785@gmail.com' }
-    ]
+    github: 'https://github.com/dasilva-thiago'
   },
   footer: { status: 'Versão 1.0', contact: 'thiagosilva785@gmail.com' },
 };

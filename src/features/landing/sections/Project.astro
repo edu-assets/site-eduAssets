@@ -2,23 +2,17 @@
 import Section from '../../../shared/components/Section.astro';
 import Icon from '../../../shared/components/Icon.astro';
 import IconBadge from '../../../shared/components/IconBadge.astro';
+import Photo from '../../../shared/components/Photo.astro';
 import type { LandingContent } from '../content/types';
 const { project } = Astro.props as { project: LandingContent['project'] };
 ---
 <Section id="project" eyebrow={project.eyebrow} title={project.title} lead={project.lead} tone="alt">
-  <div class="project-author card">
-    <IconBadge name={project.author.icon} tone="primary" size="lg" />
-    <div>
-      <h3>{project.author.title}</h3>
-      <p>{project.author.text}</p>
-    </div>
-  </div>
-
-  <div class="project-story">
-    <article class="project-story__card">
+  <div class="project-challenge">
+    <article class="project-challenge__card">
       <IconBadge name={project.challenge.icon} tone="warning" />
       <h3>{project.challenge.title}</h3>
       <p>{project.challenge.text}</p>
+      <Photo name="carrinho-notebooks" ratio="16 / 9" alt={project.challenge.photo.alt} caption={project.challenge.photo.caption} />
       <h4 class="project-questions-title">{project.challenge.questionsTitle}</h4>
       <ul class="project-questions" role="list">
         {project.challenge.questions.map((question) => (
@@ -26,7 +20,7 @@ const { project } = Astro.props as { project: LandingContent['project'] };
         ))}
       </ul>
     </article>
-    <article class="project-story__card">
+    <article class="project-solution">
       <IconBadge name={project.solution.icon} tone="success" />
       <h3>{project.solution.title}</h3>
       <p>{project.solution.text}</p>

@@ -122,8 +122,7 @@ export const en: LandingContent = {
     eyebrow: 'Portfolio project',
     title: 'From operational challenge to full-stack implementation',
     lead: 'A full-stack web system for managing school equipment inventory, loans, returns and incidents.',
-    author: { icon: 'person', title: 'Portfolio project developed by Thiago da Silva', text: 'A complete implementation bringing interface, API, database, infrastructure, testing and documentation together in one demonstrable project.' },
-    challenge: { icon: 'description', title: 'The challenge', text: 'Schools often manage laptops, tablets and accessories through scattered spreadsheets, making it difficult to know what is available, borrowed, under maintenance or broken.', questionsTitle: 'The dashboard answers, no spreadsheets needed:', questions: [
+    challenge: { icon: 'description', title: 'The challenge', text: 'Schools often manage laptops, tablets and accessories through scattered spreadsheets, making it difficult to know what is available, borrowed, under maintenance or broken.', photo: { alt: 'Cart with laptops stored in numbered compartments.', caption: 'The scenario the system organizes: numbered equipment, borrowed and returned every day.' }, questionsTitle: 'The dashboard answers, no spreadsheets needed:', questions: [
       { icon: 'inventory_2', text: 'How many items exist and how many are available?' },
       { icon: 'swap_horiz', text: 'What is on loan, and to whom?' },
       { icon: 'build', text: 'What is in maintenance?' },
@@ -193,11 +192,7 @@ export const en: LandingContent = {
     name: 'Thiago da Silva',
     role: 'Developer · IT technician · Computer Engineering student',
     location: 'São Paulo, Brazil',
-    links: [
-      { icon: 'code', label: 'Personal GitHub', href: 'https://github.com/dasilva-thiago', external: true },
-      { icon: 'work', label: 'LinkedIn', href: 'https://www.linkedin.com/in/dasilva-thiago/', external: true },
-      { icon: 'mail', label: 'thiagosilva785@gmail.com', href: 'mailto:thiagosilva785@gmail.com' }
-    ]
+    github: 'https://github.com/dasilva-thiago'
   },
   footer: { status: 'Version 1.0', contact: 'thiagosilva785@gmail.com' },
 };

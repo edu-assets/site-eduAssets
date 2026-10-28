@@ -1,8 +1,10 @@
 ---
 import Section from '../../../shared/components/Section.astro';
 import Icon from '../../../shared/components/Icon.astro';
+import SocialLinks from '../../../shared/components/SocialLinks.astro';
+import type { Locale } from '../../../core/i18n';
 import type { LandingContent } from '../content/types';
-const { profile } = Astro.props as { profile: LandingContent['profile'] };
+const { profile, locale } = Astro.props as { profile: LandingContent['profile']; locale: Locale };
 ---
 <Section id="profile" eyebrow={profile.eyebrow} title={profile.title} lead={profile.lead} tone="dark">
   <div class="profile-card">
@@ -14,14 +16,9 @@ const { profile } = Astro.props as { profile: LandingContent['profile'] };
         <p class="profile-card__location"><Icon name="place" /> {profile.location}</p>
       </div>
     </div>
-    <nav class="profile-card__links" aria-label={profile.title}>
-      {profile.links.map((link) => (
-        <a href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined}>
-          <Icon name={link.icon} />
-          <span>{link.label}</span>
-          {link.external && <Icon name="open_in_new" />}
-        </a>
-      ))}
-    </nav>
+    <div class="profile-card__links">
+      <p class="profile-card__links-label">{profile.title}</p>
+      <SocialLinks locale={locale} githubHref={profile.github} />
+    </div>
   </div>
 </Section>
