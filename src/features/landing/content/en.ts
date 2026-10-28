@@ -217,5 +217,5 @@ export const en: LandingContent = {
     photoAlt: 'Portrait of Thiago da Silva wearing glasses, a dark blue shirt and a light jacket.',
     github: 'https://github.com/dasilva-thiago'
   },
-  footer: { status: 'Version 1.0', contact: 'thiagosilva785@gmail.com' },
+  footer: { status: 'Official version 1.0', contact: 'thiagosilva785@gmail.com' },
 };
