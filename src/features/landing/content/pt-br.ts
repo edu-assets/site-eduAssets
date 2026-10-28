@@ -2,7 +2,7 @@ import type { LandingContent } from './types';
 
 export const ptBr: LandingContent = {
   lang: { href: '/en/', label: 'EN', title: 'English version' },
-  nav: { project: 'O projeto', problem: 'O problema', flow: 'Fluxo', features: 'Funcionalidades', differentials: 'Recursos', access: 'Acesso', tech: 'Tecnologia', docs: 'Documentação', profile: 'Sobre o autor' },
+  nav: { project: 'O projeto', problem: 'O problema', flow: 'Fluxo', features: 'Funcionalidades', differentials: 'Recursos', access: 'Acesso', tech: 'Tecnologia', docs: 'Documentação', profile: 'Autor' },
   hero: {
     eyebrow: 'v1.0 · Projeto de portfólio',
     title: 'Controle de equipamentos',

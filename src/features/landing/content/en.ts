@@ -2,7 +2,7 @@ import type { LandingContent } from './types';
 
 export const en: LandingContent = {
   lang: { href: '/', label: 'PT', title: 'Versão em português' },
-  nav: { project: 'The project', problem: 'The problem', flow: 'Workflow', features: 'Features', differentials: 'Capabilities', access: 'Access', tech: 'Technology', docs: 'Documentation', profile: 'About the author' },
+  nav: { project: 'The project', problem: 'The problem', flow: 'Workflow', features: 'Features', differentials: 'Capabilities', access: 'Access', tech: 'Technology', docs: 'Documentation', profile: 'Author' },
   hero: {
     eyebrow: 'v1.0 · Portfolio project',
     title: 'School equipment management',

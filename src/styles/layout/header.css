@@ -39,7 +39,7 @@
 .site-header__inner {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   min-height: 68px;
 }
 
@@ -67,16 +67,18 @@ html[data-theme="dark"] .logo--dark {
 
 .site-header__nav {
   display: flex;
-  gap: 2px;
+  flex: 0 1 auto;
+  gap: 0;
   margin-left: auto;
 }
 
 .site-header__nav a {
-  padding: 8px 12px;
+  padding: 8px 7px;
   border-radius: 6px;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 500;
+  white-space: nowrap;
   text-decoration: none;
   transition: background-color 0.2s, color 0.2s;
 }
@@ -266,13 +268,13 @@ html[data-theme="dark"] .theme-toggle__sun {
   font-size: 28px;
 }
 
-@media (min-width: 1081px) {
+@media (min-width: 1201px) {
   .mobile-menu {
     display: none !important;
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1200px) {
 
   .site-header__nav,
   .site-header__cta,
