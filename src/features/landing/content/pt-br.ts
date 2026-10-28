@@ -8,7 +8,8 @@ export const ptBr: LandingContent = {
     title: 'Controle de equipamentos',
     lead: 'O eduAssets registra quem retirou o quê, mantém o estoque atualizado, acompanha manutenções e quebras e exporta relatórios em CSV, Excel e PDF.',
     primary: 'Acessar o sistema',
-    secondary: 'Ver código no GitHub'
+    secondary: 'Ver código no GitHub',
+    note: 'Abre em Guest Mode: somente leitura, sem cadastro.'
   },
   problem: {
     eyebrow: 'O problema',

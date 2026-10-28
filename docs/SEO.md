@@ -11,6 +11,8 @@ Este documento registra as configurações mantidas no repositório do site púb
 
 As páginas PT/EN usam canonicals próprios, `hreflang` recíproco e `x-default` apontando para a versão em português. O `robots.txt` público aponta para `https://eduassets.tech/sitemap.xml`, que referencia o sitemap gerado pelo Astro.
 
+O host `app.eduassets.tech` é operacional e não deve aparecer na busca. O frontend da aplicação envia `X-Robots-Tag: noindex, nofollow, noarchive`, publica meta `robots` equivalente e mantém `robots.txt` com `Disallow: /`. Isso é uma política separada do `robots.txt` da landing page.
+
 ## Deploy e verificação local
 
 ```bash
@@ -34,6 +36,8 @@ O sitemap gerado pelo Astro pode conter as rotas públicas de artigos quando a c
 3. Use a inspeção de URL para `https://eduassets.tech/` e `https://eduassets.tech/en/`.
 4. Confirme canonical, indexação, experiência da página e relatórios de segurança.
 5. Repita a inspeção depois de cada publicação relevante e aguarde o novo rastreamento.
+
+Se uma URL antiga da aplicação já aparecer nos resultados, publique primeiro a correção de `noindex`, confirme que o host responde com o header e depois use Search Console → Remoções → Nova solicitação para ocultar temporariamente a URL antiga. A remoção temporária não substitui o `noindex`; aguarde o recrawl para a remoção permanente.
 
 ## PageSpeed Insights e Bing
 
