@@ -5,7 +5,7 @@ type RfidPhoto = { alt: string; caption: string };
 export interface LandingContent {
   lang: { href: string; label: string; title: string };
   nav: { problem: string; flow: string; features: string; differentials: string; access: string; tech: string; docs: string };
-  hero: { eyebrow: string; title: string; lead: string; primary: string; secondary: string; note: string };
+  hero: { eyebrow: string; title: string; lead: string; primary: string; secondary: string; };
   problem: {
     eyebrow: string;
     title: string;

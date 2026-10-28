@@ -8,8 +8,7 @@ export const en: LandingContent = {
     title: 'School equipment management',
     lead: 'eduAssets records who took what, keeps stock up to date, tracks maintenance and breakage, and exports reports as CSV, Excel and PDF.',
     primary: 'Open the system',
-    secondary: 'View code on GitHub',
-    note: 'Opens in Guest Mode: read-only, no sign-up.',
+    secondary: 'View code on GitHub'
   },
   problem: {
     eyebrow: 'The problem',
