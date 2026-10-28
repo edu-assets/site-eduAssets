@@ -3,7 +3,7 @@ import Button from '../../../shared/components/Button.astro';
 import BrandIcon from '../../../shared/components/BrandIcon.astro';
 import SocialLinks from '../../../shared/components/SocialLinks.astro';
 import { Image } from 'astro:assets';
-import banner from '../../../assets/img/eduAssets_banner.webp';
+import notebook from '../../../assets/img/eduAssets_notebook-transparent.png';
 import { APP_LOGIN_URL, GITHUB_URL } from '../../../core/config/site';
 import type { Locale } from '../../../core/i18n';
 import type { LandingContent } from '../content/types';
@@ -29,7 +29,7 @@ const bannerAlt = locale === 'pt-br'
     <div class="hero__visual">
       <figure class="hero__banner">
         <Image
-          src={banner}
+          src={notebook}
           alt={bannerAlt}
           widths={[640, 960, 1280, 1600]}
           sizes="(min-width: 960px) 600px, 100vw"
