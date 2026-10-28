@@ -9,8 +9,10 @@ const { project } = Astro.props as { project: LandingContent['project'] };
 <Section id="project" eyebrow={project.eyebrow} title={project.title} lead={project.lead} tone="alt">
   <div class="project-challenge">
     <article class="project-challenge__card">
-      <IconBadge name={project.challenge.icon} tone="warning" />
-      <h3>{project.challenge.title}</h3>
+      <div class="project-card__heading">
+        <IconBadge name={project.challenge.icon} tone="warning" size="lg" />
+        <h3>{project.challenge.title}</h3>
+      </div>
       <p>{project.challenge.text}</p>
       <Photo name="carrinho-notebooks" ratio="16 / 9" alt={project.challenge.photo.alt} caption={project.challenge.photo.caption} />
       <h4 class="project-questions-title">{project.challenge.questionsTitle}</h4>
@@ -21,8 +23,10 @@ const { project } = Astro.props as { project: LandingContent['project'] };
       </ul>
     </article>
     <article class="project-solution">
-      <IconBadge name={project.solution.icon} tone="success" />
-      <h3>{project.solution.title}</h3>
+      <div class="project-card__heading">
+        <IconBadge name={project.solution.icon} tone="success" size="lg" />
+        <h3>{project.solution.title}</h3>
+      </div>
       <p>{project.solution.text}</p>
     </article>
   </div>

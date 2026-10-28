@@ -284,6 +284,23 @@
   text-align: left;
 }
 
+.project-card__heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.project-card__heading .icon-badge {
+  box-shadow: 0 4px 12px color-mix(in srgb, currentColor 16%, transparent);
+}
+
+.project-card__heading h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
 .project-challenge__card > .photo {
   max-width: 760px;
   margin: 28px auto 24px;
@@ -293,11 +310,6 @@
   max-width: 760px;
   margin: 20px auto 44px;
   padding: 22px 28px;
-}
-
-.project-challenge__card h3,
-.project-solution h3 {
-  margin-top: 16px;
 }
 
 .project-questions-title {
@@ -374,9 +386,11 @@
 
 /* Profile */
 .profile-card {
+  max-width: 760px;
+  margin-inline: auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
   align-items: center;
   padding: 28px;
   background: color-mix(in srgb, var(--band-bg) 70%, white 5%);

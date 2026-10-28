@@ -134,7 +134,7 @@ export const en: LandingContent = {
     scope: [
       { icon: 'code', title: 'Frontend', text: 'TypeScript, Vite and feature-first architecture.' },
       { icon: 'dns', title: 'REST API', text: 'Node.js, Express 5, Prisma and Zod.' },
-      { icon: 'database', title: 'Persistence', text: 'Managed PostgreSQL on Neon.' },
+      { icon: 'database', title: 'Database', text: 'Managed PostgreSQL on Neon.' },
       { icon: 'lock', title: 'Authentication', text: 'JWT and session control.' },
       { icon: 'admin_panel_settings', title: 'Permissions', text: 'Access levels for different responsibilities.' },
       { icon: 'description', title: 'Reports', text: 'CSV, Excel and PDF exports.' },

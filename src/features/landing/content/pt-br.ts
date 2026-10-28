@@ -134,7 +134,7 @@ export const ptBr: LandingContent = {
     scope: [
       { icon: 'code', title: 'Frontend', text: 'TypeScript, Vite e arquitetura feature-first.' },
       { icon: 'dns', title: 'API REST', text: 'Node.js, Express 5, Prisma e Zod.' },
-      { icon: 'database', title: 'Persistência', text: 'PostgreSQL gerenciado no Neon.' },
+      { icon: 'database', title: 'Banco de dados', text: 'PostgreSQL gerenciado no Neon.' },
       { icon: 'lock', title: 'Autenticação', text: 'JWT e controle de sessão.' },
       { icon: 'admin_panel_settings', title: 'Permissões', text: 'Níveis de acesso para diferentes responsabilidades.' },
       { icon: 'description', title: 'Relatórios', text: 'Exportação em CSV, Excel e PDF.' },
