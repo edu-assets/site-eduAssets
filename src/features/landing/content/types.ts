@@ -44,6 +44,7 @@ export interface LandingContent {
     name: string;
     role: string;
     location: string;
+    photoAlt: string;
     github: string;
   };
   footer: { status: string; contact: string };

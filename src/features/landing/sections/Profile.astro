@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Section from '../../../shared/components/Section.astro';
 import Icon from '../../../shared/components/Icon.astro';
 import SocialLinks from '../../../shared/components/SocialLinks.astro';
+import profilePhoto from '../../../assets/photos/thiago-profile.webp';
 import type { Locale } from '../../../core/i18n';
 import type { LandingContent } from '../content/types';
 const { profile, locale } = Astro.props as { profile: LandingContent['profile']; locale: Locale };
@@ -9,7 +11,7 @@ const { profile, locale } = Astro.props as { profile: LandingContent['profile'];
 <Section id="profile" eyebrow={profile.eyebrow} title={profile.title} lead={profile.lead} tone="dark">
   <div class="profile-card">
     <div class="profile-card__identity">
-      <span class="profile-card__avatar" aria-hidden="true"><Icon name="person" /></span>
+      <Image class="profile-card__photo" src={profilePhoto} alt={profile.photoAlt} width={240} height={240} loading="lazy" />
       <div>
         <h3>{profile.name}</h3>
         <p>{profile.role}</p>

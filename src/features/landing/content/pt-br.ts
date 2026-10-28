@@ -139,8 +139,8 @@ export const ptBr: LandingContent = {
       { icon: 'admin_panel_settings', title: 'Permissões', text: 'Níveis de acesso para diferentes responsabilidades.' },
       { icon: 'description', title: 'Relatórios', text: 'Exportação em CSV, Excel e PDF.' },
       { icon: 'contactless', title: 'RFID opcional', text: 'Integração com Raspberry Pi ou Arduino Nano.' },
-      { icon: 'fact_check', title: 'Qualidade', text: 'Testes unitários e de integração.' },
-      { icon: 'cloud_done', title: 'Entrega', text: 'CI/CD, deploy da aplicação e API, e documentação operacional.' }
+      { icon: 'task_alt', title: 'Qualidade', text: 'Testes unitários e de integração.' },
+      { icon: 'cloud', title: 'Entrega', text: 'CI/CD, deploy da aplicação e API, e documentação operacional.' }
     ],
     decisionsTitle: 'Decisões de arquitetura',
     decisions: [
@@ -156,7 +156,7 @@ export const ptBr: LandingContent = {
     groups: [
       { area: 'Frontend', items: [
         { name: 'TypeScript', brand: 'typescript' }, { name: 'Vite', brand: 'vite' },
-        { name: 'CSS custom properties', brand: 'css' }, { name: 'Arquitetura feature-first', icon: 'account_tree' },
+        { name: 'CSS custom properties', brand: 'css' }, { name: 'Arquitetura feature-first', icon: 'code' },
       ] },
       { area: 'Backend e API', items: [
         { name: 'Node.js', brand: 'nodedotjs' }, { name: 'Express 5', brand: 'express' },
@@ -206,6 +206,7 @@ export const ptBr: LandingContent = {
     name: 'Thiago da Silva',
     role: 'Desenvolvedor · Técnico em informática · Estudante de Engenharia da Computação',
     location: 'São Paulo, Brasil',
+    photoAlt: 'Retrato de Thiago da Silva usando óculos, camisa azul-escura e jaqueta clara.',
     github: 'https://github.com/dasilva-thiago'
   },
   footer: { status: 'Versão 1.0', contact: 'thiagosilva785@gmail.com' },

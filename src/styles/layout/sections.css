@@ -143,12 +143,15 @@
 }
 
 .effects ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
 .effects li {
+  flex: 1 1 160px;
+  max-width: 205px;
   display: grid;
   gap: 4px;
   justify-items: start;
@@ -229,12 +232,15 @@
 }
 
 .tech-stack {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
 }
 
 .tech-stack__group {
+  flex: 1 1 290px;
+  max-width: 360px;
   padding: 20px;
   background: var(--surface-white);
   border: 1px solid var(--border-color);
@@ -386,6 +392,12 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
   font-size: 0.92rem;
 }
 
+.project-questions > li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 520px);
+}
+
 .project-block {
   margin-top: 36px;
 }
@@ -440,7 +452,7 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
 
 /* Profile */
 .profile-card {
-  max-width: 760px;
+  max-width: 900px;
   margin-inline: auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -458,20 +470,15 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
   gap: 18px;
 }
 
-.profile-card__avatar {
-  display: grid;
-  place-items: center;
-  flex: 0 0 64px;
-  width: 64px;
-  height: 64px;
+.profile-card__photo {
+  flex: 0 0 136px;
+  width: 136px;
+  height: 136px;
   border-radius: 50%;
-  color: var(--primary-200);
-  background: var(--primary-800);
-  border: 1px solid var(--primary-600);
-}
-
-.profile-card__avatar .material-symbols-outlined {
-  font-size: 34px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid var(--primary-300);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 22%);
 }
 
 .profile-card h3 {
@@ -514,6 +521,12 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}
+
+.doc-links > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 520px);
 }
 
 #docs {
@@ -639,6 +652,12 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .project-scope > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 460px);
+  }
+
   .profile-card {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -663,6 +682,12 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
   .profile-card__identity {
     align-items: flex-start;
     gap: 14px;
+  }
+
+  .profile-card__photo {
+    flex-basis: 112px;
+    width: 112px;
+    height: 112px;
   }
 
   .profile-card {

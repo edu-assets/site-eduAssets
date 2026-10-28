@@ -139,8 +139,8 @@ export const en: LandingContent = {
       { icon: 'admin_panel_settings', title: 'Permissions', text: 'Access levels for different responsibilities.' },
       { icon: 'description', title: 'Reports', text: 'CSV, Excel and PDF exports.' },
       { icon: 'contactless', title: 'Optional RFID', text: 'Integration with Raspberry Pi or Arduino Nano.' },
-      { icon: 'fact_check', title: 'Quality', text: 'Unit and integration tests.' },
-      { icon: 'cloud_done', title: 'Delivery', text: 'CI/CD, application and API deployment, and operational documentation.' }
+      { icon: 'task_alt', title: 'Quality', text: 'Unit and integration tests.' },
+      { icon: 'cloud', title: 'Delivery', text: 'CI/CD, application and API deployment, and operational documentation.' }
     ],
     decisionsTitle: 'Architecture decisions',
     decisions: [
@@ -156,7 +156,7 @@ export const en: LandingContent = {
     groups: [
       { area: 'Frontend', items: [
         { name: 'TypeScript', brand: 'typescript' }, { name: 'Vite', brand: 'vite' },
-        { name: 'CSS custom properties', brand: 'css' }, { name: 'Feature-first architecture', icon: 'account_tree' },
+        { name: 'CSS custom properties', brand: 'css' }, { name: 'Feature-first architecture', icon: 'code' },
       ] },
       { area: 'Backend and API', items: [
         { name: 'Node.js', brand: 'nodedotjs' }, { name: 'Express 5', brand: 'express' },
@@ -206,6 +206,7 @@ export const en: LandingContent = {
     name: 'Thiago da Silva',
     role: 'Developer · IT technician · Computer Engineering student',
     location: 'São Paulo, Brazil',
+    photoAlt: 'Portrait of Thiago da Silva wearing glasses, a dark blue shirt and a light jacket.',
     github: 'https://github.com/dasilva-thiago'
   },
   footer: { status: 'Version 1.0', contact: 'thiagosilva785@gmail.com' },
