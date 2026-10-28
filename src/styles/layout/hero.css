@@ -90,15 +90,75 @@ html[data-theme='dark'] .hero__banner img {
 
 @media (max-width: 900px) {
     .hero {
-        padding-top: 104px;
+        min-height: 100svh;
+        padding-top: 88px;
+        padding-bottom: 20px;
+        justify-content: flex-start;
     }
 
     .hero__inner {
         grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            'eyebrow'
+            'title'
+            'visual'
+            'divider'
+            'lead'
+            'actions'
+            'note'
+            'social';
+        gap: 0;
+    }
+
+    .hero__text {
+        display: contents;
+    }
+
+    .hero__text > .eyebrow {
+        grid-area: eyebrow;
+        margin-bottom: 8px;
+    }
+
+    .hero__text > h1 {
+        grid-area: title;
+        margin-top: 0;
+        margin-bottom: 2px;
+        font-size: clamp(2rem, 8.5vw, 2.5rem);
+        line-height: 1.08;
+    }
+
+    .hero__text > .divider {
+        grid-area: divider;
+        margin: 12px 0 14px;
+    }
+
+    .hero__text > .hero__lead {
+        grid-area: lead;
+        margin-bottom: 18px;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .hero__text > .actions {
+        grid-area: actions;
+        gap: 8px;
+    }
+
+    .hero__text > .hero__note {
+        grid-area: note;
+        margin-top: 10px;
+    }
+
+    .hero__text > .social {
+        grid-area: social;
+        margin-top: 14px;
     }
 
     .hero__banner {
+        grid-area: visual;
         max-width: 720px;
+        width: 100%;
+        margin-top: 2px;
         margin-inline: auto;
     }
 
