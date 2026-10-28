@@ -2,7 +2,7 @@ import type { LandingContent } from './types';
 
 export const en: LandingContent = {
   lang: { href: '/', label: 'PT', title: 'Versão em português' },
-  nav: { problem: 'The problem', flow: 'Workflow', features: 'Features', differentials: 'Capabilities', access: 'Access', tech: 'Technology', docs: 'Documentation' },
+  nav: { project: 'The project', problem: 'The problem', flow: 'Workflow', features: 'Features', differentials: 'Capabilities', access: 'Access', tech: 'Technology', docs: 'Documentation', profile: 'About the author' },
   hero: {
     eyebrow: 'v1.0 · Portfolio project',
     title: 'School equipment management',
@@ -132,6 +132,33 @@ export const en: LandingContent = {
     ],
     note: 'The reader plays distinct tones for card detected, success and error. RFID is never required.',
   },
+  project: {
+    eyebrow: 'Portfolio project',
+    title: 'From operational challenge to full-stack implementation',
+    lead: 'A full-stack web system for managing school equipment inventory, loans, returns and incidents.',
+    author: { icon: 'person', title: 'Portfolio project developed by Thiago da Silva', text: 'A complete implementation bringing interface, API, database, infrastructure, testing and documentation together in one demonstrable project.' },
+    challenge: { icon: 'description', title: 'The challenge', text: 'Schools often manage laptops, tablets and accessories through scattered spreadsheets, making it difficult to know what is available, borrowed, under maintenance or broken.' },
+    solution: { icon: 'task_alt', title: 'The solution', text: 'eduAssets centralizes inventory, loans, returns, incidents, permissions and report exports in a web application.' },
+    scopeTitle: 'What was built',
+    scope: [
+      { icon: 'code', title: 'Frontend', text: 'TypeScript, Vite and feature-first architecture.' },
+      { icon: 'dns', title: 'REST API', text: 'Node.js, Express 5, Prisma and Zod.' },
+      { icon: 'database', title: 'Persistence', text: 'Managed PostgreSQL on Neon.' },
+      { icon: 'lock', title: 'Authentication', text: 'JWT and session control.' },
+      { icon: 'admin_panel_settings', title: 'Permissions', text: 'Access levels for different responsibilities.' },
+      { icon: 'description', title: 'Reports', text: 'CSV, Excel and PDF exports.' },
+      { icon: 'contactless', title: 'Optional RFID', text: 'Integration with Raspberry Pi or Arduino Nano.' },
+      { icon: 'fact_check', title: 'Quality', text: 'Unit and integration tests.' },
+      { icon: 'cloud_done', title: 'Delivery', text: 'CI/CD, application and API deployment, and operational documentation.' }
+    ],
+    decisionsTitle: 'Architecture decisions',
+    decisions: [
+      { icon: 'database', title: 'Why is the database on Neon?', text: 'The Oracle VM has only 1 GB of RAM. Keeping PostgreSQL managed reduces memory usage, simplifies backups and separates database availability from the API machine.' },
+      { icon: 'cloud', title: 'Why separate the frontend from the API?', text: 'The static frontend can be served globally by Cloudflare Pages, while the API remains on a VM with independent operational control.' },
+      { icon: 'visibility', title: 'Why include Guest Mode?', text: 'To allow immediate evaluation and interaction without creating accounts or exposing administrator credentials.' },
+      { icon: 'contactless', title: 'Why is RFID optional?', text: 'The system remains useful with conventional login and can receive hardware when hosted locally or when operations justify the investment.' }
+    ]
+  },
   tech: {
     eyebrow: 'Technology',
     title: 'Stack',
@@ -145,7 +172,7 @@ export const en: LandingContent = {
   },
   docs: {
     eyebrow: 'Documentation',
-    title: 'Product and project guides',
+    title: 'Project guides',
     lead: 'Browse the user, architecture, API, development, deployment, hosting and operations guides.',
     items: [
       { icon: 'description', title: 'README', file: 'README.md' },
@@ -166,6 +193,19 @@ export const en: LandingContent = {
     text: 'Open eduAssets in Guest Mode and browse every panel, no sign-up.',
     primary: 'Open the system',
     secondary: 'View code on GitHub',
+  },
+  profile: {
+    eyebrow: 'Personal profile',
+    title: 'About the author',
+    lead: 'Developer, IT technician and Computer Engineering student.',
+    name: 'Thiago da Silva',
+    role: 'Developer · IT technician · Computer Engineering student',
+    location: 'São Paulo, Brazil',
+    links: [
+      { icon: 'code', label: 'Personal GitHub', href: 'https://github.com/dasilva-thiago', external: true },
+      { icon: 'work', label: 'LinkedIn', href: 'https://www.linkedin.com/in/dasilva-thiago/', external: true },
+      { icon: 'mail', label: 'thiagosilva785@gmail.com', href: 'mailto:thiagosilva785@gmail.com' }
+    ]
   },
   footer: { status: 'Version 1.0', contact: 'thiagosilva785@gmail.com' },
 };

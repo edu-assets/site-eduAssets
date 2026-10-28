@@ -1,0 +1,27 @@
+---
+import Section from '../../../shared/components/Section.astro';
+import Icon from '../../../shared/components/Icon.astro';
+import type { LandingContent } from '../content/types';
+const { profile } = Astro.props as { profile: LandingContent['profile'] };
+---
+<Section id="profile" eyebrow={profile.eyebrow} title={profile.title} lead={profile.lead} tone="dark">
+  <div class="profile-card">
+    <div class="profile-card__identity">
+      <span class="profile-card__avatar" aria-hidden="true"><Icon name="person" /></span>
+      <div>
+        <h3>{profile.name}</h3>
+        <p>{profile.role}</p>
+        <p class="profile-card__location"><Icon name="location_on" /> {profile.location}</p>
+      </div>
+    </div>
+    <nav class="profile-card__links" aria-label={profile.title}>
+      {profile.links.map((link) => (
+        <a href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined}>
+          <Icon name={link.icon} />
+          <span>{link.label}</span>
+          {link.external && <Icon name="open_in_new" />}
+        </a>
+      ))}
+    </nav>
+  </div>
+</Section>

@@ -8,9 +8,11 @@ import Features from './sections/Features.astro';
 import Differentials from './sections/Differentials.astro';
 import Access from './sections/Access.astro';
 import Rfid from './sections/Rfid.astro';
+import Project from './sections/Project.astro';
 import Tech from './sections/Tech.astro';
 import Docs from './sections/Docs.astro';
 import FinalCta from './sections/FinalCta.astro';
+import Profile from './sections/Profile.astro';
 import type { Locale } from '../../core/i18n';
 import type { LandingContent } from './content/types';
 
@@ -19,11 +21,13 @@ const { locale, content: c } = Astro.props;
 // Keep the navbar short: only the sections people actually jump to.
 // Other sections (problem, highlights) are reached by scrolling; add them back here if needed.
 const nav = [
+  { href: '#project', label: c.nav.project, icon: 'description' },
   { href: '#features', label: c.nav.features, icon: 'dashboard' },
   { href: '#flow', label: c.nav.flow, icon: 'swap_horiz' },
   { href: '#access', label: c.nav.access, icon: 'admin_panel_settings' },
   { href: '#tech', label: c.nav.tech, icon: 'code' },
   { href: '#docs', label: c.nav.docs, icon: 'menu_book' },
+  { href: '#profile', label: c.nav.profile, icon: 'person' },
 ];
 ---
 <SiteHeader locale={locale} nav={nav} cta={c.hero.primary} />
@@ -35,8 +39,10 @@ const nav = [
   <Differentials differentials={c.differentials} />
   <Access access={c.access} />
   <Rfid rfid={c.rfid} />
+  <Project project={c.project} />
   <Tech tech={c.tech} />
   <Docs docs={c.docs} locale={locale} />
+  <Profile profile={c.profile} />
   <FinalCta cta={c.cta} />
 </main>
 <SiteFooter locale={locale} {...c.footer} />

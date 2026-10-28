@@ -4,7 +4,7 @@ export interface IconItem { icon: string; title: string; text: string }
 type RfidPhoto = { alt: string; caption: string };
 export interface LandingContent {
   lang: { href: string; label: string; title: string };
-  nav: { problem: string; flow: string; features: string; differentials: string; access: string; tech: string; docs: string };
+  nav: { project: string; problem: string; flow: string; features: string; differentials: string; access: string; tech: string; docs: string; profile: string };
   hero: { eyebrow: string; title: string; lead: string; primary: string; secondary: string; note: string };
   problem: {
     eyebrow: string;
@@ -34,8 +34,29 @@ export interface LandingContent {
     steps: IconItem[];
     note: string;
   };
+  project: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    author: { icon: string; title: string; text: string };
+    challenge: { icon: string; title: string; text: string };
+    solution: { icon: string; title: string; text: string };
+    scopeTitle: string;
+    scope: { icon: string; title: string; text: string }[];
+    decisionsTitle: string;
+    decisions: { icon: string; title: string; text: string }[];
+  };
   tech: { eyebrow: string; title: string; rows: { icon: string; area: string; items: string }[] };
   docs: { eyebrow: string; title: string; lead: string; items: { icon: string; title: string; file: string }[] };
   cta: { title: string; text: string; primary: string; secondary: string };
+  profile: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    name: string;
+    role: string;
+    location: string;
+    links: { icon: string; label: string; href: string; external?: boolean }[];
+  };
   footer: { status: string; contact: string };
 }

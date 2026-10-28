@@ -1,0 +1,53 @@
+---
+import Section from '../../../shared/components/Section.astro';
+import Icon from '../../../shared/components/Icon.astro';
+import IconBadge from '../../../shared/components/IconBadge.astro';
+import type { LandingContent } from '../content/types';
+const { project } = Astro.props as { project: LandingContent['project'] };
+---
+<Section id="project" eyebrow={project.eyebrow} title={project.title} lead={project.lead} tone="alt">
+  <div class="project-author card">
+    <IconBadge name={project.author.icon} tone="primary" size="lg" />
+    <div>
+      <h3>{project.author.title}</h3>
+      <p>{project.author.text}</p>
+    </div>
+  </div>
+
+  <div class="project-story">
+    <article class="project-story__card">
+      <IconBadge name={project.challenge.icon} tone="warning" />
+      <h3>{project.challenge.title}</h3>
+      <p>{project.challenge.text}</p>
+    </article>
+    <article class="project-story__card">
+      <IconBadge name={project.solution.icon} tone="success" />
+      <h3>{project.solution.title}</h3>
+      <p>{project.solution.text}</p>
+    </article>
+  </div>
+
+  <div class="project-block">
+    <h3>{project.scopeTitle}</h3>
+    <ul class="project-scope" role="list">
+      {project.scope.map((item) => (
+        <li>
+          <IconBadge name={item.icon} tone="neutral" />
+          <div><strong>{item.title}</strong><p>{item.text}</p></div>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="project-block project-block--decisions">
+    <h3>{project.decisionsTitle}</h3>
+    <ul class="project-decisions" role="list">
+      {project.decisions.map((item) => (
+        <li>
+          <Icon name={item.icon} />
+          <div><strong>{item.title}</strong><p>{item.text}</p></div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Section>

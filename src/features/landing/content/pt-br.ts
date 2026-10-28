@@ -2,7 +2,7 @@ import type { LandingContent } from './types';
 
 export const ptBr: LandingContent = {
   lang: { href: '/en/', label: 'EN', title: 'English version' },
-  nav: { problem: 'O problema', flow: 'Fluxo', features: 'Funcionalidades', differentials: 'Recursos', access: 'Acesso', tech: 'Tecnologia', docs: 'Documentação' },
+  nav: { project: 'O projeto', problem: 'O problema', flow: 'Fluxo', features: 'Funcionalidades', differentials: 'Recursos', access: 'Acesso', tech: 'Tecnologia', docs: 'Documentação', profile: 'Sobre o autor' },
   hero: {
     eyebrow: 'v1.0 · Projeto de portfólio',
     title: 'Controle de equipamentos',
@@ -132,6 +132,33 @@ export const ptBr: LandingContent = {
     ],
     note: 'O leitor emite sons distintos para cartão detectado, sucesso e erro. O RFID nunca é obrigatório.',
   },
+  project: {
+    eyebrow: 'Projeto de portfólio',
+    title: 'Do desafio operacional à implementação full-stack',
+    lead: 'Sistema web full-stack para controle de estoque, empréstimos, devoluções e ocorrências de equipamentos escolares.',
+    author: { icon: 'person', title: 'Projeto de portfólio desenvolvido por Thiago da Silva', text: 'Uma implementação completa que reúne interface, API, banco de dados, infraestrutura, testes e documentação em um único projeto demonstrável.' },
+    challenge: { icon: 'description', title: 'O desafio', text: 'Escolas frequentemente controlam notebooks, tablets e acessórios por planilhas dispersas, dificultando saber o que está disponível, emprestado, em manutenção ou quebrado.' },
+    solution: { icon: 'task_alt', title: 'A solução', text: 'O eduAssets centraliza estoque, empréstimos, devoluções, ocorrências, permissões e exportação de relatórios em uma aplicação web.' },
+    scopeTitle: 'O que foi desenvolvido',
+    scope: [
+      { icon: 'code', title: 'Frontend', text: 'TypeScript, Vite e arquitetura feature-first.' },
+      { icon: 'dns', title: 'API REST', text: 'Node.js, Express 5, Prisma e Zod.' },
+      { icon: 'database', title: 'Persistência', text: 'PostgreSQL gerenciado no Neon.' },
+      { icon: 'lock', title: 'Autenticação', text: 'JWT e controle de sessão.' },
+      { icon: 'admin_panel_settings', title: 'Permissões', text: 'Níveis de acesso para diferentes responsabilidades.' },
+      { icon: 'description', title: 'Relatórios', text: 'Exportação em CSV, Excel e PDF.' },
+      { icon: 'contactless', title: 'RFID opcional', text: 'Integração com Raspberry Pi ou Arduino Nano.' },
+      { icon: 'fact_check', title: 'Qualidade', text: 'Testes unitários e de integração.' },
+      { icon: 'cloud_done', title: 'Entrega', text: 'CI/CD, deploy da aplicação e API, e documentação operacional.' }
+    ],
+    decisionsTitle: 'Decisões de arquitetura',
+    decisions: [
+      { icon: 'database', title: 'Por que o banco fica na Neon?', text: 'A VM Oracle possui apenas 1 GB de RAM. Manter o PostgreSQL gerenciado reduz consumo de memória, simplifica backups e separa a disponibilidade do banco da máquina da API.' },
+      { icon: 'cloud', title: 'Por que o frontend é separado da API?', text: 'O frontend estático pode ser servido globalmente pelo Cloudflare Pages, enquanto a API permanece em uma VM com controle operacional independente.' },
+      { icon: 'visibility', title: 'Por que existe Guest Mode?', text: 'Para permitir avaliação e interação imediata do sistema sem criar contas ou expor credenciais administrativas.' },
+      { icon: 'contactless', title: 'Por que RFID é opcional?', text: 'O sistema continua útil com login convencional e pode receber hardware quando for hospedado localmente ou quando a operação justificar o investimento.' }
+    ]
+  },
   tech: {
     eyebrow: 'Tecnologia',
     title: 'Stack',
@@ -145,7 +172,7 @@ export const ptBr: LandingContent = {
   },
   docs: {
     eyebrow: 'Documentação',
-    title: 'Guias do produto e do projeto',
+    title: 'Guias do projeto',
     lead: 'Consulte os materiais de uso, arquitetura, API, desenvolvimento, implantação, hospedagem e operação.',
     items: [
       { icon: 'description', title: 'Apresentação do projeto', file: 'LEIAME.md' },
@@ -166,6 +193,19 @@ export const ptBr: LandingContent = {
     text: 'Abra o eduAssets em Guest Mode e navegue pelos painéis, sem cadastro.',
     primary: 'Acessar o sistema',
     secondary: 'Ver código no GitHub',
+  },
+  profile: {
+    eyebrow: 'Perfil pessoal',
+    title: 'Sobre o autor',
+    lead: 'Desenvolvedor, técnico em informática e estudante de Engenharia da Computação.',
+    name: 'Thiago da Silva',
+    role: 'Desenvolvedor · Técnico em informática · Estudante de Engenharia da Computação',
+    location: 'São Paulo, Brasil',
+    links: [
+      { icon: 'code', label: 'GitHub pessoal', href: 'https://github.com/dasilva-thiago', external: true },
+      { icon: 'work', label: 'LinkedIn', href: 'https://www.linkedin.com/in/dasilva-thiago/', external: true },
+      { icon: 'mail', label: 'thiagosilva785@gmail.com', href: 'mailto:thiagosilva785@gmail.com' }
+    ]
   },
   footer: { status: 'Versão 1.0', contact: 'thiagosilva785@gmail.com' },
 };
