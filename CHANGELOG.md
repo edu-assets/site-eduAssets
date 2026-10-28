@@ -1,5 +1,9 @@
 # Changelog — eduAssets site
 
+## 1.0.1 — Product patch status — 2026-10-28
+
+- Synchronized the site release status and package metadata with the product's official 1.0.1 patch release. The site's 1.0.0 visual/content work remains unchanged; backend security fixes and production deployment evidence are recorded in the central bilingual changelog.
+
 ## 1.0.0 — Official release — 2026-10-28
 
 - Clarified the project challenge and solution with stronger headings and adjacent icons; updated the database label to “Banco de dados”.
