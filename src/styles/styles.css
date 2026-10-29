@@ -8,6 +8,7 @@
 @import './components/cards.css';
 @import './components/docs-modal.css';
 @import './components/screenshot.css';
+@import './components/scrollbar.css';
 @import './layout/header.css';
 @import './layout/hero.css';
 @import './layout/sections.css';
