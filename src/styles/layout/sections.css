@@ -485,17 +485,15 @@ html[data-theme="dark"] .tech-stack__logo--neon { color: #00e599; }
 }
 
 @media (min-width: 961px) {
-  /* Mantém a segunda linha como um grupo centralizado, em vez de deixá-la encostada à esquerda. */
-  .project-scope li:nth-child(4) {
-    grid-column: 2 / span 3;
+  .project-scope {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 920px;
+    margin-inline: auto;
   }
 
-  .project-scope li:nth-child(5) {
-    grid-column: 5 / span 3;
-  }
-
-  .project-scope li:nth-child(6) {
-    grid-column: 8 / span 3;
+  .project-scope li,
+  .project-scope__item--featured {
+    grid-column: auto;
   }
 }
 
