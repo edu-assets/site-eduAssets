@@ -17,8 +17,12 @@ const { project } = Astro.props as { project: LandingContent['project'] };
       <Photo name="carrinho-notebooks" ratio="16 / 9" alt={project.challenge.photo.alt} caption={project.challenge.photo.caption} />
       <h4 class="project-questions-title">{project.challenge.questionsTitle}</h4>
       <ul class="project-questions" role="list">
-        {project.challenge.questions.map((question) => (
-          <li><IconBadge name={question.icon} tone="neutral" />{question.text}</li>
+        {project.challenge.questions.map((question, index) => (
+          <li>
+            <span class="project-question__index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <IconBadge name={question.icon} tone="neutral" />
+            <span class="project-question__text">{question.text}</span>
+          </li>
         ))}
       </ul>
     </article>
