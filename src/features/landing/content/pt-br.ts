@@ -135,11 +135,8 @@ export const ptBr: LandingContent = {
       { icon: 'code', title: 'Frontend', text: 'TypeScript, Vite e arquitetura feature-first.' },
       { icon: 'dns', title: 'API REST', text: 'Node.js, Express 5, Prisma e Zod.' },
       { icon: 'database', title: 'Banco de dados', text: 'PostgreSQL gerenciado no Neon.' },
-      { icon: 'lock', title: 'Autenticação', text: 'JWT e controle de sessão.' },
-      { icon: 'admin_panel_settings', title: 'Permissões', text: 'Níveis de acesso para diferentes responsabilidades.' },
-      { icon: 'description', title: 'Relatórios', text: 'Exportação em CSV, Excel e PDF.' },
+      { icon: 'lock', title: 'Acesso e permissões', text: 'JWT, controle de sessão e níveis de acesso por responsabilidade.' },
       { icon: 'contactless', title: 'RFID opcional', text: 'Integração com Raspberry Pi ou Arduino Nano.' },
-      { icon: 'task_alt', title: 'Qualidade', text: 'Testes unitários e de integração.' },
       { icon: 'cloud', title: 'Entrega', text: 'CI/CD, deploy da aplicação e API, e documentação operacional.' }
     ],
     decisionsTitle: 'Decisões de arquitetura',

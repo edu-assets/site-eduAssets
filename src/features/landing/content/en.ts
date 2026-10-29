@@ -135,11 +135,8 @@ export const en: LandingContent = {
       { icon: 'code', title: 'Frontend', text: 'TypeScript, Vite and feature-first architecture.' },
       { icon: 'dns', title: 'REST API', text: 'Node.js, Express 5, Prisma and Zod.' },
       { icon: 'database', title: 'Database', text: 'Managed PostgreSQL on Neon.' },
-      { icon: 'lock', title: 'Authentication', text: 'JWT and session control.' },
-      { icon: 'admin_panel_settings', title: 'Permissions', text: 'Access levels for different responsibilities.' },
-      { icon: 'description', title: 'Reports', text: 'CSV, Excel and PDF exports.' },
+      { icon: 'lock', title: 'Access and permissions', text: 'JWT, session control and responsibility-based access levels.' },
       { icon: 'contactless', title: 'Optional RFID', text: 'Integration with Raspberry Pi or Arduino Nano.' },
-      { icon: 'task_alt', title: 'Quality', text: 'Unit and integration tests.' },
       { icon: 'cloud', title: 'Delivery', text: 'CI/CD, application and API deployment, and operational documentation.' }
     ],
     decisionsTitle: 'Architecture decisions',

@@ -34,8 +34,9 @@ const { project } = Astro.props as { project: LandingContent['project'] };
   <div class="project-block">
     <h3>{project.scopeTitle}</h3>
     <ul class="project-scope" role="list">
-      {project.scope.map((item) => (
-        <li>
+      {project.scope.map((item, index) => (
+        <li class:list={{ 'project-scope__item--featured': index < 3 }}>
+          <span class="project-scope__index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <IconBadge name={item.icon} tone="neutral" />
           <div><strong>{item.title}</strong><p>{item.text}</p></div>
         </li>
@@ -48,7 +49,7 @@ const { project } = Astro.props as { project: LandingContent['project'] };
     <ul class="project-decisions" role="list">
       {project.decisions.map((item) => (
         <li>
-          <Icon name={item.icon} />
+          <span class="project-decision__icon"><Icon name={item.icon} /></span>
           <div><strong>{item.title}</strong><p>{item.text}</p></div>
         </li>
       ))}
