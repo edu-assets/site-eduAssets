@@ -3,9 +3,8 @@
 (function () {
   var theme = 'light';
   try {
-    var saved = localStorage.getItem('eduassets-theme');
-    theme = saved === 'light' || saved === 'dark'
-      ? saved
+    var match = document.cookie.match(/(?:^|;\s*)eduassets-theme=(light|dark)/);
+    theme = match ? match[1]
       : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   } catch (e) {}
   document.documentElement.setAttribute('data-theme', theme);

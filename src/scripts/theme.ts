@@ -1,4 +1,5 @@
 const KEY = 'eduassets-theme';
+const COOKIE_OPTS = 'Path=/; SameSite=Lax; Secure; Max-Age=31536000';
 type Theme = 'light' | 'dark';
 
 const root = document.documentElement;
@@ -25,8 +26,8 @@ function withTransition(change: () => void) {
 
 function saved(): Theme | null {
   try {
-    const v = localStorage.getItem(KEY);
-    return v === 'light' || v === 'dark' ? v : null;
+    const match = document.cookie.match(/(?:^|;\s*)eduassets-theme=(light|dark)/);
+    return match ? (match[1] as Theme) : null;
   } catch {
     return null;
   }
@@ -38,7 +39,7 @@ document.querySelectorAll('[data-theme-toggle]').forEach((btn) =>
   btn.addEventListener('click', () => {
     const next: Theme = current() === 'dark' ? 'light' : 'dark';
     withTransition(() => apply(next));
-    try { localStorage.setItem(KEY, next); } catch { /* ignore */ }
+    try { document.cookie = `${KEY}=${next}; ${COOKIE_OPTS}`; } catch { /* ignore */ }
   }),
 );
 
