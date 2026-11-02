@@ -10,6 +10,26 @@
     justify-content: center;
 }
 
+/* On wide viewports the container is centered, so 88% vw drifts far past the content.
+   Anchor the glow to the right half of the centered container instead. */
+@media (min-width: 1400px) {
+    .hero {
+        background: radial-gradient(900px 420px at calc(50% + 320px) 0%, var(--hero-glow), transparent 70%);
+    }
+}
+
+@media (min-width: 2000px) {
+    .hero {
+        background: radial-gradient(1000px 480px at calc(50% + 400px) 0%, var(--hero-glow), transparent 70%);
+    }
+}
+
+@media (min-width: 2560px) {
+    .hero {
+        background: radial-gradient(1100px 520px at calc(50% + 480px) 0%, var(--hero-glow), transparent 70%);
+    }
+}
+
 .hero__inner {
     display: grid;
     grid-template-columns: 1.1fr 1fr;

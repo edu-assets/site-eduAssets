@@ -2,6 +2,18 @@
   padding-block: 80px;
 }
 
+@media (min-width: 1600px) {
+  .section {
+    padding-block: 100px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .section {
+    padding-block: 120px;
+  }
+}
+
 .section--alt {
   background: var(--alt-bg);
 }
