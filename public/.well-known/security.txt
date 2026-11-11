@@ -1,0 +1,6 @@
+# Política de divulgação de vulnerabilidades do eduAssets / eduAssets vulnerability disclosure
+# RFC 9116 - https://www.rfc-editor.org/rfc/rfc9116
+Contact: mailto:dasilva-thiago@eduassets.tech
+Expires: 2027-11-11T00:00:00.000Z
+Preferred-Languages: pt-BR, en
+Canonical: https://eduassets.tech/.well-known/security.txt
