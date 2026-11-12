@@ -4,7 +4,7 @@ export const en: LandingContent = {
   lang: { href: '/', label: 'PT', title: 'Versão em português' },
   nav: { project: 'The project', problem: 'The problem', flow: 'Workflow', features: 'Features', differentials: 'Capabilities', access: 'Access', tech: 'Technology', docs: 'Documentation', profile: 'Author' },
   hero: {
-    eyebrow: 'v1.1.0 · Portfolio project',
+    eyebrow: 'v1.2.0 · Portfolio project',
     title: 'School equipment management',
     lead: 'eduAssets records who took what, keeps stock up to date, tracks maintenance and breakage, and exports reports as CSV, Excel and PDF.',
     primary: 'Open the system',
@@ -214,5 +214,5 @@ export const en: LandingContent = {
     photoAlt: 'Portrait of Thiago da Silva wearing glasses, a dark blue shirt and a light jacket.',
     github: 'https://github.com/dasilva-thiago'
   },
-  footer: { status: 'Official version 1.1.0', contact: 'thiagosilva785@gmail.com' },
+  footer: { status: 'Official version 1.2.0', contact: 'thiagosilva785@gmail.com' },
 };

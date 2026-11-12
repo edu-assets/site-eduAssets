@@ -1,5 +1,10 @@
 # Changelog — eduAssets site
 
+## 1.2.0 — Product minor release status — 2026-11-12
+
+- Synchronized the site release status (hero, footer, README) and package metadata with the product's official 1.2.0 release: self-service email password recovery, automatic API deployment after CI and HTTP 5xx alerting, recorded in the central bilingual changelog.
+- Updated vulnerable transitive dependencies reported by `npm audit` (`undici`, `zod`, `fast-xml-parser`, `fast-uri`); `npm audit` now reports 0 vulnerabilities.
+
 ## 1.1.0 — Product minor release status — 2026-11-12
 
 - Synchronized the site release status (hero, footer, README) and package metadata with the product's official 1.1.0 release: administrator password reset, network-resilient logout and continuous-operation tooling, recorded in the central bilingual changelog.
