@@ -13,4 +13,5 @@
 @import './layout/hero.css';
 @import './layout/sections.css';
 @import './components/social.css';
+@import './components/consent.css';
 @import './layout/page.css';

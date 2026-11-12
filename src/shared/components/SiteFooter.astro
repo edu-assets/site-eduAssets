@@ -11,6 +11,7 @@ const { locale, status, contact } = Astro.props;
     <nav class="site-footer__legal" aria-label={locale === 'pt-br' ? 'Informações legais' : 'Legal information'}>
       <a href={locale === 'pt-br' ? '/politica-de-privacidade/' : '/en/privacy-policy/'}>{locale === 'pt-br' ? 'Privacidade' : 'Privacy'}</a>
       <a href={locale === 'pt-br' ? '/politica-de-cookies/' : '/en/cookies-policy/'}>Cookies</a>
+      <button type="button" class="cookie-preferences-link" data-open-cookie-preferences>{locale === 'pt-br' ? 'Preferências de cookies' : 'Cookie preferences'}</button>
     </nav>
     <SocialLinks locale={locale} size="sm" />
   </div>
