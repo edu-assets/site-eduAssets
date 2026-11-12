@@ -1,5 +1,10 @@
 # Changelog — eduAssets site
 
+## 1.0.2 — Product patch status — 2026-11-12
+
+- Synchronized the site package metadata with the product's official 1.0.2 patch release (frontend interface fixes recorded in the central bilingual changelog).
+- Published `/.well-known/security.txt` (RFC 9116) with the vulnerability-disclosure contact, served as `text/plain` via Cloudflare Pages headers.
+
 ## 1.0.1 — Product patch status — 2026-10-28
 
 - Synchronized the site release status and package metadata with the product's official 1.0.1 patch release. The site's 1.0.0 visual/content work remains unchanged; backend security fixes and production deployment evidence are recorded in the central bilingual changelog.
