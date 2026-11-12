@@ -4,7 +4,7 @@ export const ptBr: LandingContent = {
   lang: { href: '/en/', label: 'EN', title: 'English version' },
   nav: { project: 'O projeto', problem: 'O problema', flow: 'Fluxo', features: 'Funcionalidades', differentials: 'Recursos', access: 'Acesso', tech: 'Tecnologia', docs: 'Documentação', profile: 'Autor' },
   hero: {
-    eyebrow: 'v1.0.2 · Projeto de portfólio',
+    eyebrow: 'v1.1.0 · Projeto de portfólio',
     title: 'Controle de equipamentos',
     lead: 'O eduAssets registra quem retirou o quê, mantém o estoque atualizado, acompanha manutenções e quebras e exporta relatórios em CSV, Excel e PDF.',
     primary: 'Acessar o sistema',
@@ -214,5 +214,5 @@ export const ptBr: LandingContent = {
     photoAlt: 'Retrato de Thiago da Silva usando óculos, camisa azul-escura e jaqueta clara.',
     github: 'https://github.com/dasilva-thiago'
   },
-  footer: { status: 'Versão 1.0.2 oficial', contact: 'thiagosilva785@gmail.com' },
+  footer: { status: 'Versão 1.1.0 oficial', contact: 'thiagosilva785@gmail.com' },
 };

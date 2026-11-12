@@ -1,5 +1,10 @@
 # Changelog — eduAssets site
 
+## 1.1.0 — Product minor release status — 2026-11-12
+
+- Synchronized the site release status (hero, footer, README) and package metadata with the product's official 1.1.0 release: administrator password reset, network-resilient logout and continuous-operation tooling, recorded in the central bilingual changelog.
+- The `security.txt` validity is now checked by the API repository's scheduled `Uptime` workflow, which alerts 30 days before `Expires`.
+
 ## 1.0.2 — Product patch status — 2026-11-12
 
 - Synchronized the site package metadata with the product's official 1.0.2 patch release (frontend interface fixes recorded in the central bilingual changelog).
