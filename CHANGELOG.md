@@ -1,5 +1,9 @@
 # Changelog — eduAssets site
 
+## 1.5.0 — Product minor release status — 2026-11-13
+
+- Synchronized the site release status (hero, footer, README) and package metadata with the product's official 1.5.0 release: paginated loan history with filters, panel addresses, session expiry warning, catalog editing and password and notification accessibility improvements, recorded in the central bilingual changelog.
+
 ## 1.4.0 — Product minor release status — 2026-11-13
 
 - Synchronized the site release status (hero, footer, README) and package metadata with the product's official 1.4.0 release: record authorship (who registered, edited, returned or resolved each record), user management with administrator safeguards and interface refinements, recorded in the central bilingual changelog.
