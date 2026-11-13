@@ -1,5 +1,9 @@
 # Changelog — eduAssets site
 
+## 1.5.2 — Product patch status — 2026-11-13
+
+- Synchronized the site release status and package metadata with the product's official 1.5.2 correction release (push notification activation fixes and VAPID key-pair validation, de-duplicated toasts, single-scroll Cadastros edit view, and mobile layout fixes for loans, returns, dashboard and controle cards, recorded in the central bilingual changelog).
+
 ## 1.5.1 — Product patch status — 2026-11-13
 
 - Synchronized the site release status and package metadata with the product's official 1.5.1 patch release (frontend guest-mode clarity, stock badges, localized dates and accessibility fixes recorded in the central bilingual changelog).

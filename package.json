@@ -1,6 +1,6 @@
 {
   "name": "eduassets-site",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "private": true,
   "type": "module",
   "description": "Public landing page and articles for eduAssets (eduassets.tech).",
