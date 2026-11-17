@@ -5,7 +5,7 @@ export const ptBr: LandingContent = {
   lang: { href: '/en/', label: 'EN', title: 'English version' },
   nav: { project: 'O projeto', problem: 'O problema', flow: 'Fluxo', features: 'Funcionalidades', differentials: 'Recursos', access: 'Acesso', tech: 'Tecnologia', docs: 'Documentação', profile: 'Autor' },
   hero: {
-    eyebrow: `v${PRODUCT_VERSION} · Projeto de portfólio`,
+    eyebrow: `v${PRODUCT_VERSION}`,
     title: 'Controle de equipamentos',
     lead: 'O eduAssets registra quem retirou o quê, mantém o estoque atualizado, acompanha manutenções e quebras e exporta relatórios em CSV, Excel e PDF.',
     primary: 'Acessar o sistema',
@@ -120,7 +120,7 @@ export const ptBr: LandingContent = {
     note: 'O leitor emite sons distintos para cartão detectado, sucesso e erro. O RFID nunca é obrigatório.',
   },
   project: {
-    eyebrow: 'Projeto de portfólio',
+    eyebrow: 'O projeto',
     title: 'Do desafio operacional à implementação full-stack',
     lead: 'Sistema web full-stack para controle de estoque, empréstimos, devoluções e ocorrências de equipamentos escolares.',
     challenge: { icon: 'description', title: 'O desafio', text: 'Escolas frequentemente controlam notebooks, tablets e acessórios por planilhas dispersas, dificultando saber o que está disponível, emprestado, em manutenção ou quebrado.', photo: { alt: 'Carrinho com notebooks guardados em compartimentos numerados.', caption: 'O cenário que o sistema organiza: equipamentos numerados, emprestados e devolvidos todos os dias.' }, questionsTitle: 'O painel responde, sem precisar abrir planilhas:', questions: [

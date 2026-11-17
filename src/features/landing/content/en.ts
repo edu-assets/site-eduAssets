@@ -5,7 +5,7 @@ export const en: LandingContent = {
   lang: { href: '/', label: 'PT', title: 'Versão em português' },
   nav: { project: 'The project', problem: 'The problem', flow: 'Workflow', features: 'Features', differentials: 'Capabilities', access: 'Access', tech: 'Technology', docs: 'Documentation', profile: 'Author' },
   hero: {
-    eyebrow: `v${PRODUCT_VERSION} · Portfolio project`,
+    eyebrow: `v${PRODUCT_VERSION}`,
     title: 'School equipment management',
     lead: 'eduAssets records who took what, keeps stock up to date, tracks maintenance and breakage, and exports reports as CSV, Excel and PDF.',
     primary: 'Open the system',
@@ -120,7 +120,7 @@ export const en: LandingContent = {
     note: 'The reader plays distinct tones for card detected, success and error. RFID is never required.',
   },
   project: {
-    eyebrow: 'Portfolio project',
+    eyebrow: 'The project',
     title: 'From operational challenge to full-stack implementation',
     lead: 'A full-stack web system for managing school equipment inventory, loans, returns and incidents.',
     challenge: { icon: 'description', title: 'The challenge', text: 'Schools often manage laptops, tablets and accessories through scattered spreadsheets, making it difficult to know what is available, borrowed, under maintenance or broken.', photo: { alt: 'Cart with laptops stored in numbered compartments.', caption: 'The scenario the system organizes: numbered equipment, borrowed and returned every day.' }, questionsTitle: 'The dashboard answers, no spreadsheets needed:', questions: [
