@@ -1,0 +1,80 @@
+/* Revelação ao rolar (scripts/reveal.ts) e entrada do hero.
+   Uma só curva e duração no site inteiro; cada variante muda apenas o ponto de partida.
+   A animação usa `backwards`: terminada, o elemento volta ao estilo normal, então hover e
+   transições próprias dos cartões continuam funcionando. */
+:root {
+  --reveal-duracao: 0.6s;
+  --reveal-curva: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+[data-reveal] { --reveal-de: translateY(18px); }
+[data-reveal='left'] { --reveal-de: translateX(-24px); }
+[data-reveal='right'] { --reveal-de: translateX(24px); }
+[data-reveal='scale'] { --reveal-de: translateY(12px) scale(0.96); }
+[data-reveal='pop'] { --reveal-de: scale(0.88); }
+[data-reveal='fade'] { --reveal-de: none; }
+
+@keyframes reveal-entrada {
+  from { opacity: 0; transform: var(--reveal-de); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Impressão: nada fica escondido à espera de rolagem. */
+@media print {
+  [data-reveal-estado] {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal-estado='oculto'] {
+    opacity: 0;
+  }
+
+  [data-reveal-estado='visivel'] {
+    animation: reveal-entrada var(--reveal-duracao) var(--reveal-curva) backwards;
+    animation-delay: var(--reveal-delay, 0ms);
+  }
+
+  /* Fluxo: a seta tracejada entre os passos "se desenha" depois que o passo aparece. */
+  @keyframes reveal-traco {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .flow li[data-reveal-estado='visivel']::after {
+    transform-origin: left center;
+    animation: reveal-traco 0.5s var(--reveal-curva) backwards;
+    animation-delay: calc(var(--reveal-delay, 0ms) + 0.35s);
+  }
+
+  /* Hero: entrada no carregamento (só CSS, não depende do script). */
+  .hero__text > * {
+    --reveal-de: translateY(14px);
+    animation: reveal-entrada 0.7s var(--reveal-curva) backwards;
+  }
+
+  .hero__text > :nth-child(2) { animation-delay: 80ms; }
+  .hero__text > :nth-child(3) { animation-delay: 140ms; }
+  .hero__text > :nth-child(4) { animation-delay: 200ms; }
+  .hero__text > :nth-child(5) { animation-delay: 260ms; }
+  .hero__text > :nth-child(6) { animation-delay: 320ms; }
+  .hero__text > :nth-child(7) { animation-delay: 380ms; }
+
+  .hero__banner {
+    --reveal-de: translateY(16px) scale(0.95);
+    animation: reveal-entrada 0.9s var(--reveal-curva) 0.15s backwards;
+  }
+
+  /* O divisor do hero cresce da esquerda, como a linha da marca. */
+  @keyframes reveal-divisor {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .hero__text > .divider {
+    transform-origin: left center;
+    animation: reveal-divisor 0.6s var(--reveal-curva) 0.3s backwards;
+  }
+}

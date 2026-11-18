@@ -34,7 +34,7 @@ const sourceFileUrl = (file: string) => `${DOCS_REPO_URL}/blob/main/public/docs/
 <Section id="docs" eyebrow={docs.eyebrow} title={docs.title} lead={docs.lead}>
   <div class="doc-groups">
     {docs.groups.map((group, groupIndex) => (
-      <section class="doc-group" aria-labelledby={`doc-group-${groupIndex}`}>
+      <section class="doc-group" data-reveal="up" aria-labelledby={`doc-group-${groupIndex}`}>
         <h3 id={`doc-group-${groupIndex}`}>{group.title}</h3>
         <ul class="doc-links" role="list">
           {group.items.map((doc) => (
@@ -59,7 +59,7 @@ const sourceFileUrl = (file: string) => `${DOCS_REPO_URL}/blob/main/public/docs/
       </section>
     ))}
   </div>
-  <p class="docs-source-note">
+  <p class="docs-source-note" data-reveal="fade">
     <span>{t.openDocs}:</span>
     <a href={README_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
   </p>

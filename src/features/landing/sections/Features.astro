@@ -9,7 +9,7 @@ const { features } = Astro.props as { features: LandingContent['features'] };
 <Section id="features" eyebrow={features.eyebrow} title={features.title} tone="alt">
   {features.rows.map((row, i) => (
     <article class={`feature ${i % 2 ? 'feature--reverse' : ''}`}>
-      <div class="feature__text">
+      <div class="feature__text" data-reveal={i % 2 ? 'right' : 'left'}>
         <IconBadge name={row.icon} size="lg" />
         <h3>{row.title}</h3>
         <p>{row.text}</p>
@@ -17,7 +17,7 @@ const { features } = Astro.props as { features: LandingContent['features'] };
           {row.points.map((p) => <li><Icon name="check_circle" />{p}</li>)}
         </ul>
       </div>
-      <Screenshot name={row.shot.key} label={row.shot.label} alt={row.shot.alt} caption={row.shot.caption} hint={row.shot.hint} />
+      <Screenshot name={row.shot.key} label={row.shot.label} alt={row.shot.alt} caption={row.shot.caption} hint={row.shot.hint} reveal="scale" />
     </article>
   ))}
   <div class="effects">
@@ -27,7 +27,7 @@ const { features } = Astro.props as { features: LandingContent['features'] };
     </div>
     <ul role="list">
       {features.effects.items.map((e) => (
-        <li>
+        <li data-reveal="up">
           <IconBadge name={e.icon} tone={e.tone} />
           <strong>{e.action}</strong>
           <span>{e.effect}</span>

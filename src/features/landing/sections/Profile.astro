@@ -9,7 +9,7 @@ import type { LandingContent } from '../content/types';
 const { profile, locale } = Astro.props as { profile: LandingContent['profile']; locale: Locale };
 ---
 <Section id="profile" eyebrow={profile.eyebrow} title={profile.title} lead={profile.lead} tone="dark">
-  <div class="profile-card">
+  <div class="profile-card" data-reveal="scale">
     <div class="profile-card__identity">
       <Image class="profile-card__photo" src={profilePhoto} alt={profile.photoAlt} width={240} height={240} loading="lazy" />
       <div class="profile-card__details">

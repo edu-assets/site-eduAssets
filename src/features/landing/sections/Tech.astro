@@ -7,11 +7,11 @@ const { tech } = Astro.props as { tech: LandingContent['tech'] };
 <Section id="tech" eyebrow={tech.eyebrow} title={tech.title} tone="alt">
   <div class="tech-stack">
     {tech.groups.map((group) => (
-      <section class="tech-stack__group" aria-label={group.area}>
+      <section class="tech-stack__group" aria-label={group.area} data-reveal="up">
         <h3>{group.area}</h3>
         <ul class="tech-stack__items" role="list">
           {group.items.map((item) => (
-            <li class="tech-stack__item">
+            <li class="tech-stack__item" data-reveal="pop">
               <span class="tech-stack__mark" aria-hidden="true">
                 {item.brand ? (
                   <svg class={`tech-stack__logo tech-stack__logo--${item.brand}`} viewBox="0 0 24 24" focusable="false">

@@ -9,13 +9,13 @@ const { access } = Astro.props as { access: LandingContent['access'] };
   <div class="access">
     <ul class="levels" role="list">
       {access.levels.map((l) => (
-        <li>
+        <li data-reveal="left">
           <IconBadge name={l.icon} />
           <div><h3>{l.name}</h3><p>{l.can}</p></div>
         </li>
       ))}
     </ul>
-    <div class="security">
+    <div class="security" data-reveal="right">
       <h3>{access.securityTitle}</h3>
       <ul class="ticks" role="list">
         {access.security.map((s) => <li><Icon name="verified_user" />{s}</li>)}

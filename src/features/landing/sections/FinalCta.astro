@@ -6,11 +6,11 @@ const { cta } = Astro.props as { cta: LandingContent['cta'] };
 ---
 <section class="final-cta">
   <div class="container final-cta__inner">
-    <div>
+    <div data-reveal="up">
       <h2>{cta.title}</h2>
       <p>{cta.text}</p>
     </div>
-    <div class="actions">
+    <div class="actions" data-reveal="up">
       <Button href={APP_LOGIN_URL} icon="arrow_forward">{cta.primary}</Button>
       <Button href={GITHUB_URL} variant="secondary" external icon="open_in_new">{cta.secondary}</Button>
     </div>

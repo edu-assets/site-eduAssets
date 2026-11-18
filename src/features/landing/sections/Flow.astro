@@ -7,7 +7,7 @@ const { flow } = Astro.props as { flow: LandingContent['flow'] };
 <Section id="flow" eyebrow={flow.eyebrow} title={flow.title} lead={flow.lead} tone="dark">
   <ol class="flow" role="list">
     {flow.steps.map((s) => (
-      <li>
+      <li data-reveal="up">
         <span class="flow__icon"><Icon name={s.icon} /></span>
         <h3>{s.title}</h3>
         <p>{s.text}</p>
