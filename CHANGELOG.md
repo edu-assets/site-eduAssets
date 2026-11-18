@@ -1,5 +1,9 @@
 # Changelog — eduAssets site
 
+## 1.6.1 — Product patch status — 2026-11-18
+
+- Rebuilt the site favicon set (ICO, PNG and a theme-aware SVG) with the product's new small-size icon: bolder shapes and a double outline (white halo and navy edge) for legibility on light and dark tab strips. Synchronized the release status with the product's official 1.6.1 interface release.
+
 ## 1.6.0 — Product minor release status — 2026-11-18
 
 - Synchronized the site release status and package metadata with the product's official 1.6.0 interface release (Home "Operations now" summary computed from already-loaded data, quick actions and usage tip pinned to the bottom, compact 2×2 mobile layout, recorded in the central bilingual changelog).
