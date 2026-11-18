@@ -1,5 +1,9 @@
 # Changelog — eduAssets site
 
+## 1.6.0 — Product minor release status — 2026-11-18
+
+- Synchronized the site release status and package metadata with the product's official 1.6.0 interface release (Home "Operations now" summary computed from already-loaded data, quick actions and usage tip pinned to the bottom, compact 2×2 mobile layout, recorded in the central bilingual changelog).
+
 ## 1.5.3 — Product patch status — 2026-11-17
 
 - Synchronized the site release status and package metadata with the product's official 1.5.3 interface release (themed inline form messages replacing the browser bubble, size-stable loading buttons, dark-theme and line-break fixes across panels, recorded in the central bilingual changelog).
