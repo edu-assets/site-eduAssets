@@ -1,5 +1,9 @@
 # Changelog — eduAssets site
 
+## 1.7.0 — Product minor release status — 2026-11-23
+
+- Synchronized the site release status and package metadata with the product's official 1.7.0 release (equipment scheduling: future checkouts become reservations by time window, a scheduling offer when units are short now but fit the total, "In progress" and "Schedules" tabs in Returns with pickup confirmation that records the actual time, and deletion of no-show schedules, recorded in the central bilingual changelog).
+
 ## 1.6.2 — Product patch status — 2026-11-18
 
 - Synchronized the site release status and package metadata with the product's official 1.6.2 interface release (visual-kit avatars in the user menu, authorship lines hidden when no author is recorded, and a wider, more structured Records window, recorded in the central bilingual changelog).
