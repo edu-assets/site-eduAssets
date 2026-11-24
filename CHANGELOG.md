@@ -1,5 +1,9 @@
 # Changelog — eduAssets site
 
+## 1.7.2 — Product patch status — 2026-11-24
+
+- Synchronized the site release status and package metadata with the product's official 1.7.2 interface correction release (the scheduling window keeps its title when the page is auto-translated, and mobile layout fixes for the Home summary card and the Controle records header, recorded in the central bilingual changelog).
+
 ## 1.7.1 — Product patch status — 2026-11-23
 
 - Synchronized the site release status and package metadata with the product's official 1.7.1 interface release (the loan form no longer has an "Expected return" field; future dates and unit shortages open a single scheduling window with start and expected-return fields, recorded in the central bilingual changelog).
