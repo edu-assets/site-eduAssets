@@ -1,5 +1,9 @@
 # Changelog — eduAssets site
 
+## 1.8.0 — Product minor release status — 2026-11-24
+
+- Synchronized the site release status and package metadata with the product's official 1.8.0 release (deleting an in-progress loan registered by mistake from the Returns detail panel, with its units returned to stock; editors within 24 hours, administrators at any time; recorded in the central bilingual changelog).
+
 ## 1.7.2 — Product patch status — 2026-11-24
 
 - Synchronized the site release status and package metadata with the product's official 1.7.2 interface correction release (the scheduling window keeps its title when the page is auto-translated, and mobile layout fixes for the Home summary card and the Controle records header, recorded in the central bilingual changelog).
